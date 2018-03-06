@@ -1,0 +1,22 @@
+server:
+  port: 6200
+  contextPath: /tng-vnv-tee
+app:
+  gk:
+    host: gk
+    base.url: http://${app.gk.host}:5000
+    session:
+      endpoint: ${app.gk.base.url}/sessions
+      username: sonata
+      password: 1234
+  catalogue:
+    host: tng-vnv-catalogue
+    base.url: http://${app.catalogue.host}:6200
+    package.metadata.endpoint: ${app.catalogue.base.url}/packages/{packageId}
+    filter.test.endpoint: ${app.catalogue.base.url}/network-services/{networkServiceId}/matched-test-suites
+    filter.ns.endpoint: ${app.catalogue.base.url}/test-suites/{testSuiteId}/matched-network-services
+  trr:
+    host: tng-vnv-trr
+    base.url: http://${app.trr.host}:6300
+    test.plan.create.endpoint: ${app.trr.base.url}/test-plans
+    test.plan.update.endpoint: ${app.trr.base.url}/test-plans/{testPlanId}
