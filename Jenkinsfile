@@ -29,11 +29,11 @@ pipeline {
     }
     post {
         always {
-            junit(allowEmptyResults: true, testResults: 'build/test-results/*.xml')
+            junit(allowEmptyResults: true, testResults: 'build/test-results/**/*.xml')
             publishHTML (target: [
                   allowMissing: true,
                   alwaysLinkToLastBuild: false,
-                  reportDir: 'build/reports/tests',
+                  reportDir: 'build/reports/tests/test',
                   reportFiles: 'index.html',
                   reportName: "Test Report"
             ])
