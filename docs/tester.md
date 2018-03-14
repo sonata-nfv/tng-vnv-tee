@@ -16,3 +16,20 @@ The TTCN3 tester will execute `runner.sh` in package root folder. Test result wi
 * has TTCN3 tests fail = FAILED
 * has TTCN3 tests success = SUCCESS
 * has NONE TTCN3 tests success = INVALID_TEST_RESULT
+
+The test result summary will be stored at `testSuiteResult.details` e.g.
+```json
+{
+    "test_suite_result_id":"test_suite_result_id",
+    "test_suite_id":"test_suite_id",
+    "details":
+        {
+          "none":0,
+          "pass":19,
+          "inconc":0,
+          "fail":3,
+          "error":0
+        },
+    "status":"FAILED"
+}
+```
