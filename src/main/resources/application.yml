@@ -5,7 +5,7 @@ app:
   tee.tmp.dir: /docker-host-shared-tmp
   gk:
     host: gk
-    base.url: http://${app.gk.host}:5000
+    base.url: http://${app.gk.host}:32001/api/v2
     session:
       endpoint: ${app.gk.base.url}/sessions
       username: sonata

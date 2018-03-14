@@ -1,6 +1,7 @@
 server:
   port: 16200
 app:
+  tee.tmp.dir: docker-host-shared-tmp
   gk.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/gk
   catalogue.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/catalogue
   trr.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/trr
