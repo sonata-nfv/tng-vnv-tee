@@ -2,9 +2,10 @@ server:
   port: 6200
   contextPath: /tng-vnv-tee
 app:
+  tee.tmp.dir: /docker-host-shared-tmp
   gk:
     host: gk
-    base.url: http://${app.gk.host}:5000
+    base.url: http://${app.gk.host}:32001/api/v2
     session:
       endpoint: ${app.gk.base.url}/sessions
       username: sonata
@@ -12,11 +13,11 @@ app:
   catalogue:
     host: tng-vnv-catalogue
     base.url: http://${app.catalogue.host}:6200
-    package.metadata.endpoint: ${app.catalogue.base.url}/packages/{packageId}
-    filter.test.endpoint: ${app.catalogue.base.url}/network-services/{networkServiceId}/matched-test-suites
-    filter.ns.endpoint: ${app.catalogue.base.url}/test-suites/{testSuiteId}/matched-network-services
+    test.suite.load.endpoint: ${app.catalogue.base.url}/test-suites/{testSuiteId}
+    resource.download.endpoint: ${app.catalogue.base.url}/test-suites/{testSuiteId}/download-resource?source={source}
   trr:
     host: tng-vnv-trr
     base.url: http://${app.trr.host}:6300
-    test.plan.create.endpoint: ${app.trr.base.url}/test-plans
-    test.plan.update.endpoint: ${app.trr.base.url}/test-plans/{testPlanId}
+    test.suite.result.create.endpoint: ${app.trr.base.url}/test-suite-results
+    test.suite.result.update.endpoint: ${app.trr.base.url}/test-suite-results/{testSuiteResultId}
+    network.service.instance.load.endpoint: ${app.trr.base.url}/network-service-instance-instances/{networkServiceInstanceId}
