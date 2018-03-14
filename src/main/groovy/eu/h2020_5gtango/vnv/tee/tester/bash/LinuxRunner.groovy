@@ -10,7 +10,6 @@ class LinuxRunner extends AbstractRunner {
     List<String> createCmd(File runnerSh) {
         [
                 'sh',
-                '-c',
                 runnerSh.absolutePath,
         ]
     }
