@@ -1,0 +1,743 @@
+12:21:12.078794 - TTCN-3 Main Test Component started on tango-VirtualBox. Version: CRL 113 200/6 R3A.
+12:21:12.078904 - TTCN Logger v2.2 options: TimeStampFormat:=Time; LogEntityName:=No; LogEventTypes:=No; SourceInfoFormat:=Stack; *.FileMask:=LOG_ALL | MATCHING | DEBUG; *.ConsoleMask:=LOG_ALL | MATCHING | DEBUG; LogFileSize:=0; LogFileNumber:=1; DiskFullAction:=Error
+12:21:12.081143 - Connected to MC.
+12:21:12.082221 - Executing control part of module DemoTestSuite.
+12:21:12.082891 DemoTestSuite.ttcn:350 Execution of control part in module DemoTestSuite started.
+12:21:12.083599 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:7 Test case UDP_SimpleHello started.
+12:21:12.084176 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:7 Initializing variables, timers and ports of component type Types.Tester inside testcase UDP_SimpleHello.
+12:21:12.084448 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:7 Port pUDPPort was started.
+12:21:12.084821 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:7 Port pTCPPort was started.
+12:21:12.084968 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:7 Component type Types.Tester was initialized.
+12:21:12.085146 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:13 Mapping port mtc:pUDPPort to system:pUDPPort.
+12:21:12.085429 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:13 Port pUDPPort was mapped to system:pUDPPort.
+12:21:12.085722 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:13 Map operation of mtc:pUDPPort to system:pUDPPort finished.
+12:21:12.085879 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:15 Sent on pUDPPort to system @Types.Message : { msgType := E_COMMAND_HELLO (0), msgContent := "Tester" }
+12:21:12.086688 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:17 Start timer t: 5 s
+12:21:12.088249 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:18 Message enqueued on pUDPPort from system charstring : "Hello Tester !" id 1
+12:21:17.088493 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:19 Matching on port pUDPPort succeeded: "Hello Tester !" with "Hello Tester !" matched
+12:21:17.088597 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:19 Receive operation on port pUDPPort succeeded, message from system(): charstring : "Hello Tester !" id 1
+12:21:17.088630 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:19 Message with id 1 was extracted from the queue of pUDPPort.
+12:21:17.088657 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:20 setverdict(pass): none -> pass
+12:21:17.088681 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:21 Stop timer t: 5 s
+12:21:17.088708 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:32 Unmapping port mtc:pUDPPort from system:pUDPPort.
+12:21:17.089038 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:32 Port pUDPPort was unmapped from system:pUDPPort.
+12:21:17.089234 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:32 Unmap operation of mtc:pUDPPort from system:pUDPPort finished.
+12:21:17.089273 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:32 Terminating component type Types.Tester.
+12:21:17.089299 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:32 Port pUDPPort was stopped.
+12:21:17.089323 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:32 Port pTCPPort was stopped.
+12:21:17.089344 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:32 Component type Types.Tester was shut down inside testcase UDP_SimpleHello.
+12:21:17.089369 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:32 Waiting for PTCs to finish.
+12:21:17.089573 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:32 Setting final verdict of the test case.
+12:21:17.089606 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:32 Local verdict of MTC: pass
+12:21:17.089631 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:32 No PTCs were created.
+12:21:17.089653 DemoTestSuite.ttcn:351->DemoTestSuite.ttcn:32 Test case UDP_SimpleHello finished. Verdict: pass
+12:21:17.089686 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:35 Test case UDP_SimpleEcho started.
+12:21:17.089708 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:35 Initializing variables, timers and ports of component type Types.Tester inside testcase UDP_SimpleEcho.
+12:21:17.089737 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:35 Port pUDPPort was started.
+12:21:17.089759 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:35 Port pTCPPort was started.
+12:21:17.089790 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:35 Component type Types.Tester was initialized.
+12:21:17.089814 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:41 Mapping port mtc:pUDPPort to system:pUDPPort.
+12:21:17.090096 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:41 Port pUDPPort was mapped to system:pUDPPort.
+12:21:17.090247 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:41 Map operation of mtc:pUDPPort to system:pUDPPort finished.
+12:21:17.090289 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:43 Sent on pUDPPort to system @Types.Message : { msgType := E_COMMAND_ECHO (1), msgContent := "Tester" }
+12:21:17.090498 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:45 Start timer t: 5 s
+12:21:17.090697 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:46 Message enqueued on pUDPPort from system charstring : "Tester" id 1
+12:21:22.093888 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:47 Matching on port pUDPPort succeeded: "Tester" with "Tester" matched
+12:21:22.094008 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:47 Receive operation on port pUDPPort succeeded, message from system(): charstring : "Tester" id 1
+12:21:22.094060 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:47 Message with id 1 was extracted from the queue of pUDPPort.
+12:21:22.094099 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:48 setverdict(pass): none -> pass
+12:21:22.094130 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:49 Stop timer t: 5 s
+12:21:22.094163 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:60 Unmapping port mtc:pUDPPort from system:pUDPPort.
+12:21:22.095097 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:60 Port pUDPPort was unmapped from system:pUDPPort.
+12:21:22.095594 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:60 Unmap operation of mtc:pUDPPort from system:pUDPPort finished.
+12:21:22.095641 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:60 Terminating component type Types.Tester.
+12:21:22.095670 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:60 Port pUDPPort was stopped.
+12:21:22.095696 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:60 Port pTCPPort was stopped.
+12:21:22.095720 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:60 Component type Types.Tester was shut down inside testcase UDP_SimpleEcho.
+12:21:22.095766 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:60 Waiting for PTCs to finish.
+12:21:22.095979 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:60 Setting final verdict of the test case.
+12:21:22.096013 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:60 Local verdict of MTC: pass
+12:21:22.096039 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:60 No PTCs were created.
+12:21:22.096062 DemoTestSuite.ttcn:352->DemoTestSuite.ttcn:60 Test case UDP_SimpleEcho finished. Verdict: pass
+12:21:22.096096 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:63 Test case UDP_SimpleReverse started.
+12:21:22.096119 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:63 Initializing variables, timers and ports of component type Types.Tester inside testcase UDP_SimpleReverse.
+12:21:22.096148 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:63 Port pUDPPort was started.
+12:21:22.096172 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:63 Port pTCPPort was started.
+12:21:22.096194 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:63 Component type Types.Tester was initialized.
+12:21:22.096221 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:69 Mapping port mtc:pUDPPort to system:pUDPPort.
+12:21:22.096584 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:69 Port pUDPPort was mapped to system:pUDPPort.
+12:21:22.096888 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:69 Map operation of mtc:pUDPPort to system:pUDPPort finished.
+12:21:22.096936 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:71 Sent on pUDPPort to system @Types.Message : { msgType := E_COMMAND_REVERSE (2), msgContent := "Tester" }
+12:21:22.097200 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:73 Start timer t: 5 s
+12:21:22.097525 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:74 Message enqueued on pUDPPort from system charstring : "Tester" id 1
+12:21:27.098199 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:75 Matching on port pUDPPort "Tester" with "retseT" unmatched: First message in the queue does not match the template:
+12:21:27.098305 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:79 Matching on port pUDPPort succeeded: "Tester" with ? matched
+12:21:27.098337 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:79 Receive operation on port pUDPPort succeeded, message from system(): charstring : "Tester" id 1
+12:21:27.098367 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:79 Message with id 1 was extracted from the queue of pUDPPort.
+12:21:27.098397 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:80 setverdict(fail): none -> fail reason: ""Wrong message, expected \"retseT\" and received \"Tester\""", new component reason: ""Wrong message, expected \"retseT\" and received \"Tester\"""
+12:21:27.098431 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:81 Stop timer t: 5 s
+12:21:27.098462 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:88 Unmapping port mtc:pUDPPort from system:pUDPPort.
+12:21:27.099372 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:88 Port pUDPPort was unmapped from system:pUDPPort.
+12:21:27.099936 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:88 Unmap operation of mtc:pUDPPort from system:pUDPPort finished.
+12:21:27.099983 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:88 Terminating component type Types.Tester.
+12:21:27.100010 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:88 Port pUDPPort was stopped.
+12:21:27.100036 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:88 Port pTCPPort was stopped.
+12:21:27.100058 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:88 Component type Types.Tester was shut down inside testcase UDP_SimpleReverse.
+12:21:27.100083 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:88 Waiting for PTCs to finish.
+12:21:27.100518 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:88 Setting final verdict of the test case.
+12:21:27.100555 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:88 Local verdict of MTC: fail reason: ""Wrong message, expected \"retseT\" and received \"Tester\"""
+12:21:27.100583 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:88 No PTCs were created.
+12:21:27.100606 DemoTestSuite.ttcn:353->DemoTestSuite.ttcn:88 Test case UDP_SimpleReverse finished. Verdict: fail reason: "Wrong message, expected \"retseT\" and received \"Tester\""
+12:21:27.100662 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:91 Test case UDP_SimpleCount started.
+12:21:27.100688 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:91 Initializing variables, timers and ports of component type Types.Tester inside testcase UDP_SimpleCount.
+12:21:27.100721 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:91 Port pUDPPort was started.
+12:21:27.100745 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:91 Port pTCPPort was started.
+12:21:27.100766 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:91 Component type Types.Tester was initialized.
+12:21:27.100789 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:97 Mapping port mtc:pUDPPort to system:pUDPPort.
+12:21:27.101064 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:97 Port pUDPPort was mapped to system:pUDPPort.
+12:21:27.101374 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:97 Map operation of mtc:pUDPPort to system:pUDPPort finished.
+12:21:27.101420 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:99 Sent on pUDPPort to system @Types.Message : { msgType := E_COMMAND_COUNT (3), msgContent := "Tester" }
+12:21:27.101781 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:101 Start timer t: 5 s
+12:21:27.102088 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:102 Message enqueued on pUDPPort from system charstring : "6" id 1
+12:21:32.105959 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:103 Matching on port pUDPPort succeeded: "6" with "6" matched
+12:21:32.106071 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:103 Receive operation on port pUDPPort succeeded, message from system(): charstring : "6" id 1
+12:21:32.106130 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:103 Message with id 1 was extracted from the queue of pUDPPort.
+12:21:32.106191 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:104 setverdict(pass): none -> pass
+12:21:32.106232 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:105 Stop timer t: 5 s
+12:21:32.106264 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:116 Unmapping port mtc:pUDPPort from system:pUDPPort.
+12:21:32.107584 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:116 Port pUDPPort was unmapped from system:pUDPPort.
+12:21:32.109442 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:116 Unmap operation of mtc:pUDPPort from system:pUDPPort finished.
+12:21:32.109573 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:116 Terminating component type Types.Tester.
+12:21:32.109609 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:116 Port pUDPPort was stopped.
+12:21:32.109693 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:116 Port pTCPPort was stopped.
+12:21:32.109719 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:116 Component type Types.Tester was shut down inside testcase UDP_SimpleCount.
+12:21:32.109748 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:116 Waiting for PTCs to finish.
+12:21:32.110218 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:116 Setting final verdict of the test case.
+12:21:32.110294 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:116 Local verdict of MTC: pass
+12:21:32.110322 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:116 No PTCs were created.
+12:21:32.110346 DemoTestSuite.ttcn:354->DemoTestSuite.ttcn:116 Test case UDP_SimpleCount finished. Verdict: pass
+12:21:32.110383 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:119 Test case UDP_SimpleNone started.
+12:21:32.110408 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:119 Initializing variables, timers and ports of component type Types.Tester inside testcase UDP_SimpleNone.
+12:21:32.110441 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:119 Port pUDPPort was started.
+12:21:32.110465 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:119 Port pTCPPort was started.
+12:21:32.110490 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:119 Component type Types.Tester was initialized.
+12:21:32.110516 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:125 Mapping port mtc:pUDPPort to system:pUDPPort.
+12:21:32.110976 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:125 Port pUDPPort was mapped to system:pUDPPort.
+12:21:32.111276 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:125 Map operation of mtc:pUDPPort to system:pUDPPort finished.
+12:21:32.111506 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:127 Sent on pUDPPort to system @Types.Message : { msgType := E_COMMAND_NONE (4), msgContent := "Tester" }
+12:21:32.111864 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:129 Start timer t: 5 s
+12:21:32.112565 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:130 Message enqueued on pUDPPort from system charstring : "" id 1
+12:21:37.116290 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:131 Matching on port pUDPPort succeeded: "" with "" matched
+12:21:37.116393 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:131 Receive operation on port pUDPPort succeeded, message from system(): charstring : "" id 1
+12:21:37.116427 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:131 Message with id 1 was extracted from the queue of pUDPPort.
+12:21:37.116454 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:132 setverdict(pass): none -> pass
+12:21:37.116478 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:133 Stop timer t: 5 s
+12:21:37.116503 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:144 Unmapping port mtc:pUDPPort from system:pUDPPort.
+12:21:37.117013 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:144 Port pUDPPort was unmapped from system:pUDPPort.
+12:21:37.117289 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:144 Unmap operation of mtc:pUDPPort from system:pUDPPort finished.
+12:21:37.117327 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:144 Terminating component type Types.Tester.
+12:21:37.117353 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:144 Port pUDPPort was stopped.
+12:21:37.117377 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:144 Port pTCPPort was stopped.
+12:21:37.117398 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:144 Component type Types.Tester was shut down inside testcase UDP_SimpleNone.
+12:21:37.117422 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:144 Waiting for PTCs to finish.
+12:21:37.117680 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:144 Setting final verdict of the test case.
+12:21:37.117723 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:144 Local verdict of MTC: pass
+12:21:37.117748 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:144 No PTCs were created.
+12:21:37.117777 DemoTestSuite.ttcn:355->DemoTestSuite.ttcn:144 Test case UDP_SimpleNone finished. Verdict: pass
+12:21:37.117810 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:149 Test case UDP_ShorterHello started.
+12:21:37.117831 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:149 Initializing variables, timers and ports of component type Types.Tester inside testcase UDP_ShorterHello.
+12:21:37.117859 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:149 Port pUDPPort was started.
+12:21:37.117881 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:149 Port pTCPPort was started.
+12:21:37.117903 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:149 Component type Types.Tester was initialized.
+12:21:37.117928 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:151 Mapping port mtc:pUDPPort to system:pUDPPort.
+12:21:37.118236 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:151 Port pUDPPort was mapped to system:pUDPPort.
+12:21:37.118435 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:151 Map operation of mtc:pUDPPort to system:pUDPPort finished.
+12:21:37.118478 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:152->Functions.ttcn:21 Sent on pUDPPort to system @Types.Message : { msgType := E_COMMAND_HELLO (0), msgContent := "Tester" }
+12:21:37.118749 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:152->Functions.ttcn:23 Start timer t: 5 s
+12:21:37.119038 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:152->Functions.ttcn:24 Message enqueued on pUDPPort from system charstring : "Hello Tester !" id 1
+12:21:42.119248 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:152->Functions.ttcn:25 Matching on port pUDPPort succeeded: "Hello Tester !" with "Hello Tester !" matched
+12:21:42.119381 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:152->Functions.ttcn:25 Receive operation on port pUDPPort succeeded, message from system(): charstring : "Hello Tester !" id 1
+12:21:42.119434 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:152->Functions.ttcn:25 Message with id 1 was extracted from the queue of pUDPPort.
+12:21:42.119477 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:152->Functions.ttcn:26 setverdict(pass): none -> pass
+12:21:42.119517 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:152->Functions.ttcn:27 Stop timer t: 5 s
+12:21:42.119554 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:153 Unmapping port mtc:pUDPPort from system:pUDPPort.
+12:21:42.120192 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:153 Port pUDPPort was unmapped from system:pUDPPort.
+12:21:42.120579 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:153 Unmap operation of mtc:pUDPPort from system:pUDPPort finished.
+12:21:42.120620 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:153 Terminating component type Types.Tester.
+12:21:42.120647 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:153 Port pUDPPort was stopped.
+12:21:42.120672 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:153 Port pTCPPort was stopped.
+12:21:42.120693 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:153 Component type Types.Tester was shut down inside testcase UDP_ShorterHello.
+12:21:42.120718 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:153 Waiting for PTCs to finish.
+12:21:42.120946 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:153 Setting final verdict of the test case.
+12:21:42.120980 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:153 Local verdict of MTC: pass
+12:21:42.121006 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:153 No PTCs were created.
+12:21:42.121028 DemoTestSuite.ttcn:357->DemoTestSuite.ttcn:153 Test case UDP_ShorterHello finished. Verdict: pass
+12:21:42.121061 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:156 Test case UDP_ShorterEcho started.
+12:21:42.121084 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:156 Initializing variables, timers and ports of component type Types.Tester inside testcase UDP_ShorterEcho.
+12:21:42.121113 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:156 Port pUDPPort was started.
+12:21:42.121135 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:156 Port pTCPPort was started.
+12:21:42.121157 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:156 Component type Types.Tester was initialized.
+12:21:42.121183 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:158 Mapping port mtc:pUDPPort to system:pUDPPort.
+12:21:42.121495 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:158 Port pUDPPort was mapped to system:pUDPPort.
+12:21:42.121719 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:158 Map operation of mtc:pUDPPort to system:pUDPPort finished.
+12:21:42.121764 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:159->Functions.ttcn:21 Sent on pUDPPort to system @Types.Message : { msgType := E_COMMAND_ECHO (1), msgContent := "Tester" }
+12:21:42.122241 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:159->Functions.ttcn:23 Start timer t: 5 s
+12:21:42.122636 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:159->Functions.ttcn:24 Message enqueued on pUDPPort from system charstring : "Tester" id 1
+12:21:47.125728 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:159->Functions.ttcn:25 Matching on port pUDPPort succeeded: "Tester" with "Tester" matched
+12:21:47.125827 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:159->Functions.ttcn:25 Receive operation on port pUDPPort succeeded, message from system(): charstring : "Tester" id 1
+12:21:47.125862 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:159->Functions.ttcn:25 Message with id 1 was extracted from the queue of pUDPPort.
+12:21:47.125890 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:159->Functions.ttcn:26 setverdict(pass): none -> pass
+12:21:47.125945 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:159->Functions.ttcn:27 Stop timer t: 5 s
+12:21:47.125983 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:160 Unmapping port mtc:pUDPPort from system:pUDPPort.
+12:21:47.126739 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:160 Port pUDPPort was unmapped from system:pUDPPort.
+12:21:47.127166 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:160 Unmap operation of mtc:pUDPPort from system:pUDPPort finished.
+12:21:47.127208 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:160 Terminating component type Types.Tester.
+12:21:47.127245 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:160 Port pUDPPort was stopped.
+12:21:47.127269 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:160 Port pTCPPort was stopped.
+12:21:47.127679 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:160 Component type Types.Tester was shut down inside testcase UDP_ShorterEcho.
+12:21:47.127708 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:160 Waiting for PTCs to finish.
+12:21:47.127944 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:160 Setting final verdict of the test case.
+12:21:47.127989 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:160 Local verdict of MTC: pass
+12:21:47.128013 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:160 No PTCs were created.
+12:21:47.128045 DemoTestSuite.ttcn:358->DemoTestSuite.ttcn:160 Test case UDP_ShorterEcho finished. Verdict: pass
+12:21:47.128078 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:163 Test case UDP_ShorterReverse started.
+12:21:47.128101 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:163 Initializing variables, timers and ports of component type Types.Tester inside testcase UDP_ShorterReverse.
+12:21:47.128377 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:163 Port pUDPPort was started.
+12:21:47.128402 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:163 Port pTCPPort was started.
+12:21:47.128459 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:163 Component type Types.Tester was initialized.
+12:21:47.128481 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:165 Mapping port mtc:pUDPPort to system:pUDPPort.
+12:21:47.128711 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:165 Port pUDPPort was mapped to system:pUDPPort.
+12:21:47.128904 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:165 Map operation of mtc:pUDPPort to system:pUDPPort finished.
+12:21:47.128990 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:166->Functions.ttcn:21 Sent on pUDPPort to system @Types.Message : { msgType := E_COMMAND_REVERSE (2), msgContent := "Tester" }
+12:21:47.129245 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:166->Functions.ttcn:23 Start timer t: 5 s
+12:21:47.129580 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:166->Functions.ttcn:24 Message enqueued on pUDPPort from system charstring : "Tester" id 1
+12:21:52.133523 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:166->Functions.ttcn:25 Matching on port pUDPPort "Tester" with "retseT" unmatched: First message in the queue does not match the template:
+12:21:52.133648 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:166->Functions.ttcn:29 Matching on port pUDPPort succeeded: "Tester" with ? matched
+12:21:52.133682 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:166->Functions.ttcn:29 Receive operation on port pUDPPort succeeded, message from system(): charstring : "Tester" id 1
+12:21:52.133712 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:166->Functions.ttcn:29 Message with id 1 was extracted from the queue of pUDPPort.
+12:21:52.133745 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:166->Functions.ttcn:30 setverdict(fail): none -> fail reason: ""Wrong message, expected \"retseT\" and received \"Tester\""", new component reason: ""Wrong message, expected \"retseT\" and received \"Tester\"""
+12:21:52.133829 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:166->Functions.ttcn:31 Stop timer t: 5 s
+12:21:52.133881 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:167 Unmapping port mtc:pUDPPort from system:pUDPPort.
+12:21:52.135658 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:167 Port pUDPPort was unmapped from system:pUDPPort.
+12:21:52.136781 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:167 Unmap operation of mtc:pUDPPort from system:pUDPPort finished.
+12:21:52.136966 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:167 Terminating component type Types.Tester.
+12:21:52.137056 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:167 Port pUDPPort was stopped.
+12:21:52.137118 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:167 Port pTCPPort was stopped.
+12:21:52.137171 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:167 Component type Types.Tester was shut down inside testcase UDP_ShorterReverse.
+12:21:52.137224 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:167 Waiting for PTCs to finish.
+12:21:52.138005 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:167 Setting final verdict of the test case.
+12:21:52.138166 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:167 Local verdict of MTC: fail reason: ""Wrong message, expected \"retseT\" and received \"Tester\"""
+12:21:52.138249 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:167 No PTCs were created.
+12:21:52.138326 DemoTestSuite.ttcn:359->DemoTestSuite.ttcn:167 Test case UDP_ShorterReverse finished. Verdict: fail reason: "Wrong message, expected \"retseT\" and received \"Tester\""
+12:21:52.138482 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:170 Test case UDP_ShorterCount started.
+12:21:52.138537 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:170 Initializing variables, timers and ports of component type Types.Tester inside testcase UDP_ShorterCount.
+12:21:52.138605 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:170 Port pUDPPort was started.
+12:21:52.138669 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:170 Port pTCPPort was started.
+12:21:52.138706 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:170 Component type Types.Tester was initialized.
+12:21:52.138737 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:172 Mapping port mtc:pUDPPort to system:pUDPPort.
+12:21:52.139587 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:172 Port pUDPPort was mapped to system:pUDPPort.
+12:21:52.141130 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:172 Map operation of mtc:pUDPPort to system:pUDPPort finished.
+12:21:52.141645 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:173->Functions.ttcn:21 Sent on pUDPPort to system @Types.Message : { msgType := E_COMMAND_COUNT (3), msgContent := "Tester" }
+12:21:52.143013 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:173->Functions.ttcn:23 Start timer t: 5 s
+12:21:52.144636 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:173->Functions.ttcn:24 Message enqueued on pUDPPort from system charstring : "6" id 1
+12:21:57.148209 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:173->Functions.ttcn:25 Matching on port pUDPPort succeeded: "6" with "6" matched
+12:21:57.148308 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:173->Functions.ttcn:25 Receive operation on port pUDPPort succeeded, message from system(): charstring : "6" id 1
+12:21:57.148342 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:173->Functions.ttcn:25 Message with id 1 was extracted from the queue of pUDPPort.
+12:21:57.148370 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:173->Functions.ttcn:26 setverdict(pass): none -> pass
+12:21:57.148406 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:173->Functions.ttcn:27 Stop timer t: 5 s
+12:21:57.148434 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:174 Unmapping port mtc:pUDPPort from system:pUDPPort.
+12:21:57.149037 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:174 Port pUDPPort was unmapped from system:pUDPPort.
+12:21:57.149428 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:174 Unmap operation of mtc:pUDPPort from system:pUDPPort finished.
+12:21:57.149467 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:174 Terminating component type Types.Tester.
+12:21:57.149493 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:174 Port pUDPPort was stopped.
+12:21:57.149517 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:174 Port pTCPPort was stopped.
+12:21:57.149539 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:174 Component type Types.Tester was shut down inside testcase UDP_ShorterCount.
+12:21:57.149578 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:174 Waiting for PTCs to finish.
+12:21:57.149783 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:174 Setting final verdict of the test case.
+12:21:57.149818 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:174 Local verdict of MTC: pass
+12:21:57.149843 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:174 No PTCs were created.
+12:21:57.149865 DemoTestSuite.ttcn:360->DemoTestSuite.ttcn:174 Test case UDP_ShorterCount finished. Verdict: pass
+12:21:57.149898 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:177 Test case UDP_ShorterNone started.
+12:21:57.149920 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:177 Initializing variables, timers and ports of component type Types.Tester inside testcase UDP_ShorterNone.
+12:21:57.149949 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:177 Port pUDPPort was started.
+12:21:57.149972 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:177 Port pTCPPort was started.
+12:21:57.149994 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:177 Component type Types.Tester was initialized.
+12:21:57.150020 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:179 Mapping port mtc:pUDPPort to system:pUDPPort.
+12:21:57.150329 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:179 Port pUDPPort was mapped to system:pUDPPort.
+12:21:57.150529 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:179 Map operation of mtc:pUDPPort to system:pUDPPort finished.
+12:21:57.150606 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:180->Functions.ttcn:21 Sent on pUDPPort to system @Types.Message : { msgType := E_COMMAND_NONE (4), msgContent := "Tester" }
+12:21:57.150875 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:180->Functions.ttcn:23 Start timer t: 5 s
+12:21:57.151198 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:180->Functions.ttcn:24 Message enqueued on pUDPPort from system charstring : "" id 1
+12:22:02.154304 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:180->Functions.ttcn:25 Matching on port pUDPPort succeeded: "" with "" matched
+12:22:02.154411 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:180->Functions.ttcn:25 Receive operation on port pUDPPort succeeded, message from system(): charstring : "" id 1
+12:22:02.154444 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:180->Functions.ttcn:25 Message with id 1 was extracted from the queue of pUDPPort.
+12:22:02.154472 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:180->Functions.ttcn:26 setverdict(pass): none -> pass
+12:22:02.154496 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:180->Functions.ttcn:27 Stop timer t: 5 s
+12:22:02.154533 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:181 Unmapping port mtc:pUDPPort from system:pUDPPort.
+12:22:02.155268 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:181 Port pUDPPort was unmapped from system:pUDPPort.
+12:22:02.155820 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:181 Unmap operation of mtc:pUDPPort from system:pUDPPort finished.
+12:22:02.155875 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:181 Terminating component type Types.Tester.
+12:22:02.155905 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:181 Port pUDPPort was stopped.
+12:22:02.155940 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:181 Port pTCPPort was stopped.
+12:22:02.155962 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:181 Component type Types.Tester was shut down inside testcase UDP_ShorterNone.
+12:22:02.155996 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:181 Waiting for PTCs to finish.
+12:22:02.156225 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:181 Setting final verdict of the test case.
+12:22:02.156260 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:181 Local verdict of MTC: pass
+12:22:02.156285 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:181 No PTCs were created.
+12:22:02.156306 DemoTestSuite.ttcn:361->DemoTestSuite.ttcn:181 Test case UDP_ShorterNone finished. Verdict: pass
+12:22:02.156339 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:184 Test case UDP_AllInOne started.
+12:22:02.156360 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:184 Initializing variables, timers and ports of component type Types.Tester inside testcase UDP_AllInOne.
+12:22:02.156388 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:184 Port pUDPPort was started.
+12:22:02.156410 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:184 Port pTCPPort was started.
+12:22:02.156432 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:184 Component type Types.Tester was initialized.
+12:22:02.156454 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:186 Mapping port mtc:pUDPPort to system:pUDPPort.
+12:22:02.156788 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:186 Port pUDPPort was mapped to system:pUDPPort.
+12:22:02.157007 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:186 Map operation of mtc:pUDPPort to system:pUDPPort finished.
+12:22:02.157050 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:188->Functions.ttcn:21 Sent on pUDPPort to system @Types.Message : { msgType := E_COMMAND_HELLO (0), msgContent := "Tester" }
+12:22:02.157344 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:188->Functions.ttcn:23 Start timer t: 5 s
+12:22:02.157677 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:188->Functions.ttcn:24 Message enqueued on pUDPPort from system charstring : "Hello Tester !" id 1
+12:22:07.160642 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:188->Functions.ttcn:25 Matching on port pUDPPort succeeded: "Hello Tester !" with "Hello Tester !" matched
+12:22:07.160789 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:188->Functions.ttcn:25 Receive operation on port pUDPPort succeeded, message from system(): charstring : "Hello Tester !" id 1
+12:22:07.160901 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:188->Functions.ttcn:25 Message with id 1 was extracted from the queue of pUDPPort.
+12:22:07.160961 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:188->Functions.ttcn:26 setverdict(pass): none -> pass
+12:22:07.161006 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:188->Functions.ttcn:27 Stop timer t: 5 s
+12:22:07.161056 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:189->Functions.ttcn:21 Sent on pUDPPort to system @Types.Message : { msgType := E_COMMAND_ECHO (1), msgContent := "Tester" }
+12:22:07.161126 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:189->Functions.ttcn:23 Start timer t: 5 s
+12:22:07.162523 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:189->Functions.ttcn:24 Message enqueued on pUDPPort from system charstring : "Tester" id 2
+12:22:12.165269 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:189->Functions.ttcn:25 Matching on port pUDPPort succeeded: "Tester" with "Tester" matched
+12:22:12.165401 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:189->Functions.ttcn:25 Receive operation on port pUDPPort succeeded, message from system(): charstring : "Tester" id 2
+12:22:12.165438 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:189->Functions.ttcn:25 Message with id 2 was extracted from the queue of pUDPPort.
+12:22:12.165466 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:189->Functions.ttcn:26 setverdict(pass): pass -> pass, component reason not changed
+12:22:12.165493 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:189->Functions.ttcn:27 Stop timer t: 5 s
+12:22:12.165527 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:190->Functions.ttcn:21 Sent on pUDPPort to system @Types.Message : { msgType := E_COMMAND_REVERSE (2), msgContent := "Tester" }
+12:22:12.165575 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:190->Functions.ttcn:23 Start timer t: 5 s
+12:22:12.166311 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:190->Functions.ttcn:24 Message enqueued on pUDPPort from system charstring : "Tester" id 3
+12:22:17.169991 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:190->Functions.ttcn:25 Matching on port pUDPPort "Tester" with "retseT" unmatched: First message in the queue does not match the template:
+12:22:17.170113 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:190->Functions.ttcn:29 Matching on port pUDPPort succeeded: "Tester" with ? matched
+12:22:17.170160 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:190->Functions.ttcn:29 Receive operation on port pUDPPort succeeded, message from system(): charstring : "Tester" id 3
+12:22:17.170195 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:190->Functions.ttcn:29 Message with id 3 was extracted from the queue of pUDPPort.
+12:22:17.170229 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:190->Functions.ttcn:30 setverdict(fail): pass -> fail reason: ""Wrong message, expected \"retseT\" and received \"Tester\""", new component reason: ""Wrong message, expected \"retseT\" and received \"Tester\"""
+12:22:17.170261 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:190->Functions.ttcn:31 Stop timer t: 5 s
+12:22:17.170297 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:191->Functions.ttcn:21 Sent on pUDPPort to system @Types.Message : { msgType := E_COMMAND_COUNT (3), msgContent := "Tester" }
+12:22:17.170371 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:191->Functions.ttcn:23 Start timer t: 5 s
+12:22:17.171272 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:191->Functions.ttcn:24 Message enqueued on pUDPPort from system charstring : "6" id 4
+12:22:22.170641 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:191->Functions.ttcn:25 Matching on port pUDPPort succeeded: "6" with "6" matched
+12:22:22.170807 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:191->Functions.ttcn:25 Receive operation on port pUDPPort succeeded, message from system(): charstring : "6" id 4
+12:22:22.170898 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:191->Functions.ttcn:25 Message with id 4 was extracted from the queue of pUDPPort.
+12:22:22.170968 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:191->Functions.ttcn:27 Stop timer t: 5 s
+12:22:22.171084 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:192->Functions.ttcn:21 Sent on pUDPPort to system @Types.Message : { msgType := E_COMMAND_NONE (4), msgContent := "Tester" }
+12:22:22.171161 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:192->Functions.ttcn:23 Start timer t: 5 s
+12:22:22.171965 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:192->Functions.ttcn:24 Message enqueued on pUDPPort from system charstring : "" id 5
+12:22:27.175454 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:192->Functions.ttcn:25 Matching on port pUDPPort succeeded: "" with "" matched
+12:22:27.175560 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:192->Functions.ttcn:25 Receive operation on port pUDPPort succeeded, message from system(): charstring : "" id 5
+12:22:27.175595 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:192->Functions.ttcn:25 Message with id 5 was extracted from the queue of pUDPPort.
+12:22:27.175623 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:192->Functions.ttcn:27 Stop timer t: 5 s
+12:22:27.175652 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:194 Unmapping port mtc:pUDPPort from system:pUDPPort.
+12:22:27.176248 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:194 Port pUDPPort was unmapped from system:pUDPPort.
+12:22:27.176745 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:194 Unmap operation of mtc:pUDPPort from system:pUDPPort finished.
+12:22:27.176806 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:194 Terminating component type Types.Tester.
+12:22:27.176836 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:194 Port pUDPPort was stopped.
+12:22:27.176861 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:194 Port pTCPPort was stopped.
+12:22:27.176882 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:194 Component type Types.Tester was shut down inside testcase UDP_AllInOne.
+12:22:27.176906 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:194 Waiting for PTCs to finish.
+12:22:27.177361 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:194 Setting final verdict of the test case.
+12:22:27.177400 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:194 Local verdict of MTC: fail reason: ""Wrong message, expected \"retseT\" and received \"Tester\"""
+12:22:27.177437 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:194 No PTCs were created.
+12:22:27.177459 DemoTestSuite.ttcn:363->DemoTestSuite.ttcn:194 Test case UDP_AllInOne finished. Verdict: fail reason: "Wrong message, expected \"retseT\" and received \"Tester\""
+12:22:27.177504 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:197 Test case TCP_SimpleHello started.
+12:22:27.177526 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:197 Initializing variables, timers and ports of component type Types.Tester inside testcase TCP_SimpleHello.
+12:22:27.177568 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:197 Port pUDPPort was started.
+12:22:27.177592 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:197 Port pTCPPort was started.
+12:22:27.177613 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:197 Component type Types.Tester was initialized.
+12:22:27.177635 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:203->Functions.ttcn:51 Mapping port mtc:pTCPPort to system:pTCPPort.
+12:22:27.178711 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:203->Functions.ttcn:51 Port pTCPPort was mapped to system:pTCPPort.
+12:22:27.178984 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:203->Functions.ttcn:51 Map operation of mtc:pTCPPort to system:pTCPPort finished.
+12:22:27.179024 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:203->Functions.ttcn:52 Altstep defaultTCP was activated as default, id 1
+12:22:27.179058 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:205 Sent on pTCPPort to system @Types.Message : { msgType := E_COMMAND_HELLO (0), msgContent := "Tester" }
+12:22:27.179104 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:207 Start timer t: 5 s
+12:22:27.179510 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:208->Codec.ttcn:24 regexp(): POSIX ERE equivalent of pattern "(?+)($)(?+)" is: "^(.+)(\\$)(.+)$"
+12:22:27.179617 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:208->Codec.ttcn:25 "TPC decoded: Hello Tester !"
+12:22:27.179658 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:208 Message enqueued on pTCPPort from system charstring : "Hello Tester !" id 1
+12:22:32.181728 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:209 Matching on port pTCPPort succeeded: "Hello Tester !" with "Hello Tester !" matched
+12:22:32.181828 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:209 Receive operation on port pTCPPort succeeded, message from system(): charstring : "Hello Tester !" id 1
+12:22:32.181863 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:209 Message with id 1 was extracted from the queue of pTCPPort.
+12:22:32.181891 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:210 setverdict(pass): none -> pass
+12:22:32.181915 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:211 Stop timer t: 5 s
+12:22:32.181948 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:215->Functions.ttcn:57 setverdict(pass): pass -> pass, component reason not changed
+12:22:32.181975 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:215->Functions.ttcn:58 Unmapping port mtc:pTCPPort from system:pTCPPort.
+12:22:32.182669 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:215->Functions.ttcn:58 Port pTCPPort was unmapped from system:pTCPPort.
+12:22:32.184109 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:215->Functions.ttcn:58 Unmap operation of mtc:pTCPPort from system:pTCPPort finished.
+12:22:32.184195 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:215 Terminating component type Types.Tester.
+12:22:32.184225 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:215 Default with id 1 (altstep defaultTCP) was deactivated.
+12:22:32.184249 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:215 Port pUDPPort was stopped.
+12:22:32.184275 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:215 Port pTCPPort was stopped.
+12:22:32.184296 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:215 Component type Types.Tester was shut down inside testcase TCP_SimpleHello.
+12:22:32.184321 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:215 Waiting for PTCs to finish.
+12:22:32.184596 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:215 Setting final verdict of the test case.
+12:22:32.184663 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:215 Local verdict of MTC: pass
+12:22:32.184703 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:215 No PTCs were created.
+12:22:32.184726 DemoTestSuite.ttcn:365->DemoTestSuite.ttcn:215 Test case TCP_SimpleHello finished. Verdict: pass
+12:22:32.184759 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:218 Test case TCP_SimpleEcho started.
+12:22:32.184781 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:218 Initializing variables, timers and ports of component type Types.Tester inside testcase TCP_SimpleEcho.
+12:22:32.184810 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:218 Port pUDPPort was started.
+12:22:32.184834 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:218 Port pTCPPort was started.
+12:22:32.184856 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:218 Component type Types.Tester was initialized.
+12:22:32.184879 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:224->Functions.ttcn:51 Mapping port mtc:pTCPPort to system:pTCPPort.
+12:22:32.185244 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:224->Functions.ttcn:51 Port pTCPPort was mapped to system:pTCPPort.
+12:22:32.186178 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:224->Functions.ttcn:51 Map operation of mtc:pTCPPort to system:pTCPPort finished.
+12:22:32.186231 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:224->Functions.ttcn:52 Altstep defaultTCP was activated as default, id 1
+12:22:32.186266 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:226 Sent on pTCPPort to system @Types.Message : { msgType := E_COMMAND_ECHO (1), msgContent := "Tester" }
+12:22:32.186306 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:228 Start timer t: 5 s
+12:22:32.186880 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:229->Codec.ttcn:24 regexp(): POSIX ERE equivalent of pattern "(?+)($)(?+)" is: "^(.+)(\\$)(.+)$"
+12:22:32.186964 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:229->Codec.ttcn:25 "TPC decoded: Tester"
+12:22:32.187000 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:229 Message enqueued on pTCPPort from system charstring : "Tester" id 1
+12:22:37.190238 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:230 Matching on port pTCPPort succeeded: "Tester" with "Tester" matched
+12:22:37.190339 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:230 Receive operation on port pTCPPort succeeded, message from system(): charstring : "Tester" id 1
+12:22:37.190414 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:230 Message with id 1 was extracted from the queue of pTCPPort.
+12:22:37.190441 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:231 setverdict(pass): none -> pass
+12:22:37.190465 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:232 Stop timer t: 5 s
+12:22:37.190492 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:236->Functions.ttcn:57 setverdict(pass): pass -> pass, component reason not changed
+12:22:37.190517 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:236->Functions.ttcn:58 Unmapping port mtc:pTCPPort from system:pTCPPort.
+12:22:37.191160 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:236->Functions.ttcn:58 Port pTCPPort was unmapped from system:pTCPPort.
+12:22:37.191630 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:236->Functions.ttcn:58 Unmap operation of mtc:pTCPPort from system:pTCPPort finished.
+12:22:37.191672 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:236 Terminating component type Types.Tester.
+12:22:37.191698 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:236 Default with id 1 (altstep defaultTCP) was deactivated.
+12:22:37.191722 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:236 Port pUDPPort was stopped.
+12:22:37.191745 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:236 Port pTCPPort was stopped.
+12:22:37.191766 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:236 Component type Types.Tester was shut down inside testcase TCP_SimpleEcho.
+12:22:37.191789 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:236 Waiting for PTCs to finish.
+12:22:37.192059 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:236 Setting final verdict of the test case.
+12:22:37.192094 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:236 Local verdict of MTC: pass
+12:22:37.192120 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:236 No PTCs were created.
+12:22:37.192142 DemoTestSuite.ttcn:366->DemoTestSuite.ttcn:236 Test case TCP_SimpleEcho finished. Verdict: pass
+12:22:37.192179 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:239 Test case TCP_SimpleReverse started.
+12:22:37.192217 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:239 Initializing variables, timers and ports of component type Types.Tester inside testcase TCP_SimpleReverse.
+12:22:37.192248 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:239 Port pUDPPort was started.
+12:22:37.192271 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:239 Port pTCPPort was started.
+12:22:37.192293 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:239 Component type Types.Tester was initialized.
+12:22:37.192320 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:245->Functions.ttcn:51 Mapping port mtc:pTCPPort to system:pTCPPort.
+12:22:37.192666 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:245->Functions.ttcn:51 Port pTCPPort was mapped to system:pTCPPort.
+12:22:37.193479 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:245->Functions.ttcn:51 Map operation of mtc:pTCPPort to system:pTCPPort finished.
+12:22:37.193522 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:245->Functions.ttcn:52 Altstep defaultTCP was activated as default, id 1
+12:22:37.193555 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:247 Sent on pTCPPort to system @Types.Message : { msgType := E_COMMAND_REVERSE (2), msgContent := "Tester" }
+12:22:37.193590 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:249 Start timer t: 5 s
+12:22:37.194038 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:250->Codec.ttcn:24 regexp(): POSIX ERE equivalent of pattern "(?+)($)(?+)" is: "^(.+)(\\$)(.+)$"
+12:22:37.194120 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:250->Codec.ttcn:25 "TPC decoded: retseT"
+12:22:37.194155 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:250 Message enqueued on pTCPPort from system charstring : "retseT" id 1
+12:22:42.194450 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:251 Matching on port pTCPPort succeeded: "retseT" with "retseT" matched
+12:22:42.194605 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:251 Receive operation on port pTCPPort succeeded, message from system(): charstring : "retseT" id 1
+12:22:42.194648 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:251 Message with id 1 was extracted from the queue of pTCPPort.
+12:22:42.194682 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:252 setverdict(pass): none -> pass
+12:22:42.194713 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:253 Stop timer t: 5 s
+12:22:42.194745 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:257->Functions.ttcn:57 setverdict(pass): pass -> pass, component reason not changed
+12:22:42.194825 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:257->Functions.ttcn:58 Unmapping port mtc:pTCPPort from system:pTCPPort.
+12:22:42.196096 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:257->Functions.ttcn:58 Port pTCPPort was unmapped from system:pTCPPort.
+12:22:42.197098 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:257->Functions.ttcn:58 Unmap operation of mtc:pTCPPort from system:pTCPPort finished.
+12:22:42.197183 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:257 Terminating component type Types.Tester.
+12:22:42.197223 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:257 Default with id 1 (altstep defaultTCP) was deactivated.
+12:22:42.197270 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:257 Port pUDPPort was stopped.
+12:22:42.197342 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:257 Port pTCPPort was stopped.
+12:22:42.197376 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:257 Component type Types.Tester was shut down inside testcase TCP_SimpleReverse.
+12:22:42.197413 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:257 Waiting for PTCs to finish.
+12:22:42.197742 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:257 Setting final verdict of the test case.
+12:22:42.197885 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:257 Local verdict of MTC: pass
+12:22:42.197923 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:257 No PTCs were created.
+12:22:42.197955 DemoTestSuite.ttcn:367->DemoTestSuite.ttcn:257 Test case TCP_SimpleReverse finished. Verdict: pass
+12:22:42.198004 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:260 Test case TCP_SimpleCount started.
+12:22:42.198037 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:260 Initializing variables, timers and ports of component type Types.Tester inside testcase TCP_SimpleCount.
+12:22:42.198095 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:260 Port pUDPPort was started.
+12:22:42.198130 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:260 Port pTCPPort was started.
+12:22:42.198164 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:260 Component type Types.Tester was initialized.
+12:22:42.198203 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:266->Functions.ttcn:51 Mapping port mtc:pTCPPort to system:pTCPPort.
+12:22:42.199609 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:266->Functions.ttcn:51 Port pTCPPort was mapped to system:pTCPPort.
+12:22:42.200468 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:266->Functions.ttcn:51 Map operation of mtc:pTCPPort to system:pTCPPort finished.
+12:22:42.201034 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:266->Functions.ttcn:52 Altstep defaultTCP was activated as default, id 1
+12:22:42.201340 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:268 Sent on pTCPPort to system @Types.Message : { msgType := E_COMMAND_COUNT (3), msgContent := "Tester" }
+12:22:42.202195 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:270 Start timer t: 5 s
+12:22:42.202639 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:271->Codec.ttcn:24 regexp(): POSIX ERE equivalent of pattern "(?+)($)(?+)" is: "^(.+)(\\$)(.+)$"
+12:22:42.203250 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:271->Codec.ttcn:25 "TPC decoded: 6"
+12:22:42.203680 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:271 Message enqueued on pTCPPort from system charstring : "6" id 1
+12:22:47.206874 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:272 Matching on port pTCPPort succeeded: "6" with "6" matched
+12:22:47.207374 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:272 Receive operation on port pTCPPort succeeded, message from system(): charstring : "6" id 1
+12:22:47.207719 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:272 Message with id 1 was extracted from the queue of pTCPPort.
+12:22:47.207949 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:273 setverdict(pass): none -> pass
+12:22:47.208228 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:274 Stop timer t: 5 s
+12:22:47.208298 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:278->Functions.ttcn:57 setverdict(pass): pass -> pass, component reason not changed
+12:22:47.208339 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:278->Functions.ttcn:58 Unmapping port mtc:pTCPPort from system:pTCPPort.
+12:22:47.214962 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:278->Functions.ttcn:58 Port pTCPPort was unmapped from system:pTCPPort.
+12:22:47.215630 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:278->Functions.ttcn:58 Unmap operation of mtc:pTCPPort from system:pTCPPort finished.
+12:22:47.215847 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:278 Terminating component type Types.Tester.
+12:22:47.216026 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:278 Default with id 1 (altstep defaultTCP) was deactivated.
+12:22:47.216271 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:278 Port pUDPPort was stopped.
+12:22:47.216500 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:278 Port pTCPPort was stopped.
+12:22:47.216738 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:278 Component type Types.Tester was shut down inside testcase TCP_SimpleCount.
+12:22:47.216968 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:278 Waiting for PTCs to finish.
+12:22:47.217275 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:278 Setting final verdict of the test case.
+12:22:47.217496 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:278 Local verdict of MTC: pass
+12:22:47.217837 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:278 No PTCs were created.
+12:22:47.218040 DemoTestSuite.ttcn:368->DemoTestSuite.ttcn:278 Test case TCP_SimpleCount finished. Verdict: pass
+12:22:47.218397 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:281 Test case TCP_SimpleNone started.
+12:22:47.218772 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:281 Initializing variables, timers and ports of component type Types.Tester inside testcase TCP_SimpleNone.
+12:22:47.221257 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:281 Port pUDPPort was started.
+12:22:47.221768 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:281 Port pTCPPort was started.
+12:22:47.222021 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:281 Component type Types.Tester was initialized.
+12:22:47.222300 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:287->Functions.ttcn:51 Mapping port mtc:pTCPPort to system:pTCPPort.
+12:22:47.222748 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:287->Functions.ttcn:51 Port pTCPPort was mapped to system:pTCPPort.
+12:22:47.223662 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:287->Functions.ttcn:51 Map operation of mtc:pTCPPort to system:pTCPPort finished.
+12:22:47.224369 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:287->Functions.ttcn:52 Altstep defaultTCP was activated as default, id 1
+12:22:47.225878 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:289 Sent on pTCPPort to system @Types.Message : { msgType := E_COMMAND_NONE (4), msgContent := "Tester" }
+12:22:47.226424 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:291 Start timer t: 5 s
+12:22:47.229245 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:292->Codec.ttcn:24 regexp(): POSIX ERE equivalent of pattern "(?+)($)(?+)" is: "^(.+)(\\$)(.+)$"
+12:22:47.229682 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:292->Codec.ttcn:25 "TPC decoded: "
+12:22:47.229854 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:292 Message enqueued on pTCPPort from system charstring : "" id 1
+12:22:52.230715 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:293 Matching on port pTCPPort succeeded: "" with "" matched
+12:22:52.230903 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:293 Receive operation on port pTCPPort succeeded, message from system(): charstring : "" id 1
+12:22:52.230961 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:293 Message with id 1 was extracted from the queue of pTCPPort.
+12:22:52.230997 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:294 setverdict(pass): none -> pass
+12:22:52.231031 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:295 Stop timer t: 5 s
+12:22:52.231067 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:299->Functions.ttcn:57 setverdict(pass): pass -> pass, component reason not changed
+12:22:52.231099 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:299->Functions.ttcn:58 Unmapping port mtc:pTCPPort from system:pTCPPort.
+12:22:52.232656 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:299->Functions.ttcn:58 Port pTCPPort was unmapped from system:pTCPPort.
+12:22:52.233129 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:299->Functions.ttcn:58 Unmap operation of mtc:pTCPPort from system:pTCPPort finished.
+12:22:52.233187 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:299 Terminating component type Types.Tester.
+12:22:52.233216 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:299 Default with id 1 (altstep defaultTCP) was deactivated.
+12:22:52.233243 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:299 Port pUDPPort was stopped.
+12:22:52.233269 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:299 Port pTCPPort was stopped.
+12:22:52.233291 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:299 Component type Types.Tester was shut down inside testcase TCP_SimpleNone.
+12:22:52.233318 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:299 Waiting for PTCs to finish.
+12:22:52.233593 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:299 Setting final verdict of the test case.
+12:22:52.233632 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:299 Local verdict of MTC: pass
+12:22:52.233658 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:299 No PTCs were created.
+12:22:52.233681 DemoTestSuite.ttcn:369->DemoTestSuite.ttcn:299 Test case TCP_SimpleNone finished. Verdict: pass
+12:22:52.233716 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:302 Test case TCP_ShorterHello started.
+12:22:52.233739 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:302 Initializing variables, timers and ports of component type Types.Tester inside testcase TCP_ShorterHello.
+12:22:52.233769 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:302 Port pUDPPort was started.
+12:22:52.233793 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:302 Port pTCPPort was started.
+12:22:52.233815 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:302 Component type Types.Tester was initialized.
+12:22:52.233843 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:304->Functions.ttcn:51 Mapping port mtc:pTCPPort to system:pTCPPort.
+12:22:52.235343 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:304->Functions.ttcn:51 Port pTCPPort was mapped to system:pTCPPort.
+12:22:52.235933 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:304->Functions.ttcn:51 Map operation of mtc:pTCPPort to system:pTCPPort finished.
+12:22:52.236759 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:304->Functions.ttcn:52 Altstep defaultTCP was activated as default, id 1
+12:22:52.237744 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:305->Functions.ttcn:43 Sent on pTCPPort to system @Types.Message : { msgType := E_COMMAND_HELLO (0), msgContent := "Tester" }
+12:22:52.238640 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:305->Functions.ttcn:45 Start timer t: 5 s
+12:22:52.239009 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:305->Functions.ttcn:46->Codec.ttcn:24 regexp(): POSIX ERE equivalent of pattern "(?+)($)(?+)" is: "^(.+)(\\$)(.+)$"
+12:22:52.239287 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:305->Functions.ttcn:46->Codec.ttcn:25 "TPC decoded: Hello Tester !"
+12:22:52.239565 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:305->Functions.ttcn:46 Message enqueued on pTCPPort from system charstring : "Hello Tester !" id 1
+12:22:57.243182 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:305->Functions.ttcn:46 Matching on port pTCPPort succeeded: "Hello Tester !" with "Hello Tester !" matched
+12:22:57.243369 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:305->Functions.ttcn:46 Receive operation on port pTCPPort succeeded, message from system(): charstring : "Hello Tester !" id 1
+12:22:57.243416 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:305->Functions.ttcn:46 Message with id 1 was extracted from the queue of pTCPPort.
+12:22:57.243477 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:306->Functions.ttcn:57 setverdict(pass): none -> pass
+12:22:57.243516 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:306->Functions.ttcn:58 Unmapping port mtc:pTCPPort from system:pTCPPort.
+12:22:57.244424 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:306->Functions.ttcn:58 Port pTCPPort was unmapped from system:pTCPPort.
+12:22:57.246347 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:306->Functions.ttcn:58 Unmap operation of mtc:pTCPPort from system:pTCPPort finished.
+12:22:57.246581 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:306 Terminating component type Types.Tester.
+12:22:57.246683 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:306 Default with id 1 (altstep defaultTCP) was deactivated.
+12:22:57.246755 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:306 Stop timer t: 5 s
+12:22:57.246824 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:306 Port pUDPPort was stopped.
+12:22:57.246889 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:306 Port pTCPPort was stopped.
+12:22:57.246947 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:306 Component type Types.Tester was shut down inside testcase TCP_ShorterHello.
+12:22:57.247087 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:306 Waiting for PTCs to finish.
+12:22:57.247750 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:306 Setting final verdict of the test case.
+12:22:57.248199 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:306 Local verdict of MTC: pass
+12:22:57.248759 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:306 No PTCs were created.
+12:22:57.249200 DemoTestSuite.ttcn:371->DemoTestSuite.ttcn:306 Test case TCP_ShorterHello finished. Verdict: pass
+12:22:57.249863 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:309 Test case TCP_ShorterEcho started.
+12:22:57.250246 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:309 Initializing variables, timers and ports of component type Types.Tester inside testcase TCP_ShorterEcho.
+12:22:57.250517 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:309 Port pUDPPort was started.
+12:22:57.250720 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:309 Port pTCPPort was started.
+12:22:57.250912 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:309 Component type Types.Tester was initialized.
+12:22:57.251147 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:311->Functions.ttcn:51 Mapping port mtc:pTCPPort to system:pTCPPort.
+12:22:57.252093 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:311->Functions.ttcn:51 Port pTCPPort was mapped to system:pTCPPort.
+12:22:57.252354 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:311->Functions.ttcn:51 Map operation of mtc:pTCPPort to system:pTCPPort finished.
+12:22:57.252679 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:311->Functions.ttcn:52 Altstep defaultTCP was activated as default, id 1
+12:22:57.252901 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:312->Functions.ttcn:43 Sent on pTCPPort to system @Types.Message : { msgType := E_COMMAND_ECHO (1), msgContent := "Tester" }
+12:22:57.253530 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:312->Functions.ttcn:45 Start timer t: 5 s
+12:22:57.253768 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:312->Functions.ttcn:46->Codec.ttcn:24 regexp(): POSIX ERE equivalent of pattern "(?+)($)(?+)" is: "^(.+)(\\$)(.+)$"
+12:22:57.254045 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:312->Functions.ttcn:46->Codec.ttcn:25 "TPC decoded: Tester"
+12:22:57.254942 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:312->Functions.ttcn:46 Message enqueued on pTCPPort from system charstring : "Tester" id 1
+12:23:02.258119 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:312->Functions.ttcn:46 Matching on port pTCPPort succeeded: "Tester" with "Tester" matched
+12:23:02.258221 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:312->Functions.ttcn:46 Receive operation on port pTCPPort succeeded, message from system(): charstring : "Tester" id 1
+12:23:02.258260 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:312->Functions.ttcn:46 Message with id 1 was extracted from the queue of pTCPPort.
+12:23:02.258290 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:313->Functions.ttcn:57 setverdict(pass): none -> pass
+12:23:02.258318 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:313->Functions.ttcn:58 Unmapping port mtc:pTCPPort from system:pTCPPort.
+12:23:02.258988 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:313->Functions.ttcn:58 Port pTCPPort was unmapped from system:pTCPPort.
+12:23:02.259561 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:313->Functions.ttcn:58 Unmap operation of mtc:pTCPPort from system:pTCPPort finished.
+12:23:02.259945 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:313 Terminating component type Types.Tester.
+12:23:02.260366 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:313 Default with id 1 (altstep defaultTCP) was deactivated.
+12:23:02.260501 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:313 Stop timer t: 5 s
+12:23:02.260828 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:313 Port pUDPPort was stopped.
+12:23:02.260952 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:313 Port pTCPPort was stopped.
+12:23:02.261015 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:313 Component type Types.Tester was shut down inside testcase TCP_ShorterEcho.
+12:23:02.261102 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:313 Waiting for PTCs to finish.
+12:23:02.261415 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:313 Setting final verdict of the test case.
+12:23:02.261604 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:313 Local verdict of MTC: pass
+12:23:02.261765 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:313 No PTCs were created.
+12:23:02.261915 DemoTestSuite.ttcn:372->DemoTestSuite.ttcn:313 Test case TCP_ShorterEcho finished. Verdict: pass
+12:23:02.262181 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:316 Test case TCP_ShorterReverse started.
+12:23:02.262396 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:316 Initializing variables, timers and ports of component type Types.Tester inside testcase TCP_ShorterReverse.
+12:23:02.262569 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:316 Port pUDPPort was started.
+12:23:02.262751 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:316 Port pTCPPort was started.
+12:23:02.262904 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:316 Component type Types.Tester was initialized.
+12:23:02.263063 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:318->Functions.ttcn:51 Mapping port mtc:pTCPPort to system:pTCPPort.
+12:23:02.263930 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:318->Functions.ttcn:51 Port pTCPPort was mapped to system:pTCPPort.
+12:23:02.264194 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:318->Functions.ttcn:51 Map operation of mtc:pTCPPort to system:pTCPPort finished.
+12:23:02.264366 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:318->Functions.ttcn:52 Altstep defaultTCP was activated as default, id 1
+12:23:02.264553 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:319->Functions.ttcn:43 Sent on pTCPPort to system @Types.Message : { msgType := E_COMMAND_REVERSE (2), msgContent := "Tester" }
+12:23:02.265021 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:319->Functions.ttcn:45 Start timer t: 5 s
+12:23:02.265315 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:319->Functions.ttcn:46->Codec.ttcn:24 regexp(): POSIX ERE equivalent of pattern "(?+)($)(?+)" is: "^(.+)(\\$)(.+)$"
+12:23:02.265638 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:319->Functions.ttcn:46->Codec.ttcn:25 "TPC decoded: retseT"
+12:23:02.266154 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:319->Functions.ttcn:46 Message enqueued on pTCPPort from system charstring : "retseT" id 1
+12:23:07.269679 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:319->Functions.ttcn:46 Matching on port pTCPPort succeeded: "retseT" with "retseT" matched
+12:23:07.269783 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:319->Functions.ttcn:46 Receive operation on port pTCPPort succeeded, message from system(): charstring : "retseT" id 1
+12:23:07.269821 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:319->Functions.ttcn:46 Message with id 1 was extracted from the queue of pTCPPort.
+12:23:07.269850 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:320->Functions.ttcn:57 setverdict(pass): none -> pass
+12:23:07.269877 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:320->Functions.ttcn:58 Unmapping port mtc:pTCPPort from system:pTCPPort.
+12:23:07.270460 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:320->Functions.ttcn:58 Port pTCPPort was unmapped from system:pTCPPort.
+12:23:07.270998 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:320->Functions.ttcn:58 Unmap operation of mtc:pTCPPort from system:pTCPPort finished.
+12:23:07.271101 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:320 Terminating component type Types.Tester.
+12:23:07.271143 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:320 Default with id 1 (altstep defaultTCP) was deactivated.
+12:23:07.271184 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:320 Stop timer t: 5 s
+12:23:07.271223 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:320 Port pUDPPort was stopped.
+12:23:07.271247 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:320 Port pTCPPort was stopped.
+12:23:07.271269 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:320 Component type Types.Tester was shut down inside testcase TCP_ShorterReverse.
+12:23:07.271293 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:320 Waiting for PTCs to finish.
+12:23:07.271535 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:320 Setting final verdict of the test case.
+12:23:07.271570 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:320 Local verdict of MTC: pass
+12:23:07.271595 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:320 No PTCs were created.
+12:23:07.271617 DemoTestSuite.ttcn:373->DemoTestSuite.ttcn:320 Test case TCP_ShorterReverse finished. Verdict: pass
+12:23:07.271650 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:323 Test case TCP_ShorterCount started.
+12:23:07.271672 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:323 Initializing variables, timers and ports of component type Types.Tester inside testcase TCP_ShorterCount.
+12:23:07.271700 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:323 Port pUDPPort was started.
+12:23:07.271722 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:323 Port pTCPPort was started.
+12:23:07.271742 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:323 Component type Types.Tester was initialized.
+12:23:07.271767 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:325->Functions.ttcn:51 Mapping port mtc:pTCPPort to system:pTCPPort.
+12:23:07.272130 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:325->Functions.ttcn:51 Port pTCPPort was mapped to system:pTCPPort.
+12:23:07.273183 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:325->Functions.ttcn:51 Map operation of mtc:pTCPPort to system:pTCPPort finished.
+12:23:07.273242 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:325->Functions.ttcn:52 Altstep defaultTCP was activated as default, id 1
+12:23:07.273277 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:326->Functions.ttcn:43 Sent on pTCPPort to system @Types.Message : { msgType := E_COMMAND_COUNT (3), msgContent := "Tester" }
+12:23:07.273325 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:326->Functions.ttcn:45 Start timer t: 5 s
+12:23:07.273733 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:326->Functions.ttcn:46->Codec.ttcn:24 regexp(): POSIX ERE equivalent of pattern "(?+)($)(?+)" is: "^(.+)(\\$)(.+)$"
+12:23:07.273938 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:326->Functions.ttcn:46->Codec.ttcn:25 "TPC decoded: 6"
+12:23:07.274222 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:326->Functions.ttcn:46 Message enqueued on pTCPPort from system charstring : "6" id 1
+12:23:12.277471 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:326->Functions.ttcn:46 Matching on port pTCPPort succeeded: "6" with "6" matched
+12:23:12.277574 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:326->Functions.ttcn:46 Receive operation on port pTCPPort succeeded, message from system(): charstring : "6" id 1
+12:23:12.277609 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:326->Functions.ttcn:46 Message with id 1 was extracted from the queue of pTCPPort.
+12:23:12.277638 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:327->Functions.ttcn:57 setverdict(pass): none -> pass
+12:23:12.277664 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:327->Functions.ttcn:58 Unmapping port mtc:pTCPPort from system:pTCPPort.
+12:23:12.278412 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:327->Functions.ttcn:58 Port pTCPPort was unmapped from system:pTCPPort.
+12:23:12.278944 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:327->Functions.ttcn:58 Unmap operation of mtc:pTCPPort from system:pTCPPort finished.
+12:23:12.279006 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:327 Terminating component type Types.Tester.
+12:23:12.279044 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:327 Default with id 1 (altstep defaultTCP) was deactivated.
+12:23:12.279073 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:327 Stop timer t: 5 s
+12:23:12.279123 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:327 Port pUDPPort was stopped.
+12:23:12.279149 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:327 Port pTCPPort was stopped.
+12:23:12.279172 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:327 Component type Types.Tester was shut down inside testcase TCP_ShorterCount.
+12:23:12.279197 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:327 Waiting for PTCs to finish.
+12:23:12.279541 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:327 Setting final verdict of the test case.
+12:23:12.279578 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:327 Local verdict of MTC: pass
+12:23:12.279604 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:327 No PTCs were created.
+12:23:12.279625 DemoTestSuite.ttcn:374->DemoTestSuite.ttcn:327 Test case TCP_ShorterCount finished. Verdict: pass
+12:23:12.279657 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:330 Test case TCP_ShorterNone started.
+12:23:12.279679 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:330 Initializing variables, timers and ports of component type Types.Tester inside testcase TCP_ShorterNone.
+12:23:12.279707 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:330 Port pUDPPort was started.
+12:23:12.279729 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:330 Port pTCPPort was started.
+12:23:12.279749 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:330 Component type Types.Tester was initialized.
+12:23:12.279775 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:332->Functions.ttcn:51 Mapping port mtc:pTCPPort to system:pTCPPort.
+12:23:12.280153 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:332->Functions.ttcn:51 Port pTCPPort was mapped to system:pTCPPort.
+12:23:12.280993 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:332->Functions.ttcn:51 Map operation of mtc:pTCPPort to system:pTCPPort finished.
+12:23:12.281038 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:332->Functions.ttcn:52 Altstep defaultTCP was activated as default, id 1
+12:23:12.281072 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:333->Functions.ttcn:43 Sent on pTCPPort to system @Types.Message : { msgType := E_COMMAND_NONE (4), msgContent := "Tester" }
+12:23:12.281109 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:333->Functions.ttcn:45 Start timer t: 5 s
+12:23:12.281497 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:333->Functions.ttcn:46->Codec.ttcn:24 regexp(): POSIX ERE equivalent of pattern "(?+)($)(?+)" is: "^(.+)(\\$)(.+)$"
+12:23:12.281568 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:333->Functions.ttcn:46->Codec.ttcn:25 "TPC decoded: "
+12:23:12.281602 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:333->Functions.ttcn:46 Message enqueued on pTCPPort from system charstring : "" id 1
+12:23:17.284433 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:333->Functions.ttcn:46 Matching on port pTCPPort succeeded: "" with "" matched
+12:23:17.284534 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:333->Functions.ttcn:46 Receive operation on port pTCPPort succeeded, message from system(): charstring : "" id 1
+12:23:17.284570 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:333->Functions.ttcn:46 Message with id 1 was extracted from the queue of pTCPPort.
+12:23:17.284610 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:334->Functions.ttcn:57 setverdict(pass): none -> pass
+12:23:17.284634 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:334->Functions.ttcn:58 Unmapping port mtc:pTCPPort from system:pTCPPort.
+12:23:17.285253 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:334->Functions.ttcn:58 Port pTCPPort was unmapped from system:pTCPPort.
+12:23:17.285729 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:334->Functions.ttcn:58 Unmap operation of mtc:pTCPPort from system:pTCPPort finished.
+12:23:17.285770 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:334 Terminating component type Types.Tester.
+12:23:17.285796 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:334 Default with id 1 (altstep defaultTCP) was deactivated.
+12:23:17.285889 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:334 Stop timer t: 5 s
+12:23:17.285919 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:334 Port pUDPPort was stopped.
+12:23:17.285943 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:334 Port pTCPPort was stopped.
+12:23:17.285964 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:334 Component type Types.Tester was shut down inside testcase TCP_ShorterNone.
+12:23:17.285988 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:334 Waiting for PTCs to finish.
+12:23:17.286209 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:334 Setting final verdict of the test case.
+12:23:17.286243 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:334 Local verdict of MTC: pass
+12:23:17.286267 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:334 No PTCs were created.
+12:23:17.286289 DemoTestSuite.ttcn:375->DemoTestSuite.ttcn:334 Test case TCP_ShorterNone finished. Verdict: pass
+12:23:17.286336 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:337 Test case TCP_AllInOne started.
+12:23:17.286360 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:337 Initializing variables, timers and ports of component type Types.Tester inside testcase TCP_AllInOne.
+12:23:17.286388 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:337 Port pUDPPort was started.
+12:23:17.286410 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:337 Port pTCPPort was started.
+12:23:17.286430 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:337 Component type Types.Tester was initialized.
+12:23:17.286451 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:339->Functions.ttcn:51 Mapping port mtc:pTCPPort to system:pTCPPort.
+12:23:17.286739 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:339->Functions.ttcn:51 Port pTCPPort was mapped to system:pTCPPort.
+12:23:17.287548 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:339->Functions.ttcn:51 Map operation of mtc:pTCPPort to system:pTCPPort finished.
+12:23:17.287596 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:339->Functions.ttcn:52 Altstep defaultTCP was activated as default, id 1
+12:23:17.287630 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:341->Functions.ttcn:43 Sent on pTCPPort to system @Types.Message : { msgType := E_COMMAND_HELLO (0), msgContent := "Tester" }
+12:23:17.287666 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:341->Functions.ttcn:45 Start timer t: 5 s
+12:23:17.288060 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:341->Functions.ttcn:46->Codec.ttcn:24 regexp(): POSIX ERE equivalent of pattern "(?+)($)(?+)" is: "^(.+)(\\$)(.+)$"
+12:23:17.288142 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:341->Functions.ttcn:46->Codec.ttcn:25 "TPC decoded: Hello Tester !"
+12:23:17.288188 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:341->Functions.ttcn:46 Message enqueued on pTCPPort from system charstring : "Hello Tester !" id 1
+12:23:22.291592 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:341->Functions.ttcn:46 Matching on port pTCPPort succeeded: "Hello Tester !" with "Hello Tester !" matched
+12:23:22.291721 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:341->Functions.ttcn:46 Receive operation on port pTCPPort succeeded, message from system(): charstring : "Hello Tester !" id 1
+12:23:22.291756 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:341->Functions.ttcn:46 Message with id 1 was extracted from the queue of pTCPPort.
+12:23:22.291789 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:342->Functions.ttcn:43 Sent on pTCPPort to system @Types.Message : { msgType := E_COMMAND_ECHO (1), msgContent := "Tester" }
+12:23:22.291829 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:342->Functions.ttcn:45 Warning: Re-starting timer t, which is already active (running or expired).
+12:23:22.291854 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:342->Functions.ttcn:45 Start timer t: 5 s
+12:23:22.292692 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:342->Functions.ttcn:46->Codec.ttcn:24 regexp(): POSIX ERE equivalent of pattern "(?+)($)(?+)" is: "^(.+)(\\$)(.+)$"
+12:23:22.292795 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:342->Functions.ttcn:46->Codec.ttcn:25 "TPC decoded: Tester"
+12:23:22.292843 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:342->Functions.ttcn:46 Message enqueued on pTCPPort from system charstring : "Tester" id 2
+12:23:27.296004 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:342->Functions.ttcn:46 Matching on port pTCPPort succeeded: "Tester" with "Tester" matched
+12:23:27.296103 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:342->Functions.ttcn:46 Receive operation on port pTCPPort succeeded, message from system(): charstring : "Tester" id 2
+12:23:27.296136 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:342->Functions.ttcn:46 Message with id 2 was extracted from the queue of pTCPPort.
+12:23:27.296169 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:343->Functions.ttcn:43 Sent on pTCPPort to system @Types.Message : { msgType := E_COMMAND_REVERSE (2), msgContent := "Tester" }
+12:23:27.296210 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:343->Functions.ttcn:45 Warning: Re-starting timer t, which is already active (running or expired).
+12:23:27.296234 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:343->Functions.ttcn:45 Start timer t: 5 s
+12:23:27.296992 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:343->Functions.ttcn:46->Codec.ttcn:24 regexp(): POSIX ERE equivalent of pattern "(?+)($)(?+)" is: "^(.+)(\\$)(.+)$"
+12:23:27.297082 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:343->Functions.ttcn:46->Codec.ttcn:25 "TPC decoded: retseT"
+12:23:27.297117 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:343->Functions.ttcn:46 Message enqueued on pTCPPort from system charstring : "retseT" id 3
+12:23:32.297119 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:343->Functions.ttcn:46 Matching on port pTCPPort succeeded: "retseT" with "retseT" matched
+12:23:32.297261 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:343->Functions.ttcn:46 Receive operation on port pTCPPort succeeded, message from system(): charstring : "retseT" id 3
+12:23:32.297329 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:343->Functions.ttcn:46 Message with id 3 was extracted from the queue of pTCPPort.
+12:23:32.297386 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:344->Functions.ttcn:43 Sent on pTCPPort to system @Types.Message : { msgType := E_COMMAND_COUNT (3), msgContent := "Tester" }
+12:23:32.297447 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:344->Functions.ttcn:45 Warning: Re-starting timer t, which is already active (running or expired).
+12:23:32.297519 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:344->Functions.ttcn:45 Start timer t: 5 s
+12:23:32.298598 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:344->Functions.ttcn:46->Codec.ttcn:24 regexp(): POSIX ERE equivalent of pattern "(?+)($)(?+)" is: "^(.+)(\\$)(.+)$"
+12:23:32.300274 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:344->Functions.ttcn:46->Codec.ttcn:25 "TPC decoded: 6"
+12:23:32.300719 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:344->Functions.ttcn:46 Message enqueued on pTCPPort from system charstring : "6" id 4
+12:23:37.297791 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:344->Functions.ttcn:46 Matching on port pTCPPort succeeded: "6" with "6" matched
+12:23:37.297885 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:344->Functions.ttcn:46 Receive operation on port pTCPPort succeeded, message from system(): charstring : "6" id 4
+12:23:37.297919 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:344->Functions.ttcn:46 Message with id 4 was extracted from the queue of pTCPPort.
+12:23:37.297953 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:345->Functions.ttcn:43 Sent on pTCPPort to system @Types.Message : { msgType := E_COMMAND_NONE (4), msgContent := "Tester" }
+12:23:37.297993 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:345->Functions.ttcn:45 Warning: Re-starting timer t, which is already active (running or expired).
+12:23:37.298018 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:345->Functions.ttcn:45 Start timer t: 5 s
+12:23:37.298701 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:345->Functions.ttcn:46->Codec.ttcn:24 regexp(): POSIX ERE equivalent of pattern "(?+)($)(?+)" is: "^(.+)(\\$)(.+)$"
+12:23:37.298779 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:345->Functions.ttcn:46->Codec.ttcn:25 "TPC decoded: "
+12:23:37.298812 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:345->Functions.ttcn:46 Message enqueued on pTCPPort from system charstring : "" id 5
+12:23:42.301961 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:345->Functions.ttcn:46 Matching on port pTCPPort succeeded: "" with "" matched
+12:23:42.302065 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:345->Functions.ttcn:46 Receive operation on port pTCPPort succeeded, message from system(): charstring : "" id 5
+12:23:42.302100 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:345->Functions.ttcn:46 Message with id 5 was extracted from the queue of pTCPPort.
+12:23:42.302130 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:347->Functions.ttcn:57 setverdict(pass): none -> pass
+12:23:42.302156 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:347->Functions.ttcn:58 Unmapping port mtc:pTCPPort from system:pTCPPort.
+12:23:42.303094 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:347->Functions.ttcn:58 Port pTCPPort was unmapped from system:pTCPPort.
+12:23:42.303626 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:347->Functions.ttcn:58 Unmap operation of mtc:pTCPPort from system:pTCPPort finished.
+12:23:42.303676 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:347 Terminating component type Types.Tester.
+12:23:42.303704 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:347 Default with id 1 (altstep defaultTCP) was deactivated.
+12:23:42.303752 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:347 Stop timer t: 5 s
+12:23:42.303800 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:347 Port pUDPPort was stopped.
+12:23:42.303830 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:347 Port pTCPPort was stopped.
+12:23:42.303867 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:347 Component type Types.Tester was shut down inside testcase TCP_AllInOne.
+12:23:42.303899 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:347 Waiting for PTCs to finish.
+12:23:42.304827 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:347 Setting final verdict of the test case.
+12:23:42.305327 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:347 Local verdict of MTC: pass
+12:23:42.306770 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:347 No PTCs were created.
+12:23:42.310681 DemoTestSuite.ttcn:377->DemoTestSuite.ttcn:347 Test case TCP_AllInOne finished. Verdict: pass
+12:23:42.311147 DemoTestSuite.ttcn:377 Execution of control part in module DemoTestSuite finished.
+12:23:42.312283 - Verdict statistics: 0 none (0.00 %), 19 pass (86.36 %), 0 inconc (0.00 %), 3 fail (13.64 %), 0 error (0.00 %).
+12:23:42.312408 - Test execution summary: 22 test cases were executed. Overall verdict: fail
+12:23:42.312446 - Exit was requested from MC. Terminating MTC.

@@ -1,9 +1,9 @@
 server:
   port: 16200
 app:
-  gk.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/gk/
-  catalogue.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/catalogue/
-  trr.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/trr/
+  gk.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/gk
+  catalogue.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/catalogue
+  trr.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/trr
 logging.level:
   org.apache.http.wire: DEBUG
   sun.net.www.protocol.http: DEBUG
