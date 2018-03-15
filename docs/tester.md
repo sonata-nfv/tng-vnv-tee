@@ -11,7 +11,12 @@ The bash tester will execute `runner.sh` in package root folder. Test result wil
 
 The TTCN3 tester was a special type of bash tester. You need set `test_type=ttcn3` to active the tester.
 
-The TTCN3 tester will execute `runner.sh` in package root folder. Test result will be marked based on following condition:
+The TTCN3 tester will execute `runner.sh` in package root folder. You could use following sample command as template:
+```sh
+docker run --rm -v ${workspace.absolutePath}:/workspace registry.sonata-nfv.eu:5000/tng-vnv-tester-ttcn3 ttcn3_start /workspace/test-suite-binary /workspace/config
+```
+
+Test result will be marked based on following condition:
 * none 0 value = ERROR
 * has TTCN3 tests fail = FAILED
 * has TTCN3 tests success = SUCCESS
