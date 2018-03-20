@@ -76,4 +76,4 @@ The following lead developers are responsible for this repository and have admin
 
 ## Feedback-Chanels
 
-Please use the [GitHub issues](https://github.com/sonata-nfv/tng-vnv-tee/issues) and the 5GTANGO Verification and Validation group mailing list `tango-5g-wp3@lists.atosresearch.eu` for feedback.
+Please use the [GitHub issues](https://github.com/sonata-nfv/tng-vnv-tee/issues) and the 5GTANGO Verification and Validation group mailing list `5gtango-dev@list.atosresearch.eu` for feedback.
