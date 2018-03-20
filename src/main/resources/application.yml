@@ -1,6 +1,15 @@
 server:
   port: 6200
   contextPath: /tng-vnv-tee
+api:
+  name: 5GTANGO VnV Platform Test Execution Engine
+  description: An H2020 5GTANGO project
+  version: 0.0.1
+  host: tng-vnv-tee:6200
+  terms.url: https://5gtango.eu/
+  license:
+    name: Apache License 2.0
+    url: https://github.com/sonata-nfv/tng-vnv-tee/blob/master/LICENSE
 app:
   tee.tmp.dir: /workspace
   gk:

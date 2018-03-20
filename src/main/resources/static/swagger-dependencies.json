@@ -1,0 +1,426 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "An H2020 5GTANGO project",
+        "version": "0.0.1",
+        "title": "5GTANGO VnV Platform Test Execution Engine Dependencies' API",
+        "termsOfService": "https://5gtango.eu/",
+        "license": {
+            "name": "Apache License 2.0",
+            "url": "https://github.com/sonata-nfv/tng-vnv-tee/blob/master/LICENSE"
+        }
+    },
+    "host": "tng-vnv-tee:6200",
+    "basePath": "/tng-vnv-tee",
+    "tags": [
+        {
+            "name": "session-mock",
+            "description": "Session Mock"
+        },
+        {
+            "name": "test-catelogogue-mock",
+            "description": "Test Catelogogue Mock"
+        },
+        {
+            "name": "test-result-repository-mock",
+            "description": "Test Result Repository Mock"
+        }
+    ],
+    "paths": {
+        "/mock/catalogue/test-suites/{testSuiteId}": {
+            "get": {
+                "tags": [
+                    "test-catelogogue-mock"
+                ],
+                "summary": "loadTestSuite",
+                "operationId": "loadTestSuiteUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "name": "testSuiteId",
+                        "in": "path",
+                        "description": "testSuiteId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/TestSuite"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/mock/catalogue/test-suites/{testSuiteId}/download-resource": {
+            "get": {
+                "tags": [
+                    "test-catelogogue-mock"
+                ],
+                "summary": "download",
+                "operationId": "downloadUsingGET",
+                "produces": [
+                    "application/octet-stream"
+                ],
+                "parameters": [
+                    {
+                        "name": "testSuiteId",
+                        "in": "path",
+                        "description": "testSuiteId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "source",
+                        "in": "query",
+                        "description": "source",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string",
+                            "format": "byte"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/mock/gk/sessions": {
+            "post": {
+                "tags": [
+                    "session-mock"
+                ],
+                "summary": "createSession",
+                "operationId": "createSessionUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "login",
+                        "description": "login",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Login"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Session"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/mock/trr/network-service-instance-instances/{networkServiceInstanceId}": {
+            "get": {
+                "tags": [
+                    "test-result-repository-mock"
+                ],
+                "summary": "loadNetworkServiceInstance",
+                "operationId": "loadNetworkServiceInstanceUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "name": "networkServiceInstanceId",
+                        "in": "path",
+                        "description": "networkServiceInstanceId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/NetworkServiceInstance"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/mock/trr/test-suite-results": {
+            "post": {
+                "tags": [
+                    "test-result-repository-mock"
+                ],
+                "summary": "createTestSuiteResult",
+                "operationId": "createTestSuiteResultUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "testSuiteResult",
+                        "description": "testSuiteResult",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/TestSuiteResult"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/TestSuiteResult"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/mock/trr/test-suite-results/{testSuiteResultId}": {
+            "post": {
+                "tags": [
+                    "test-result-repository-mock"
+                ],
+                "summary": "updateTestSuiteResult",
+                "operationId": "updateTestSuiteResultUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "testSuiteResult",
+                        "description": "testSuiteResult",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/TestSuiteResult"
+                        }
+                    },
+                    {
+                        "name": "testSuiteResultId",
+                        "in": "path",
+                        "description": "testSuiteResultId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/TestSuiteResult"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Login": {
+            "type": "object",
+            "properties": {
+                "password": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            },
+            "title": "Login"
+        },
+        "NetworkServiceInstance": {
+            "type": "object",
+            "properties": {
+                "networkServiceId": {
+                    "type": "string"
+                },
+                "networkServiceInstanceId": {
+                    "type": "string"
+                },
+                "runtime": {
+                    "type": "object"
+                }
+            },
+            "title": "NetworkServiceInstance"
+        },
+        "Session": {
+            "type": "object",
+            "properties": {
+                "session_began_at": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "token": {
+                    "$ref": "#/definitions/Token"
+                },
+                "username": {
+                    "type": "string"
+                }
+            },
+            "title": "Session"
+        },
+        "TestResource": {
+            "type": "object",
+            "properties": {
+                "contentType": {
+                    "type": "string"
+                },
+                "source": {
+                    "type": "string"
+                },
+                "target": {
+                    "type": "string"
+                }
+            },
+            "title": "TestResource"
+        },
+        "TestSuite": {
+            "type": "object",
+            "required": [
+                "testSuiteId"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "testResources": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TestResource"
+                    }
+                },
+                "testSuiteId": {
+                    "type": "string",
+                    "allowEmptyValue": false
+                },
+                "type": {
+                    "type": "string"
+                },
+                "vendor": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "title": "TestSuite"
+        },
+        "TestSuiteResult": {
+            "type": "object",
+            "properties": {
+                "details": {
+                    "type": "object"
+                },
+                "networkServiceInstanceId": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "testPlanId": {
+                    "type": "string"
+                },
+                "testSuiteId": {
+                    "type": "string"
+                },
+                "testSuiteResultId": {
+                    "type": "string"
+                }
+            },
+            "title": "TestSuiteResult"
+        },
+        "Token": {
+            "type": "object",
+            "properties": {
+                "access_token": {
+                    "type": "string"
+                },
+                "expires_in": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "title": "Token"
+        }
+    }
+}

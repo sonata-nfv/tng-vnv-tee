@@ -49,9 +49,13 @@ http://192.168.99.100:6200/tng-vnv-tee/health
 ### Swagger UI
 
 
-http://petstore.swagger.io/?url=https://raw.githubusercontent.com/sonata-nfv/tng-vnv-tee/master/src/main/resources/static/swagger.json
-
-http://192.168.99.100:6200/tng-vnv-tee/swagger-ui.html
+* static
+    * http://petstore.swagger.io/?url=https://raw.githubusercontent.com/sonata-nfv/tng-vnv-tee/master/src/main/resources/static/swagger.json
+    * http://petstore.swagger.io/?url=https://raw.githubusercontent.com/sonata-nfv/tng-vnv-tee/master/src/main/resources/static/swagger-dependencies.json
+* pre integration 
+    * http://172.31.6.29:6200/tng-vnv-tee/swagger-ui.html
+* local 
+    * http://192.168.99.100:6200/tng-vnv-tee/swagger-ui.html
 
 
 ## Contributing
