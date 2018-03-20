@@ -1,5 +1,5 @@
 dependencies {
-    compile 'com.github.mrduguo.spring:spring-app:0.3.0-180320-160539-532363b-7'
+    compile 'com.github.mrduguo.spring:spring-app:0.3.0-180320-171212-882f865-8'
     compile "org.codehaus.groovy:groovy-all:$libGroovyVersion"
 
     testCompile 'com.github.mrduguo.spring:spring-test:0.3.0-180320-161244-f62665d-6'
