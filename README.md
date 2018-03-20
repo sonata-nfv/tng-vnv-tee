@@ -35,7 +35,7 @@ docker run -d \
     -p 6200:6200 \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v $(which docker):/usr/bin/docker \
-    -v /tmp:/host-tmp \
+    -v tee:/workspace \
     -e APP_GK_HOST=172.31.6.42 \
     registry.sonata-nfv.eu:5000/tng-vnv-tee
 ```

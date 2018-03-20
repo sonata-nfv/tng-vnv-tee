@@ -2,7 +2,7 @@ server:
   port: 6200
   contextPath: /tng-vnv-tee
 app:
-  tee.tmp.dir: /host-tmp/tng-vnv-tee
+  tee.tmp.dir: /workspace
   gk:
     host: gk
     base.url: http://${app.gk.host}:32001/api/v2
