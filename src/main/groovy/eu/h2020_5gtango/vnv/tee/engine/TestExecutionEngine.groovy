@@ -42,6 +42,7 @@ class TestExecutionEngine {
                 def binding = [
                         nsi      : nsi,
                         testSuite: testSuite,
+                        workspace: testWorkspace,
                 ]
                 def replacedText = new SimpleTemplateEngine().createTemplate(targetFile.text).make(binding).toString()
                 targetFile.delete()

@@ -30,7 +30,14 @@ For advanced build arguments, please checkout the [gradle-buildscript](https://g
 
 ```bash
 docker pull registry.sonata-nfv.eu:5000/tng-vnv-tee
-docker run -d --name tng-vnv-tee -p 6200:6200 registry.sonata-nfv.eu:5000/tng-vnv-tee
+docker run -d \
+    --name tng-vnv-tee \
+    -p 6200:6200 \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v $(which docker):/usr/bin/docker \
+    -v tee:/workspace \
+    -e APP_GK_HOST=172.31.6.42 \
+    registry.sonata-nfv.eu:5000/tng-vnv-tee
 ```
 
 ### Health checking
@@ -69,4 +76,4 @@ The following lead developers are responsible for this repository and have admin
 
 ## Feedback-Chanels
 
-Please use the [GitHub issues](https://github.com/sonata-nfv/tng-vnv-tee/issues) and the 5GTANGO Verification and Validation group mailing list `tango-5g-wp3@lists.atosresearch.eu` for feedback.
+Please use the [GitHub issues](https://github.com/sonata-nfv/tng-vnv-tee/issues) and the 5GTANGO Verification and Validation group mailing list `5gtango-dev@list.atosresearch.eu` for feedback.
