@@ -73,19 +73,19 @@
                 "details": {
                     "type": "object"
                 },
-                "networkServiceInstanceId": {
+                "network_service_instance_id": {
                     "type": "string"
                 },
                 "status": {
                     "type": "string"
                 },
-                "testPlanId": {
+                "test_plan_id": {
                     "type": "string"
                 },
-                "testSuiteId": {
+                "test_suite_id": {
                     "type": "string"
                 },
-                "testSuiteResultId": {
+                "test_suite_result_id": {
                     "type": "string"
                 }
             },

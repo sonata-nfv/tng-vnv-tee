@@ -311,10 +311,10 @@
         "NetworkServiceInstance": {
             "type": "object",
             "properties": {
-                "networkServiceId": {
+                "network_service_id": {
                     "type": "string"
                 },
-                "networkServiceInstanceId": {
+                "network_service_instance_id": {
                     "type": "string"
                 },
                 "runtime": {
@@ -342,7 +342,7 @@
         "TestResource": {
             "type": "object",
             "properties": {
-                "contentType": {
+                "content_type": {
                     "type": "string"
                 },
                 "source": {
@@ -357,19 +357,19 @@
         "TestSuite": {
             "type": "object",
             "required": [
-                "testSuiteId"
+                "test_suite_id"
             ],
             "properties": {
                 "name": {
                     "type": "string"
                 },
-                "testResources": {
+                "test_resources": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/TestResource"
                     }
                 },
-                "testSuiteId": {
+                "test_suite_id": {
                     "type": "string",
                     "allowEmptyValue": false
                 },
@@ -391,19 +391,19 @@
                 "details": {
                     "type": "object"
                 },
-                "networkServiceInstanceId": {
+                "network_service_instance_id": {
                     "type": "string"
                 },
                 "status": {
                     "type": "string"
                 },
-                "testPlanId": {
+                "test_plan_id": {
                     "type": "string"
                 },
-                "testSuiteId": {
+                "test_suite_id": {
                     "type": "string"
                 },
-                "testSuiteResultId": {
+                "test_suite_result_id": {
                     "type": "string"
                 }
             },
