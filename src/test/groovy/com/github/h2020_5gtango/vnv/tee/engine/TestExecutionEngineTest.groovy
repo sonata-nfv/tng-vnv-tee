@@ -16,9 +16,9 @@ class TestExecutionEngineTest extends AbstractSpec {
 
         when:
         def entity = postForEntity('/tng-vnv-tee/api/v1/test-suite-results', [
-                testPlanId              : 'testPlanId',
-                networkServiceInstanceId: 'networkServiceInstanceId',
-                testSuiteId             : 'testSuiteId',
+                test_plan_id              : 'test_plan_id',
+                network_service_instance_id: 'network_service_instance_id',
+                test_suite_id             : 'test_suite_id',
         ], Map.class)
 
         then:
@@ -34,9 +34,9 @@ class TestExecutionEngineTest extends AbstractSpec {
 
         when:
         def entity = postForEntity('/tng-vnv-tee/api/v1/test-suite-results', [
-                testPlanId              : 'testPlanId',
-                networkServiceInstanceId: 'networkServiceInstanceId',
-                testSuiteId             : 'ttcn3',
+                test_plan_id              : 'test_plan_id',
+                network_service_instance_id: 'network_service_instance_id',
+                test_suite_id             : 'ttcn3',
         ], Map.class)
 
         then:

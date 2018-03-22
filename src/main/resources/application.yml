@@ -1,6 +1,7 @@
 server:
   port: 6200
   contextPath: /tng-vnv-tee
+spring.jackson.property-naming-strategy: SNAKE_CASE
 api:
   name: 5GTANGO VnV Platform Test Execution Engine
   description: An H2020 5GTANGO project
