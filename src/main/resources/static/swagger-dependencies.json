@@ -411,9 +411,6 @@
                 "test_suite_id"
             ],
             "properties": {
-                "cli_output_text": {
-                    "type": "string"
-                },
                 "details": {
                     "type": "object"
                 },
@@ -426,12 +423,21 @@
                 "status": {
                     "type": "string"
                 },
+                "sterr": {
+                    "type": "string"
+                },
+                "stout": {
+                    "type": "string"
+                },
                 "test_plan_id": {
                     "type": "string"
                 },
                 "test_suite_id": {
                     "type": "string",
                     "allowEmptyValue": false
+                },
+                "tester_result_text": {
+                    "type": "string"
                 },
                 "uuid": {
                     "type": "string"
