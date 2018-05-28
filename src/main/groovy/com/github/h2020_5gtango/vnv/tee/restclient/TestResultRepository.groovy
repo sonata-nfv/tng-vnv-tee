@@ -5,6 +5,10 @@ import com.github.h2020_5gtango.vnv.tee.model.TestSuiteResult
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.http.HttpEntity
+import org.springframework.http.HttpHeaders
+import org.springframework.http.HttpMethod
+import org.springframework.http.MediaType
 import org.springframework.stereotype.Component
 import org.springframework.web.client.RestTemplate
 
@@ -25,13 +29,18 @@ class TestResultRepository {
     def networkServiceInstanceLoadEndpoint
 
     TestSuiteResult createTestSuiteResult(TestSuiteResult testSuiteResult) {
-        testSuiteResult.testSuiteResultId = UUID.randomUUID().toString()
         testSuiteResult.status='SCHEDULED'
-        restTemplate.postForEntity(testSuiteResultCreateEndpoint,testSuiteResult,TestSuiteResult).body
+        def headers = new HttpHeaders()
+        headers.setContentType(MediaType.APPLICATION_JSON)
+        def entity = new HttpEntity<TestSuiteResult>(testSuiteResult ,headers)
+        restTemplate.postForEntity(testSuiteResultCreateEndpoint,entity,TestSuiteResult).body
     }
 
     TestSuiteResult updateTestSuiteResult(TestSuiteResult testSuiteResult) {
-        restTemplate.postForEntity(testSuiteResultUpdateEndpoint,testSuiteResult,TestSuiteResult,testSuiteResult.testSuiteResultId).body
+        def headers = new HttpHeaders()
+        headers.setContentType(MediaType.APPLICATION_JSON)
+        def entity = new HttpEntity<TestSuiteResult>(testSuiteResult ,headers)
+        restTemplate.exchange(testPlanUpdateEndpoint, HttpMethod.PUT, entity, TestSuiteResult.class ,testSuiteResult.uuid).body
     }
 
     NetworkServiceInstance loadNetworkServiceInstance(String networkServiceInstanceId) {

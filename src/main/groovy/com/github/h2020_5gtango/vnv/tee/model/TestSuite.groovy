@@ -9,14 +9,13 @@ import javax.validation.constraints.NotNull
 class TestSuite {
     @ApiModelProperty(required = true)
     @NotNull
-    String testSuiteId
+    String uuid
 
-    String name
-    String vendor
-    String version
+    Map testd
+
     String type
 
-    List<TestResource> testResources
+    List<TestResource> testResources=[]
 
 
     static class TestResource{

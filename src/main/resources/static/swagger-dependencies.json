@@ -311,14 +311,40 @@
         "NetworkServiceInstance": {
             "type": "object",
             "properties": {
-                "network_service_id": {
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "forwarding_graphs": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "network_functions": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "status": {
                     "type": "string"
                 },
-                "network_service_instance_id": {
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "uuid": {
                     "type": "string"
                 },
-                "runtime": {
-                    "type": "object"
+                "version": {
+                    "type": "string"
+                },
+                "virtual_links": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
                 }
             },
             "title": "NetworkServiceInstance"
@@ -357,41 +383,44 @@
         "TestSuite": {
             "type": "object",
             "required": [
-                "test_suite_id"
+                "uuid"
             ],
             "properties": {
-                "name": {
-                    "type": "string"
-                },
                 "test_resources": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/TestResource"
                     }
                 },
-                "test_suite_id": {
-                    "type": "string",
-                    "allowEmptyValue": false
+                "testd": {
+                    "type": "object"
                 },
                 "type": {
                     "type": "string"
                 },
-                "vendor": {
-                    "type": "string"
-                },
-                "version": {
-                    "type": "string"
+                "uuid": {
+                    "type": "string",
+                    "allowEmptyValue": false
                 }
             },
             "title": "TestSuite"
         },
         "TestSuiteResult": {
             "type": "object",
+            "required": [
+                "test_suite_id"
+            ],
             "properties": {
+                "cli_output_text": {
+                    "type": "string"
+                },
                 "details": {
                     "type": "object"
                 },
                 "network_service_instance_id": {
+                    "type": "string"
+                },
+                "package_id": {
                     "type": "string"
                 },
                 "status": {
@@ -401,9 +430,10 @@
                     "type": "string"
                 },
                 "test_suite_id": {
-                    "type": "string"
+                    "type": "string",
+                    "allowEmptyValue": false
                 },
-                "test_suite_result_id": {
+                "uuid": {
                     "type": "string"
                 }
             },

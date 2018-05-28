@@ -69,11 +69,20 @@
     "definitions": {
         "TestSuiteResult": {
             "type": "object",
+            "required": [
+                "test_suite_id"
+            ],
             "properties": {
+                "cli_output_text": {
+                    "type": "string"
+                },
                 "details": {
                     "type": "object"
                 },
                 "network_service_instance_id": {
+                    "type": "string"
+                },
+                "package_id": {
                     "type": "string"
                 },
                 "status": {
@@ -83,9 +92,10 @@
                     "type": "string"
                 },
                 "test_suite_id": {
-                    "type": "string"
+                    "type": "string",
+                    "allowEmptyValue": false
                 },
-                "test_suite_result_id": {
+                "uuid": {
                     "type": "string"
                 }
             },

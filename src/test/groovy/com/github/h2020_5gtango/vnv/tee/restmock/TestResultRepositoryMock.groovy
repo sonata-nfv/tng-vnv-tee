@@ -15,7 +15,7 @@ class TestResultRepositoryMock {
 
     @PostMapping('/mock/trr/test-suite-results')
     TestSuiteResult createTestSuiteResult(@RequestBody TestSuiteResult testSuiteResult) {
-        testSuiteResults[testSuiteResult.testSuiteResultId] = testSuiteResult
+        testSuiteResults[testSuiteResult.uuid] = testSuiteResult
     }
 
     @PostMapping('/mock/trr/test-suite-results/{testSuiteResultId:.+}')
