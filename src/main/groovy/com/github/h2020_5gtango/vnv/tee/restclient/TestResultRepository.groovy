@@ -40,7 +40,7 @@ class TestResultRepository {
         def headers = new HttpHeaders()
         headers.setContentType(MediaType.APPLICATION_JSON)
         def entity = new HttpEntity<TestSuiteResult>(testSuiteResult ,headers)
-        restTemplate.exchange(testPlanUpdateEndpoint, HttpMethod.PUT, entity, TestSuiteResult.class ,testSuiteResult.uuid).body
+        restTemplate.exchange(testSuiteResultUpdateEndpoint, HttpMethod.PUT, entity, TestSuiteResult.class ,testSuiteResult.uuid).body
     }
 
     NetworkServiceInstance loadNetworkServiceInstance(String networkServiceInstanceId) {
