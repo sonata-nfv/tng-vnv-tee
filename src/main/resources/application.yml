@@ -31,8 +31,8 @@ app:
     test.suite.load.endpoint: ${app.cat.base.url}/test-suites/{testSuiteId}
     resource.download.endpoint: ${app.vnvgk.base.url}/packages/{packageId}/files/{resourceUuid}
   trr:
-    host: tng-vnv-trr
-    base.url: http://${app.trr.host}:6300
+    host: tng-rep
+    base.url: http://${app.trr.host}:4012/trr
     test.suite.result.create.endpoint: ${app.trr.base.url}/test-suite-results
     test.suite.result.update.endpoint: ${app.trr.base.url}/test-suite-results/{uuid}
     network.service.instance.load.endpoint: ${app.gk.base.url}/records/services/{networkServiceInstanceId}
