@@ -26,7 +26,7 @@ class Ttcn3ResultParser {
             testSuiteResult.status = 'INVALID_TEST_RESULT'
         }
         testSuiteResult.details=result
-        testSuiteResult.cliOutputText=resultTextFile.text
+        testSuiteResult.testerResultText=resultTextFile.text
         testSuiteResult
     }
 }

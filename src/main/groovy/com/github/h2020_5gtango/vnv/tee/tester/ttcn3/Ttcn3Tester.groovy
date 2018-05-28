@@ -19,6 +19,8 @@ class Ttcn3Tester extends BashTester {
         } else {
             testSuiteResult=resultParser.parse(workspace,testSuiteResult)
         }
+        testSuiteResult.stout = result.stout?.toString()
+        testSuiteResult.sterr = result.sterr?.toString()
         testSuiteResult
     }
 }

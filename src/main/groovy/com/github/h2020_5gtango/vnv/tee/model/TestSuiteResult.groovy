@@ -22,5 +22,7 @@ class TestSuiteResult {
 
     Map details
 
-    String cliOutputText
+    String testerResultText
+    String stout
+    String sterr
 }

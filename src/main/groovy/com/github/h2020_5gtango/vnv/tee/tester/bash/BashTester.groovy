@@ -19,6 +19,8 @@ class BashTester implements Tester {
     TestSuiteResult execute(File workspace, TestSuiteResult testSuiteResult) {
         def result = exexuteSh(new File(workspace, 'runner.sh'))
         testSuiteResult.status = result.exitValue == 0 ? 'SUCCESS' : 'FAILED'
+        testSuiteResult.stout = result.stout?.toString()
+        testSuiteResult.sterr = result.sterr?.toString()
         testSuiteResult
     }
 }
