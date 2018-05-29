@@ -20,7 +20,7 @@ class Ttcn3ResultParser {
 
         if (result.fail || result.error) {
             testSuiteResult.status = 'FAILED'
-        } else if (result.pass) {
+        } else if (result.pass || result.none) {
             testSuiteResult.status = 'SUCCESS'
         } else {
             testSuiteResult.status = 'INVALID_TEST_RESULT'
