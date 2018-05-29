@@ -311,6 +311,9 @@
         "NetworkServiceInstance": {
             "type": "object",
             "properties": {
+                "connection_points": {
+                    "type": "object"
+                },
                 "created_at": {
                     "type": "string",
                     "format": "date-time"
