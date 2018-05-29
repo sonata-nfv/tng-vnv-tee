@@ -28,6 +28,9 @@ class TestResultRepository {
     @Value('${app.trr.network.service.instance.load.endpoint}')
     def networkServiceInstanceLoadEndpoint
 
+    @Value('${app.trr.network.function.instance.load.endpoint}')
+    def networkFunctionInstanceLoadEndpoint
+
     TestSuiteResult createTestSuiteResult(TestSuiteResult testSuiteResult) {
         testSuiteResult.status='SCHEDULED'
         def headers = new HttpHeaders()
@@ -44,6 +47,21 @@ class TestResultRepository {
     }
 
     NetworkServiceInstance loadNetworkServiceInstance(String networkServiceInstanceId) {
-        restTemplate.getForEntity(networkServiceInstanceLoadEndpoint,NetworkServiceInstance,networkServiceInstanceId).body
+        NetworkServiceInstance networkServiceInstance = restTemplate.getForEntity(networkServiceInstanceLoadEndpoint, NetworkServiceInstance, networkServiceInstanceId).body
+        networkServiceInstance.networkFunctions?.each{vnf->
+            def vnfi = restTemplate.getForEntity(networkFunctionInstanceLoadEndpoint, Object.class, vnf.vnfr_id).body
+            vnf.vnfi=vnfi
+            vnfi.virtual_deployment_units?.each{unit->
+                unit.vnfc_instance?.each{vnfc_instance->
+                    def points=[:]
+                    networkServiceInstance.connectionPoints.put(unit.vdu_reference,points)
+                    vnfc_instance.connection_points?.each{connection_point->
+                        points.put(connection_point.id,connection_point)
+                    }
+
+                }
+            }
+        }
+        networkServiceInstance
     }
 }

@@ -15,4 +15,6 @@ class NetworkServiceInstance {
     List networkFunctions
     List virtualLinks
 
+    Map connectionPoints=[:]
+
 }

@@ -36,3 +36,4 @@ app:
     test.suite.result.create.endpoint: ${app.trr.base.url}/test-suite-results
     test.suite.result.update.endpoint: ${app.trr.base.url}/test-suite-results/{uuid}
     network.service.instance.load.endpoint: ${app.gk.base.url}/records/services/{networkServiceInstanceId}
+    network.function.instance.load.endpoint: ${app.gk.base.url}/records/functions/{networkFunctionInstanceId}
