@@ -4,6 +4,10 @@
 This is a [5GTANGO](http://www.5gtango.eu) component to execute the test suites for 5G Network Services.
 
 
+<p align="center"><img src="https://github.com/sonata-nfv/tng-api-gtw/wiki/images/sonata-5gtango-logo-500px.png" /></p>
+
+
+
 ## Build from source code
 
 ```bash
