@@ -27,7 +27,7 @@ class TestExecutionEngine {
     TestSuiteResult executeTestAgainstNs(@RequestBody TestSuiteResult testSuiteResult) {
         testSuiteResult=testResultRepository.createTestSuiteResult(testSuiteResult)
         def packageMetadata = testCatalogue.loadPackageMetadata(testSuiteResult.packageId)
-        def testSuite = testCatalogue.loadTestSuite(testSuiteResult.testSuiteId)
+        def testSuite = testCatalogue.loadTestSuite(testSuiteResult.testUuid)
         def testWorkspace = testCatalogue.downloadTestSuiteResources(packageMetadata,testSuite, testSuiteResult.uuid)
         def nsi = testResultRepository.loadNetworkServiceInstance(testSuiteResult.networkServiceInstanceId)
         applyTemplating(testSuite, testWorkspace, nsi)

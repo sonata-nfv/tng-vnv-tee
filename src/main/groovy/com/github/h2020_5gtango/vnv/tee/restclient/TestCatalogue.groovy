@@ -36,8 +36,8 @@ class TestCatalogue {
         restTemplate.getForEntity(packageLoadEndpoint,PackageMetadata,packageId).body
     }
 
-    TestSuite loadTestSuite(String testSuiteId ) {
-        TestSuite testSuite=restTemplateWithAuth.getForEntity(testSuiteLoadEndpoint,TestSuite,testSuiteId).body
+    TestSuite loadTestSuite(String testUuid ) {
+        TestSuite testSuite=restTemplateWithAuth.getForEntity(testSuiteLoadEndpoint,TestSuite,testUuid).body
         testSuite.type=testSuite.testd.test_type
         testSuite.testd.test_configuration_parameters.each{param->
             if(param.containsKey('content_type')){

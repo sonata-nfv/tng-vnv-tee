@@ -27,7 +27,7 @@
         }
     ],
     "paths": {
-        "/mock/catalogue/test-suites/{testSuiteId}": {
+        "/mock/catalogue/test-suites/{testUuid}": {
             "get": {
                 "tags": [
                     "test-catelogogue-mock"
@@ -39,9 +39,9 @@
                 ],
                 "parameters": [
                     {
-                        "name": "testSuiteId",
+                        "name": "testUuid",
                         "in": "path",
-                        "description": "testSuiteId",
+                        "description": "testUuid",
                         "required": true,
                         "type": "string"
                     }
@@ -65,7 +65,7 @@
                 }
             }
         },
-        "/mock/catalogue/test-suites/{testSuiteId}/download-resource": {
+        "/mock/catalogue/test-suites/{testUuid}/download-resource": {
             "get": {
                 "tags": [
                     "test-catelogogue-mock"
@@ -77,9 +77,9 @@
                 ],
                 "parameters": [
                     {
-                        "name": "testSuiteId",
+                        "name": "testUuid",
                         "in": "path",
-                        "description": "testSuiteId",
+                        "description": "testUuid",
                         "required": true,
                         "type": "string"
                     },
@@ -411,7 +411,7 @@
         "TestSuiteResult": {
             "type": "object",
             "required": [
-                "test_suite_id"
+                "test_uuid"
             ],
             "properties": {
                 "details": {
@@ -421,6 +421,9 @@
                     "type": "string"
                 },
                 "package_id": {
+                    "type": "string"
+                },
+                "service_uuid": {
                     "type": "string"
                 },
                 "status": {
@@ -435,7 +438,7 @@
                 "test_plan_id": {
                     "type": "string"
                 },
-                "test_suite_id": {
+                "test_uuid": {
                     "type": "string",
                     "allowEmptyValue": false
                 },

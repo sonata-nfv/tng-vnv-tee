@@ -16,7 +16,7 @@ class TestExecutionEngineTest extends AbstractSpec {
     @Value('${app.test.nsi.id}')
     def networkServiceInstanceId
     @Value('${app.test.suite.id}')
-    def testSuiteId
+    def testUuid
 
     @Autowired
     TestResultRepositoryMock testResultRepositoryMock
@@ -30,7 +30,7 @@ class TestExecutionEngineTest extends AbstractSpec {
                 package_id              : 'package_id',
                 test_plan_id              : 'test_plan_id',
                 network_service_instance_id: 'network_service_instance_id',
-                test_suite_id             : 'test_suite_id',
+                test_uuid             : 'test_uuid',
         ], Map.class)
 
         then:
@@ -49,7 +49,7 @@ class TestExecutionEngineTest extends AbstractSpec {
                 package_id              : testPackageId,
                 test_plan_id              : testPlanId,
                 network_service_instance_id: networkServiceInstanceId,
-                test_suite_id             : testSuiteId,
+                test_uuid             : testUuid,
         ], Map.class)
 
         then:

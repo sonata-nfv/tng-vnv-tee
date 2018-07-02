@@ -9,16 +9,16 @@ app:
 #    package.id: test_pacakge_id
 #    plan.id: test_plan_id
 #    nsi.id: network_service_instance_id
-#    suite.id: test_suite_id
+#    suite.id: test_uuid
   gk.base.url: http://qual-sp-bcn.5gtango.eu:32001/api/v2
   vnvgk.base.url: http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3
   cat.base.url: http://pre-int-vnv-bcn.5gtango.eu:4011/api/catalogues/v2
   trr.base.url: http://pre-int-vnv-bcn.5gtango.eu:4012/trr
   test:
-    package.id: 5b075ed1-4e90-47b1-b927-bd2d090245e5
+    package.id: 4110e0b7-9618-4914-bfa7-7e91a99d7324
     plan.id: 5b0bb8b57d2e070001000001
     nsi.id: ed036e6a-faeb-4ae0-838f-b8618901ae17
-    suite.id: 0b864c80-5c4b-4e1b-bf57-94d4178a8a95
+    suite.id: 8c16153a-a3ea-4325-ac17-60ce2c74d53d
 logging.level:
   org.apache.http.wire: DEBUG
   sun.net.www.protocol.http: DEBUG

@@ -12,11 +12,12 @@ class TestSuiteResult {
     String packageId
     String uuid
     String testPlanId
+    String serviceUuid
     String networkServiceInstanceId
 
     @ApiModelProperty(required = true)
     @NotNull
-    String testSuiteId
+    String testUuid
 
     String status
 

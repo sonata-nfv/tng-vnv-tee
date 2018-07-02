@@ -70,7 +70,7 @@
         "TestSuiteResult": {
             "type": "object",
             "required": [
-                "test_suite_id"
+                "test_uuid"
             ],
             "properties": {
                 "details": {
@@ -80,6 +80,9 @@
                     "type": "string"
                 },
                 "package_id": {
+                    "type": "string"
+                },
+                "service_uuid": {
                     "type": "string"
                 },
                 "status": {
@@ -94,7 +97,7 @@
                 "test_plan_id": {
                     "type": "string"
                 },
-                "test_suite_id": {
+                "test_uuid": {
                     "type": "string",
                     "allowEmptyValue": false
                 },

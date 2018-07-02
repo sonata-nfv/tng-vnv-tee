@@ -28,7 +28,7 @@ app:
     base.url: http://${app.cat.host}:4011/api/catalogues/v2
     package.metadata.endpoint: ${app.vnvgk.base.url}/packages/{packageId}
     test.metadata.endpoint: ${app.cat.base.url}/tests/{testUuid}
-    test.suite.load.endpoint: ${app.cat.base.url}/test-suites/{testSuiteId}
+    test.suite.load.endpoint: ${app.cat.base.url}/test-suites/{testUuid}
     resource.download.endpoint: ${app.vnvgk.base.url}/packages/{packageId}/files/{resourceUuid}
   trr:
     host: tng-rep
