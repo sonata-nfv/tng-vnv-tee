@@ -2,23 +2,23 @@ server:
   port: 16200
 app:
   tee.tmp.dir: docker-host-shared-tmp
-#  gk.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/gk
-#  catalogue.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/catalogue
-#  trr.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/trr
-#  test:
-#    package.id: test_pacakge_id
-#    plan.id: test_plan_id
-#    nsi.id: network_service_instance_id
-#    suite.id: test_uuid
-  gk.base.url: http://qual-sp-bcn.5gtango.eu:32001/api/v2
-  vnvgk.base.url: http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3
-  cat.base.url: http://pre-int-vnv-bcn.5gtango.eu:4011/api/catalogues/v2
-  trr.base.url: http://pre-int-vnv-bcn.5gtango.eu:4012/trr
+  gk.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/gk
+  catalogue.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/catalogue
+  trr.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/trr
   test:
-    package.id: 4110e0b7-9618-4914-bfa7-7e91a99d7324
-    plan.id: 5b0bb8b57d2e070001000001
-    nsi.id: ed036e6a-faeb-4ae0-838f-b8618901ae17
-    suite.id: 8c16153a-a3ea-4325-ac17-60ce2c74d53d
+    package.id: test_pacakge_id
+    plan.id: test_plan_id
+    nsi.id: network_service_instance_id
+    suite.id: test_uuid
+#  gk.base.url: http://qual-sp-bcn.5gtango.eu:32002/api/v3
+#  vnvgk.base.url: http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3
+#  cat.base.url: http://pre-int-vnv-bcn.5gtango.eu:4011/api/catalogues/v2
+#  trr.base.url: http://pre-int-vnv-bcn.5gtango.eu:4012/trr
+#  test:
+#    package.id: 4110e0b7-9618-4914-bfa7-7e91a99d7324
+#    plan.id: 5b0bb8b57d2e070001000001
+#    nsi.id: ed036e6a-faeb-4ae0-838f-b8618901ae17
+#    suite.id: 8c16153a-a3ea-4325-ac17-60ce2c74d53d
 logging.level:
   org.apache.http.wire: DEBUG
   sun.net.www.protocol.http: DEBUG
