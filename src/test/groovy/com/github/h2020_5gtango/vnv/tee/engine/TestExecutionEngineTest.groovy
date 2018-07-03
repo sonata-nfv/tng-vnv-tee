@@ -14,7 +14,7 @@ class TestExecutionEngineTest extends AbstractSpec {
     @Value('${app.test.plan.id}')
     def testPlanId
     @Value('${app.test.nsi.id}')
-    def networkServiceInstanceId
+    def instanceUuid
     @Value('${app.test.suite.id}')
     def testUuid
 
@@ -29,7 +29,7 @@ class TestExecutionEngineTest extends AbstractSpec {
         def entity = postForEntity('/tng-vnv-tee/api/v1/test-suite-results', [
                 package_id              : 'package_id',
                 test_plan_id              : 'test_plan_id',
-                network_service_instance_id: 'network_service_instance_id',
+                instance_uuid: 'instance_uuid',
                 test_uuid             : 'test_uuid',
         ], Map.class)
 
@@ -48,7 +48,7 @@ class TestExecutionEngineTest extends AbstractSpec {
         def entity = postForEntity('/tng-vnv-tee/api/v1/test-suite-results', [
                 package_id              : testPackageId,
                 test_plan_id              : testPlanId,
-                network_service_instance_id: networkServiceInstanceId,
+                instance_uuid: instanceUuid,
                 test_uuid             : testUuid,
         ], Map.class)
 

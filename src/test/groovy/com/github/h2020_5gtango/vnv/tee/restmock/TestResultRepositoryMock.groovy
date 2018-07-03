@@ -24,11 +24,11 @@ class TestResultRepositoryMock {
         testSuiteResults[testSuiteResultId] = testSuiteResult
     }
 
-    @GetMapping('/mock/trr/network-service-instance-instances/{networkServiceInstanceId}')
+    @GetMapping('/mock/trr/network-service-instance-instances/{instanceUuid}')
     NetworkServiceInstance loadNetworkServiceInstance(
-            @PathVariable('networkServiceInstanceId') String networkServiceInstanceId) {
+            @PathVariable('instanceUuid') String instanceUuid) {
         new NetworkServiceInstance(
-                networkServiceInstanceId: networkServiceInstanceId,
+                instanceUuid: instanceUuid,
                 runtime: [
                         host: [
                                 ip: '8.8.8.8'

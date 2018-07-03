@@ -8,7 +8,7 @@ app:
   test:
     package.id: test_pacakge_id
     plan.id: test_plan_id
-    nsi.id: network_service_instance_id
+    nsi.id: instance_uuid
     suite.id: test_uuid
 #  gk.base.url: http://qual-sp-bcn.5gtango.eu:32002/api/v3
 #  vnvgk.base.url: http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3

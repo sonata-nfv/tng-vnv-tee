@@ -46,8 +46,8 @@ class TestResultRepository {
         restTemplate.exchange(testSuiteResultUpdateEndpoint, HttpMethod.PUT, entity, TestSuiteResult.class ,testSuiteResult.uuid).body
     }
 
-    NetworkServiceInstance loadNetworkServiceInstance(String networkServiceInstanceId) {
-        NetworkServiceInstance networkServiceInstance = restTemplate.getForEntity(networkServiceInstanceLoadEndpoint, NetworkServiceInstance, networkServiceInstanceId).body
+    NetworkServiceInstance loadNetworkServiceInstance(String instanceUuid) {
+        NetworkServiceInstance networkServiceInstance = restTemplate.getForEntity(networkServiceInstanceLoadEndpoint, NetworkServiceInstance, instanceUuid).body
         networkServiceInstance.networkFunctions?.each{vnf->
             def vnfi = restTemplate.getForEntity(networkFunctionInstanceLoadEndpoint, Object.class, vnf.vnfr_id).body
             vnf.vnfi=vnfi

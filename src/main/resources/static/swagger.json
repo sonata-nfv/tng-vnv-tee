@@ -76,7 +76,7 @@
                 "details": {
                     "type": "object"
                 },
-                "network_service_instance_id": {
+                "instance_uuid": {
                     "type": "string"
                 },
                 "package_id": {

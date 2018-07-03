@@ -157,7 +157,7 @@
                 }
             }
         },
-        "/mock/trr/network-service-instance-instances/{networkServiceInstanceId}": {
+        "/mock/trr/network-service-instance-instances/{instanceUuid}": {
             "get": {
                 "tags": [
                     "test-result-repository-mock"
@@ -169,9 +169,9 @@
                 ],
                 "parameters": [
                     {
-                        "name": "networkServiceInstanceId",
+                        "name": "instanceUuid",
                         "in": "path",
-                        "description": "networkServiceInstanceId",
+                        "description": "instanceUuid",
                         "required": true,
                         "type": "string"
                     }
@@ -417,7 +417,7 @@
                 "details": {
                     "type": "object"
                 },
-                "network_service_instance_id": {
+                "instance_uuid": {
                     "type": "string"
                 },
                 "package_id": {

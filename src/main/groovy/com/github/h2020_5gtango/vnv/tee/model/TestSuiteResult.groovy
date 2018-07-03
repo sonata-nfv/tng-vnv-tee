@@ -13,7 +13,7 @@ class TestSuiteResult {
     String uuid
     String testPlanId
     String serviceUuid
-    String networkServiceInstanceId
+    String instanceUuid
 
     @ApiModelProperty(required = true)
     @NotNull
