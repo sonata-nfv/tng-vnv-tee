@@ -1,6 +1,7 @@
 package com.github.h2020_5gtango.vnv.tee.restclient
 
 import com.github.h2020_5gtango.vnv.tee.model.PackageMetadata
+import com.github.h2020_5gtango.vnv.tee.model.Test
 import com.github.h2020_5gtango.vnv.tee.model.TestSuite
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
@@ -16,12 +17,15 @@ class TestCatalogue {
     RestTemplate restTemplateWithAuth
 
     @Autowired
-    @Qualifier('restTemplateWithoutAuth')
+    @Qualifier('restTemplateWithAuth')
     RestTemplate restTemplate
 
 
     @Value('${app.cat.package.metadata.endpoint}')
     def packageLoadEndpoint
+
+    @Value('${app.cat.test.list.endpoint}')
+    def testListEndpoint
 
     @Value('${app.cat.test.metadata.endpoint}')
     def testSuiteLoadEndpoint
@@ -31,6 +35,10 @@ class TestCatalogue {
 
     @Value('${app.tee.tmp.dir}')
     File tmpDir
+
+    List<Test> listTests() {
+        restTemplateWithAuth.getForEntity(testListEndpoint, Test[].class).body
+    }
 
     PackageMetadata loadPackageMetadata(String packageId ) {
         restTemplate.getForEntity(packageLoadEndpoint,PackageMetadata,packageId).body

@@ -31,6 +31,12 @@ class TestResultRepository {
     @Value('${app.trr.network.function.instance.load.endpoint}')
     def networkFunctionInstanceLoadEndpoint
 
+    @Value('${app.trr.test.suite.result.filter.by.service.endpoint}')
+    def resultFilterByServiceEndpoint
+
+    @Value('${app.trr.test.suite.result.filter.by.test.endpoint}')
+    def resultFilterByTestEndpoint
+
     TestSuiteResult createTestSuiteResult(TestSuiteResult testSuiteResult) {
         testSuiteResult.status='SCHEDULED'
         def headers = new HttpHeaders()
@@ -63,5 +69,13 @@ class TestResultRepository {
             }
         }
         networkServiceInstance
+    }
+
+    List<TestSuiteResult> listByService(String serviceUuid) {
+        restTemplate.getForEntity(resultFilterByServiceEndpoint, TestSuiteResult[].class,serviceUuid).body
+    }
+
+    List<TestSuiteResult> listByTest(String testUuid) {
+        restTemplate.getForEntity(resultFilterByServiceEndpoint, TestSuiteResult[].class,testUuid).body
     }
 }
