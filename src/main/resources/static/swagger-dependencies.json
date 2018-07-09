@@ -27,7 +27,7 @@
         }
     ],
     "paths": {
-        "/mock/catalogue/test-suites/{testSuiteId}": {
+        "/mock/catalogue/test-suites/{testUuid}": {
             "get": {
                 "tags": [
                     "test-catelogogue-mock"
@@ -39,9 +39,9 @@
                 ],
                 "parameters": [
                     {
-                        "name": "testSuiteId",
+                        "name": "testUuid",
                         "in": "path",
-                        "description": "testSuiteId",
+                        "description": "testUuid",
                         "required": true,
                         "type": "string"
                     }
@@ -65,7 +65,7 @@
                 }
             }
         },
-        "/mock/catalogue/test-suites/{testSuiteId}/download-resource": {
+        "/mock/catalogue/test-suites/{testUuid}/download-resource": {
             "get": {
                 "tags": [
                     "test-catelogogue-mock"
@@ -77,9 +77,9 @@
                 ],
                 "parameters": [
                     {
-                        "name": "testSuiteId",
+                        "name": "testUuid",
                         "in": "path",
-                        "description": "testSuiteId",
+                        "description": "testUuid",
                         "required": true,
                         "type": "string"
                     },
@@ -157,7 +157,7 @@
                 }
             }
         },
-        "/mock/trr/network-service-instance-instances/{networkServiceInstanceId}": {
+        "/mock/trr/network-service-instance-instances/{instanceUuid}": {
             "get": {
                 "tags": [
                     "test-result-repository-mock"
@@ -169,9 +169,9 @@
                 ],
                 "parameters": [
                     {
-                        "name": "networkServiceInstanceId",
+                        "name": "instanceUuid",
                         "in": "path",
-                        "description": "networkServiceInstanceId",
+                        "description": "instanceUuid",
                         "required": true,
                         "type": "string"
                     }
@@ -311,14 +311,43 @@
         "NetworkServiceInstance": {
             "type": "object",
             "properties": {
-                "network_service_id": {
-                    "type": "string"
-                },
-                "network_service_instance_id": {
-                    "type": "string"
-                },
-                "runtime": {
+                "connection_points": {
                     "type": "object"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "forwarding_graphs": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "network_functions": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "status": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "uuid": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                },
+                "virtual_links": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
                 }
             },
             "title": "NetworkServiceInstance"
@@ -357,53 +386,66 @@
         "TestSuite": {
             "type": "object",
             "required": [
-                "test_suite_id"
+                "uuid"
             ],
             "properties": {
-                "name": {
-                    "type": "string"
-                },
                 "test_resources": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/TestResource"
                     }
                 },
-                "test_suite_id": {
-                    "type": "string",
-                    "allowEmptyValue": false
+                "testd": {
+                    "type": "object"
                 },
                 "type": {
                     "type": "string"
                 },
-                "vendor": {
-                    "type": "string"
-                },
-                "version": {
-                    "type": "string"
+                "uuid": {
+                    "type": "string",
+                    "allowEmptyValue": false
                 }
             },
             "title": "TestSuite"
         },
         "TestSuiteResult": {
             "type": "object",
+            "required": [
+                "test_uuid"
+            ],
             "properties": {
                 "details": {
                     "type": "object"
                 },
-                "network_service_instance_id": {
+                "instance_uuid": {
+                    "type": "string"
+                },
+                "package_id": {
+                    "type": "string"
+                },
+                "service_uuid": {
                     "type": "string"
                 },
                 "status": {
                     "type": "string"
                 },
+                "sterr": {
+                    "type": "string"
+                },
+                "stout": {
+                    "type": "string"
+                },
                 "test_plan_id": {
                     "type": "string"
                 },
-                "test_suite_id": {
+                "test_uuid": {
+                    "type": "string",
+                    "allowEmptyValue": false
+                },
+                "tester_result_text": {
                     "type": "string"
                 },
-                "test_suite_result_id": {
+                "uuid": {
                     "type": "string"
                 }
             },

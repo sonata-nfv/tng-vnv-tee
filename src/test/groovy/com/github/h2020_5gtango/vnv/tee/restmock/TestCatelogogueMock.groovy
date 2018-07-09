@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class TestCatelogogueMock {
 
-    @GetMapping('/mock/catalogue/test-suites/{testSuiteId}')
-    TestSuite loadTestSuite(@PathVariable('testSuiteId') String testSuiteId) {
-        testSuiteId == 'ttcn3' ? new TestSuite(
-                testSuiteId: testSuiteId,
+    @GetMapping('/mock/catalogue/test-suites/{testUuid}')
+    TestSuite loadTestSuite(@PathVariable('testUuid') String testUuid) {
+        testUuid == 'ttcn3' ? new TestSuite(
+                testUuid: testUuid,
                 type: 'ttcn3',
                 testResources: [
                         new TestSuite.TestResource(
@@ -35,7 +35,7 @@ class TestCatelogogueMock {
                 ]
         ) :
                 new TestSuite(
-                        testSuiteId: testSuiteId,
+                        testUuid: testUuid,
                         type: 'bash',
                         testResources: [
                                 new TestSuite.TestResource(
@@ -47,10 +47,10 @@ class TestCatelogogueMock {
     }
 
     @GetMapping(
-            value = '/mock/catalogue/test-suites/{testSuiteId}/download-resource',
+            value = '/mock/catalogue/test-suites/{testUuid}/download-resource',
             produces = ['application/octet-stream']
     )
-    byte[] download(@PathVariable('testSuiteId') String testSuiteId, @RequestParam('source') String source) {
+    byte[] download(@PathVariable('testUuid') String testUuid, @RequestParam('source') String source) {
         new File("src/test/resources/test-suite-resources/$source").bytes
     }
 

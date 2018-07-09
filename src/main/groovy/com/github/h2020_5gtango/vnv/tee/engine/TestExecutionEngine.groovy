@@ -26,9 +26,10 @@ class TestExecutionEngine {
     @PostMapping('/api/v1/test-suite-results')
     TestSuiteResult executeTestAgainstNs(@RequestBody TestSuiteResult testSuiteResult) {
         testSuiteResult=testResultRepository.createTestSuiteResult(testSuiteResult)
-        def testSuite = testCatalogue.loadTestSuite(testSuiteResult.testSuiteId)
-        def testWorkspace = testCatalogue.downloadTestSuiteResources(testSuite, testSuiteResult.testSuiteResultId)
-        def nsi = testResultRepository.loadNetworkServiceInstance(testSuiteResult.networkServiceInstanceId)
+        def packageMetadata = testCatalogue.loadPackageMetadata(testSuiteResult.packageId)
+        def testSuite = testCatalogue.loadTestSuite(testSuiteResult.testUuid)
+        def testWorkspace = testCatalogue.downloadTestSuiteResources(packageMetadata,testSuite, testSuiteResult.uuid)
+        def nsi = testResultRepository.loadNetworkServiceInstance(testSuiteResult.instanceUuid)
         applyTemplating(testSuite, testWorkspace, nsi)
         testSuiteResult = testers[testSuite.type].execute(testWorkspace, testSuiteResult)
         testResultRepository.updateTestSuiteResult(testSuiteResult)

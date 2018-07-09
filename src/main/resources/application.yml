@@ -15,19 +15,30 @@ app:
   tee.tmp.dir: /workspace
   gk:
     host: gk
-    base.url: http://${app.gk.host}:32001/api/v2
+    base.url: http://qual-sp-bcn.5gtango.eu:32002/api/v3
     session:
       endpoint: ${app.gk.base.url}/sessions
       username: sonata
       password: 1234
-  catalogue:
-    host: tng-vnv-catalogue
-    base.url: http://${app.catalogue.host}:6200
-    test.suite.load.endpoint: ${app.catalogue.base.url}/test-suites/{testSuiteId}
-    resource.download.endpoint: ${app.catalogue.base.url}/test-suites/{testSuiteId}/download-resource?source={source}
+  vnvgk:
+    host: gk
+    base.url: http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3
+  cat:
+    host: tng-cat
+    base.url: http://${app.cat.host}:4011/api/catalogues/v2
+    package.metadata.endpoint: ${app.vnvgk.base.url}/packages/{packageId}
+    test.list.endpoint: ${app.cat.base.url}/tests
+    test.metadata.endpoint: ${app.cat.base.url}/tests/{testUuid}
+    test.suite.load.endpoint: ${app.cat.base.url}/test-suites/{testUuid}
+    resource.download.endpoint: ${app.vnvgk.base.url}/packages/{packageId}/files/{resourceUuid}
+  sp:
+    service.list.endpoint: ${app.gk.base.url}/services
   trr:
-    host: tng-vnv-trr
-    base.url: http://${app.trr.host}:6300
+    host: tng-rep
+    base.url: http://${app.trr.host}:4012/trr
     test.suite.result.create.endpoint: ${app.trr.base.url}/test-suite-results
-    test.suite.result.update.endpoint: ${app.trr.base.url}/test-suite-results/{testSuiteResultId}
-    network.service.instance.load.endpoint: ${app.trr.base.url}/network-service-instance-instances/{networkServiceInstanceId}
+    test.suite.result.update.endpoint: ${app.trr.base.url}/test-suite-results/{uuid}
+    test.suite.result.filter.by.service.endpoint: ${app.trr.base.url}/test-suite-results?service_uuid={service_uuid}
+    test.suite.result.filter.by.test.endpoint: ${app.trr.base.url}/test-suite-results?test_uuid={test_uuid}
+    network.service.instance.load.endpoint: ${app.gk.base.url}/records/services/{instanceUuid}
+    network.function.instance.load.endpoint: ${app.gk.base.url}/records/functions/{networkFunctionInstanceId}

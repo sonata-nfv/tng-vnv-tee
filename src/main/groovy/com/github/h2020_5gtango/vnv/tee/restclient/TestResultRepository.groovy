@@ -5,6 +5,10 @@ import com.github.h2020_5gtango.vnv.tee.model.TestSuiteResult
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.http.HttpEntity
+import org.springframework.http.HttpHeaders
+import org.springframework.http.HttpMethod
+import org.springframework.http.MediaType
 import org.springframework.stereotype.Component
 import org.springframework.web.client.RestTemplate
 
@@ -24,17 +28,54 @@ class TestResultRepository {
     @Value('${app.trr.network.service.instance.load.endpoint}')
     def networkServiceInstanceLoadEndpoint
 
+    @Value('${app.trr.network.function.instance.load.endpoint}')
+    def networkFunctionInstanceLoadEndpoint
+
+    @Value('${app.trr.test.suite.result.filter.by.service.endpoint}')
+    def resultFilterByServiceEndpoint
+
+    @Value('${app.trr.test.suite.result.filter.by.test.endpoint}')
+    def resultFilterByTestEndpoint
+
     TestSuiteResult createTestSuiteResult(TestSuiteResult testSuiteResult) {
-        testSuiteResult.testSuiteResultId = UUID.randomUUID().toString()
         testSuiteResult.status='SCHEDULED'
-        restTemplate.postForEntity(testSuiteResultCreateEndpoint,testSuiteResult,TestSuiteResult).body
+        def headers = new HttpHeaders()
+        headers.setContentType(MediaType.APPLICATION_JSON)
+        def entity = new HttpEntity<TestSuiteResult>(testSuiteResult ,headers)
+        restTemplate.postForEntity(testSuiteResultCreateEndpoint,entity,TestSuiteResult).body
     }
 
     TestSuiteResult updateTestSuiteResult(TestSuiteResult testSuiteResult) {
-        restTemplate.postForEntity(testSuiteResultUpdateEndpoint,testSuiteResult,TestSuiteResult,testSuiteResult.testSuiteResultId).body
+        def headers = new HttpHeaders()
+        headers.setContentType(MediaType.APPLICATION_JSON)
+        def entity = new HttpEntity<TestSuiteResult>(testSuiteResult ,headers)
+        restTemplate.exchange(testSuiteResultUpdateEndpoint, HttpMethod.PUT, entity, TestSuiteResult.class ,testSuiteResult.uuid).body
     }
 
-    NetworkServiceInstance loadNetworkServiceInstance(String networkServiceInstanceId) {
-        restTemplate.getForEntity(networkServiceInstanceLoadEndpoint,NetworkServiceInstance,networkServiceInstanceId).body
+    NetworkServiceInstance loadNetworkServiceInstance(String instanceUuid) {
+        NetworkServiceInstance networkServiceInstance = restTemplate.getForEntity(networkServiceInstanceLoadEndpoint, NetworkServiceInstance, instanceUuid).body
+        networkServiceInstance.networkFunctions?.each{vnf->
+            def vnfi = restTemplate.getForEntity(networkFunctionInstanceLoadEndpoint, Object.class, vnf.vnfr_id).body
+            vnf.vnfi=vnfi
+            vnfi.virtual_deployment_units?.each{unit->
+                unit.vnfc_instance?.each{vnfc_instance->
+                    def points=[:]
+                    networkServiceInstance.connectionPoints.put(unit.vdu_reference,points)
+                    vnfc_instance.connection_points?.each{connection_point->
+                        points.put(connection_point.id,connection_point)
+                    }
+
+                }
+            }
+        }
+        networkServiceInstance
+    }
+
+    List<TestSuiteResult> listByService(String serviceUuid) {
+        restTemplate.getForEntity(resultFilterByServiceEndpoint, TestSuiteResult[].class,serviceUuid).body
+    }
+
+    List<TestSuiteResult> listByTest(String testUuid) {
+        restTemplate.getForEntity(resultFilterByServiceEndpoint, TestSuiteResult[].class,testUuid).body
     }
 }

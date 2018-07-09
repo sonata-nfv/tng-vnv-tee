@@ -3,10 +3,18 @@ package com.github.h2020_5gtango.vnv.tee.model
 
 class NetworkServiceInstance {
 
-    String networkServiceInstanceId
+    String uuid
 
-    String networkServiceId
+    String status
+    String version
 
-    Map runtime
+    Date createdAt
+    Date updatedAt
+
+    List forwardingGraphs
+    List networkFunctions
+    List virtualLinks
+
+    Map connectionPoints=[:]
 
 }

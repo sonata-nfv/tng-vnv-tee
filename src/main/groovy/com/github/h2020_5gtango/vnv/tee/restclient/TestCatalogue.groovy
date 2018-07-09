@@ -1,5 +1,7 @@
 package com.github.h2020_5gtango.vnv.tee.restclient
 
+import com.github.h2020_5gtango.vnv.tee.model.PackageMetadata
+import com.github.h2020_5gtango.vnv.tee.model.Test
 import com.github.h2020_5gtango.vnv.tee.model.TestSuite
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
@@ -12,28 +14,59 @@ class TestCatalogue {
 
     @Autowired
     @Qualifier('restTemplateWithAuth')
+    RestTemplate restTemplateWithAuth
+
+    @Autowired
+    @Qualifier('restTemplateWithAuth')
     RestTemplate restTemplate
 
-    @Value('${app.catalogue.test.suite.load.endpoint}')
+
+    @Value('${app.cat.package.metadata.endpoint}')
+    def packageLoadEndpoint
+
+    @Value('${app.cat.test.list.endpoint}')
+    def testListEndpoint
+
+    @Value('${app.cat.test.metadata.endpoint}')
     def testSuiteLoadEndpoint
 
-    @Value('${app.catalogue.resource.download.endpoint}')
+    @Value('${app.cat.resource.download.endpoint}')
     def resourceDownloadEndpoint
 
     @Value('${app.tee.tmp.dir}')
     File tmpDir
 
-    TestSuite loadTestSuite(String testSuiteId ) {
-        restTemplate.getForEntity(testSuiteLoadEndpoint,TestSuite,testSuiteId).body
+    List<Test> listTests() {
+        restTemplateWithAuth.getForEntity(testListEndpoint, Test[].class).body
     }
 
-    File downloadTestSuiteResources(TestSuite testSuite,String testSuiteResultId) {
+    PackageMetadata loadPackageMetadata(String packageId ) {
+        restTemplate.getForEntity(packageLoadEndpoint,PackageMetadata,packageId).body
+    }
+
+    TestSuite loadTestSuite(String testUuid ) {
+        TestSuite testSuite=restTemplateWithAuth.getForEntity(testSuiteLoadEndpoint,TestSuite,testUuid).body
+        testSuite.type=testSuite.testd.test_type
+        testSuite.testd.test_configuration_parameters.each{param->
+            if(param.containsKey('content_type')){
+                testSuite.testResources.add(new TestSuite.TestResource(
+                        contentType: param['content_type'],
+                        source: 'Tests/'+param['parameter_value'],
+                        target: param['parameter_value'],
+                ))
+            }
+        }
+        testSuite
+    }
+
+    File downloadTestSuiteResources(PackageMetadata packageMetadata,TestSuite testSuite,String testSuiteResultId) {
         def testSuiteWorkingDir=new File(tmpDir,testSuiteResultId)
         testSuite.testResources.each {testResource->
             def targetFile=new File(testSuiteWorkingDir,testResource.target?:testResource.source)
             targetFile.parentFile.mkdirs()
             targetFile.delete()
-            targetFile << restTemplate.getForEntity(resourceDownloadEndpoint,byte[].class,testSuite.testSuiteId,testResource.source).body
+            def resourceUuid=packageMetadata.pd.package_content.find{it.source==testResource.source}.uuid
+            targetFile << restTemplate.getForEntity(resourceDownloadEndpoint,byte[].class,packageMetadata.uuid,resourceUuid).body
         }
         testSuiteWorkingDir
     }

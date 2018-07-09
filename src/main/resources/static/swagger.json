@@ -14,11 +14,83 @@
     "basePath": "/tng-vnv-tee",
     "tags": [
         {
+            "name": "services-status",
+            "description": "Services Status"
+        },
+        {
             "name": "test-execution-engine",
             "description": "Test Execution Engine"
+        },
+        {
+            "name": "tests-status",
+            "description": "Tests Status"
         }
     ],
     "paths": {
+        "/api/v1/status/services": {
+            "get": {
+                "tags": [
+                    "services-status"
+                ],
+                "summary": "listServicesStatus",
+                "operationId": "listServicesStatusUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/NetworkService"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/v1/status/tests": {
+            "get": {
+                "tags": [
+                    "tests-status"
+                ],
+                "summary": "listTestsStatus",
+                "operationId": "listTestsStatusUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Test"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
         "/api/v1/test-suite-results": {
             "post": {
                 "tags": [
@@ -67,25 +139,92 @@
         }
     },
     "definitions": {
-        "TestSuiteResult": {
+        "NetworkService": {
             "type": "object",
             "properties": {
-                "details": {
+                "created_at": {
+                    "type": "string"
+                },
+                "nsd": {
                     "type": "object"
                 },
-                "network_service_instance_id": {
+                "status": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "uuid": {
+                    "type": "string"
+                },
+                "vnv_status": {
+                    "type": "string"
+                }
+            },
+            "title": "NetworkService"
+        },
+        "Test": {
+            "type": "object",
+            "properties": {
+                "created_at": {
                     "type": "string"
                 },
                 "status": {
                     "type": "string"
                 },
+                "testd": {
+                    "type": "object"
+                },
+                "updated_at": {
+                    "type": "string"
+                },
+                "uuid": {
+                    "type": "string"
+                },
+                "vnv_status": {
+                    "type": "string"
+                }
+            },
+            "title": "Test"
+        },
+        "TestSuiteResult": {
+            "type": "object",
+            "required": [
+                "test_uuid"
+            ],
+            "properties": {
+                "details": {
+                    "type": "object"
+                },
+                "instance_uuid": {
+                    "type": "string"
+                },
+                "package_id": {
+                    "type": "string"
+                },
+                "service_uuid": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "sterr": {
+                    "type": "string"
+                },
+                "stout": {
+                    "type": "string"
+                },
                 "test_plan_id": {
                     "type": "string"
                 },
-                "test_suite_id": {
+                "test_uuid": {
+                    "type": "string",
+                    "allowEmptyValue": false
+                },
+                "tester_result_text": {
                     "type": "string"
                 },
-                "test_suite_result_id": {
+                "uuid": {
                     "type": "string"
                 }
             },
