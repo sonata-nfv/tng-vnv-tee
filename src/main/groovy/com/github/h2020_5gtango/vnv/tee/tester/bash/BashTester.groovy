@@ -55,6 +55,11 @@ class BashTester implements Tester {
         testSuiteResult.status = result.exitValue == 0 ? 'SUCCESS' : 'FAILED'
         testSuiteResult.stout = result.stout?.toString()
         testSuiteResult.sterr = result.sterr?.toString()
+
+        def resultTextFile = new File(workspace, 'result.log')
+        if(resultTextFile.exists()){
+            testSuiteResult.testerResultText=resultTextFile.text
+        }
         testSuiteResult
     }
 }
