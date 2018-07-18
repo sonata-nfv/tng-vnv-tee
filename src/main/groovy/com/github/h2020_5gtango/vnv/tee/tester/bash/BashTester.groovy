@@ -2,6 +2,7 @@ package com.github.h2020_5gtango.vnv.tee.tester.bash
 
 import com.github.h2020_5gtango.vnv.tee.model.TestSuiteResult
 import com.github.h2020_5gtango.vnv.tee.tester.Tester
+import groovy.json.JsonSlurper
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
@@ -25,6 +26,11 @@ class BashTester implements Tester {
         def resultTextFile = new File(workspace, 'result.log')
         if(resultTextFile.exists()){
             testSuiteResult.testerResultText=resultTextFile.text
+        }
+        def dataJsonFile = new File(workspace, 'details.json')
+        if(dataJsonFile.exists()){
+            def jsonMap = new JsonSlurper().parseText(dataJsonFile.text)
+            testSuiteResult.details=jsonMap
         }
         testSuiteResult
     }
