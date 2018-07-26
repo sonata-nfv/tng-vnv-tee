@@ -6,7 +6,17 @@ This is a [5GTANGO](http://www.5gtango.eu) component to execute the test suites 
 
 <p align="center"><img src="https://github.com/sonata-nfv/tng-api-gtw/wiki/images/sonata-5gtango-logo-500px.png" /></p>
 
+## What it is
 
+The TEE is responsible for the execution of individual test plans generated from the LCM. Currently it supports 3 test plugin types
+
+- bash tester A general bash script executor
+- wrk tester A test plugin developed to report results from the [WRK](https://github.com/wg/wrk) benchmark application
+- TTCN-3 tester A test adapter designed to run [TTCN-3](http://www.ttcn-3.org/) scripts
+
+<p align="center"><img src="https://raw.githubusercontent.com/wiki/sonata-nfv/tng-vnv-lcm/images/v40-release-lcm.png" /></p>
+
+More detail on how to use these plugins are given in the [wiki](https://github.com/sonata-nfv/tng-vnv-tee/wiki/Test-Execution-Engine-tester-support)
 
 ## Build from source code
 
@@ -68,7 +78,17 @@ Contributing to the Gatekeeper is really easy. You must:
 1. Clone [this repository](http://github.com/sonata-nfv/tng-vnv-tee);
 1. Work on your proposed changes, preferably through submiting [issues](https://github.com/sonata-nfv/tng-vnv-tee/issues);
 1. Submit a Pull Request;
-1. Follow/answer related [issues](https://github.com/sonata-nfv/tng-vnv-tee/issues) (see Feedback-Chanel, below).
+1. Follow/answer related [issues](https://github.com/sonata-nfv/tng-vnv-tee/issues) (see Feedback-Channel, below).
+
+
+
+## Dependencies
+
+No specific libraries are required for building this project. The following tools are used to build the component
+
+- `java (version 8)`
+- `grade (version 4.9)`
+- `docker (version 18.x)`
 
 
 ## License
@@ -82,6 +102,6 @@ The following lead developers are responsible for this repository and have admin
 * Guo Du ([mrduguo](https://github.com/mrduguo))
 * Felipe Vicens ([felipevicens](https://github.com/felipevicens))
 
-## Feedback-Chanels
+## Feedback-Channels
 
 Please use the [GitHub issues](https://github.com/sonata-nfv/tng-vnv-tee/issues) and the 5GTANGO Verification and Validation group mailing list `5gtango-dev@list.atosresearch.eu` for feedback.
