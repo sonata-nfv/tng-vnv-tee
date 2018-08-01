@@ -32,28 +32,46 @@
  * partner consortium (www.5gtango.eu).
  */
 
-package com.github.h2020_5gtango.vnv.tee.tester.ttcn3
+package com.github.h2020_5gtango.vnv.tee.tester
 
 import com.github.h2020_5gtango.vnv.tee.model.TestSuiteResult
-import com.github.h2020_5gtango.vnv.tee.tester.AbstractTester
-import com.github.h2020_5gtango.vnv.tee.tester.bash.BashTester
+import groovy.json.JsonSlurper
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.stereotype.Component
 
-@Component('ttcn3')
-class Ttcn3Tester extends AbstractTester {
+class AbstractTester implements Tester {
+
+    public static String RUNNER_EXECUTABLE_FILE = 'runner.sh'
+    public static String RESULTS_LOG_FILE = 'result.log'
+    public static String DETAILS_JSON_FILE = 'details.json'
 
     @Autowired
-    Ttcn3ResultParser resultParser
+    AbstractRunner bashRunner
 
     @Override
     TestSuiteResult execute(File workspace, TestSuiteResult testSuiteResult) {
-        testSuiteResult = executeShell(new File(workspace, 'runner.sh'),testSuiteResult)
-        if (testSuiteResult.status != 0) {
-            testSuiteResult.status = 'ERROR'
-        } else {
-            testSuiteResult=resultParser.parse(workspace,testSuiteResult)
-        }
+        testSuiteResult = executeShell(workspace, testSuiteResult)
+
         testSuiteResult
+    }
+
+    TestSuiteResult executeShell(File workspace, TestSuiteResult testSuiteResult) {
+        def result = bashRunner.run(new File(RUNNER_EXECUTABLE_FILE))
+        testSuiteResult.status = result.exitValue == 0 ? 'SUCCESS' : 'FAILED'
+        testSuiteResult.stout = result.stout?.toString()
+        testSuiteResult.sterr = result.sterr?.toString()
+
+        testSuiteResult.testerResultText=attachRawData(new File(workspace, RESULTS_LOG_FILE))
+        testSuiteResult.details=attachJsonData(new File(workspace, DETAILS_JSON_FILE))
+
+        testSuiteResult
+    }
+
+    def attachRawData(File file){
+        (file.exists()) ? file.text : null
+    }
+
+    def attachJsonData(File file){
+        (file.exists()) ? new JsonSlurper().parseText(file.text) :  null
+
     }
 }
