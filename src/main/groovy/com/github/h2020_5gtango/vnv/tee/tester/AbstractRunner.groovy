@@ -32,27 +32,40 @@
  * partner consortium (www.5gtango.eu).
  */
 
-package com.github.h2020_5gtango.vnv.tee.config
+package com.github.h2020_5gtango.vnv.tee.tester
 
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.web.client.RestTemplateBuilder
-import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.Configuration
-import org.springframework.web.client.RestTemplate
+abstract class AbstractRunner {
 
-@Configuration
-class RestConfig {
+    abstract List<String> createCmd(File runnerSh)
 
-    @Autowired
-    BearerAuthorizationInterceptor bearerAuthorizationInterceptor
+    Map run(File runnerSh, def ouputScanner = null) {
+        def result = [exitValue: -1, stout: new StringBuffer(), sterr: new StringBuffer()]
+        if(!runnerSh)
+            return result
 
-    @Bean
-    RestTemplate restTemplateWithAuth(RestTemplateBuilder builder) {
-        builder.interceptors(bearerAuthorizationInterceptor).build()
+        Process process = new ProcessBuilder(createCmd(runnerSh)).start()
+        def inputStreamThread = consumeStream(process.inputStream, result.stout, ouputScanner, result)
+        def errorStreamThread = consumeStream(process.errorStream, result.sterr, ouputScanner, result)
+        try {
+            result.exitValue = process.waitFor()
+            inputStreamThread.join()
+            errorStreamThread.join()
+        } catch (Exception e) {
+            e.printStackTrace()
+        }
+        result
     }
 
-    @Bean
-    RestTemplate restTemplateWithoutAuth(RestTemplateBuilder builder) {
-        builder.build()
+    Thread consumeStream(InputStream stream, StringBuffer output, def ouputScanner, def result) {
+        Thread.start {
+            stream.eachLine { line ->
+                println line
+                output.append(line)
+                output.append('\n')
+                if (ouputScanner) {
+                    ouputScanner(line, result)
+                }
+            }
+        }
     }
 }

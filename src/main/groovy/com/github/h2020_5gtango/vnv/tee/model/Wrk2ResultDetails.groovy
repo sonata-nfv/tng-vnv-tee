@@ -32,27 +32,19 @@
  * partner consortium (www.5gtango.eu).
  */
 
-package com.github.h2020_5gtango.vnv.tee.config
+package com.github.h2020_5gtango.vnv.tee.model
 
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.web.client.RestTemplateBuilder
-import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.Configuration
-import org.springframework.web.client.RestTemplate
-
-@Configuration
-class RestConfig {
-
-    @Autowired
-    BearerAuthorizationInterceptor bearerAuthorizationInterceptor
-
-    @Bean
-    RestTemplate restTemplateWithAuth(RestTemplateBuilder builder) {
-        builder.interceptors(bearerAuthorizationInterceptor).build()
-    }
-
-    @Bean
-    RestTemplate restTemplateWithoutAuth(RestTemplateBuilder builder) {
-        builder.build()
-    }
+class Wrk2ResultDetails {
+    String requests
+    String duration_in_microseconds
+    String bytes
+    String requests_per_sec
+    String bytes_transfer_per_sec
+    List<LatencyPercentile> latency_distribution
 }
+
+class LatencyPercentile {
+    String percentile
+    String latency_in_microseconds
+}
+

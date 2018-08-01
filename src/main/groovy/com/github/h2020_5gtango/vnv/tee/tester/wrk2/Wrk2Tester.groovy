@@ -32,27 +32,28 @@
  * partner consortium (www.5gtango.eu).
  */
 
-package com.github.h2020_5gtango.vnv.tee.config
+package com.github.h2020_5gtango.vnv.tee.tester.wrk2
 
+import com.github.h2020_5gtango.vnv.tee.model.TestSuiteResult
+import com.github.h2020_5gtango.vnv.tee.tester.AbstractTester
+import com.github.h2020_5gtango.vnv.tee.tester.bash.BashTester
+import com.github.h2020_5gtango.vnv.tee.tester.wrk2.Wrk2ResultParser
+import groovy.json.JsonSlurper
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.web.client.RestTemplateBuilder
-import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.Configuration
-import org.springframework.web.client.RestTemplate
+import org.springframework.stereotype.Component
 
-@Configuration
-class RestConfig {
+@Component('wrk2')
+class Wrk2Tester extends AbstractTester {
 
     @Autowired
-    BearerAuthorizationInterceptor bearerAuthorizationInterceptor
+    Wrk2ResultParser resultParser
 
-    @Bean
-    RestTemplate restTemplateWithAuth(RestTemplateBuilder builder) {
-        builder.interceptors(bearerAuthorizationInterceptor).build()
-    }
+    @Override
+    TestSuiteResult execute(File workspace, TestSuiteResult testSuiteResult) {
+        def resultFile = new File(workspace,'result.log')
+        if (testSuiteResult.status != 'ERROR' && resultFile)
+            testSuiteResult=resultParser.parse(workspace,testSuiteResult)
 
-    @Bean
-    RestTemplate restTemplateWithoutAuth(RestTemplateBuilder builder) {
-        builder.build()
+        testSuiteResult
     }
 }

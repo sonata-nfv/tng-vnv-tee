@@ -32,27 +32,46 @@
  * partner consortium (www.5gtango.eu).
  */
 
-package com.github.h2020_5gtango.vnv.tee.config
+package com.github.h2020_5gtango.vnv.tee.tester
 
+import com.github.h2020_5gtango.vnv.tee.model.TestSuiteResult
+import groovy.json.JsonSlurper
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.web.client.RestTemplateBuilder
-import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.Configuration
-import org.springframework.web.client.RestTemplate
 
-@Configuration
-class RestConfig {
+class AbstractTester implements Tester {
+
+    public static String RUNNER_EXECUTABLE_FILE = 'runner.sh'
+    public static String RESULTS_LOG_FILE = 'result.log'
+    public static String DETAILS_JSON_FILE = 'details.json'
 
     @Autowired
-    BearerAuthorizationInterceptor bearerAuthorizationInterceptor
+    AbstractRunner bashRunner
 
-    @Bean
-    RestTemplate restTemplateWithAuth(RestTemplateBuilder builder) {
-        builder.interceptors(bearerAuthorizationInterceptor).build()
+    @Override
+    TestSuiteResult execute(File workspace, TestSuiteResult testSuiteResult) {
+        testSuiteResult = executeShell(workspace, testSuiteResult)
+
+        testSuiteResult
     }
 
-    @Bean
-    RestTemplate restTemplateWithoutAuth(RestTemplateBuilder builder) {
-        builder.build()
+    TestSuiteResult executeShell(File workspace, TestSuiteResult testSuiteResult) {
+        def result = bashRunner.run(new File(RUNNER_EXECUTABLE_FILE))
+        testSuiteResult.status = result.exitValue == 0 ? 'SUCCESS' : 'FAILED'
+        testSuiteResult.stout = result.stout?.toString()
+        testSuiteResult.sterr = result.sterr?.toString()
+
+        testSuiteResult.testerResultText=attachRawData(new File(workspace, RESULTS_LOG_FILE))
+        testSuiteResult.details=attachJsonData(new File(workspace, DETAILS_JSON_FILE))
+
+        testSuiteResult
+    }
+
+    def attachRawData(File file){
+        (file.exists()) ? file.text : null
+    }
+
+    def attachJsonData(File file){
+        (file.exists()) ? new JsonSlurper().parseText(file.text) :  null
+
     }
 }

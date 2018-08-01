@@ -32,27 +32,35 @@
  * partner consortium (www.5gtango.eu).
  */
 
-package com.github.h2020_5gtango.vnv.tee.config
+package com.github.h2020_5gtango.vnv.tee.tester.wrk2
 
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.web.client.RestTemplateBuilder
-import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.Configuration
-import org.springframework.web.client.RestTemplate
+import com.github.h2020_5gtango.vnv.tee.model.TestSuiteResult
+import org.springframework.stereotype.Component
 
-@Configuration
-class RestConfig {
+@Component
+class Wrk2ResultParser {
 
-    @Autowired
-    BearerAuthorizationInterceptor bearerAuthorizationInterceptor
+    TestSuiteResult parse(File workspace, TestSuiteResult testSuiteResult) {
+        def result = [:]
+        def resultTextFile = new File(workspace, 'result.log')
+        resultTextFile.eachLine {line->
+            if(line.contains('- Verdict statistics: ')){
+                line.split(': ')[1].split(', ').each {sum->
+                    def sumResult=sum.split(' ')
+                    result[sumResult[1]]=sumResult[0].toInteger()
+                }
+            }
+        }
 
-    @Bean
-    RestTemplate restTemplateWithAuth(RestTemplateBuilder builder) {
-        builder.interceptors(bearerAuthorizationInterceptor).build()
-    }
-
-    @Bean
-    RestTemplate restTemplateWithoutAuth(RestTemplateBuilder builder) {
-        builder.build()
+        if (result.fail || result.error) {
+            testSuiteResult.status = 'FAILED'
+        } else if (result.pass || result.none) {
+            testSuiteResult.status = 'SUCCESS'
+        } else {
+            testSuiteResult.status = 'INVALID_TEST_RESULT'
+        }
+        testSuiteResult.details=result
+        testSuiteResult.testerResultText=resultTextFile.text
+        testSuiteResult
     }
 }

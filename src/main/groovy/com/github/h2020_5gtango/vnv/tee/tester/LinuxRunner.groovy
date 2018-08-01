@@ -32,27 +32,19 @@
  * partner consortium (www.5gtango.eu).
  */
 
-package com.github.h2020_5gtango.vnv.tee.config
+package com.github.h2020_5gtango.vnv.tee.tester
 
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.web.client.RestTemplateBuilder
-import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.Configuration
-import org.springframework.web.client.RestTemplate
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression
+import org.springframework.stereotype.Component
 
-@Configuration
-class RestConfig {
+@Component
+@ConditionalOnExpression('"${sun.desktop}"!="windows"')
+class LinuxRunner extends AbstractRunner {
 
-    @Autowired
-    BearerAuthorizationInterceptor bearerAuthorizationInterceptor
-
-    @Bean
-    RestTemplate restTemplateWithAuth(RestTemplateBuilder builder) {
-        builder.interceptors(bearerAuthorizationInterceptor).build()
-    }
-
-    @Bean
-    RestTemplate restTemplateWithoutAuth(RestTemplateBuilder builder) {
-        builder.build()
+    List<String> createCmd(File runnerSh) {
+        [
+                'sh',
+                runnerSh.absolutePath,
+        ]
     }
 }
