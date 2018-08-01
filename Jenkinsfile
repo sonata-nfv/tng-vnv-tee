@@ -19,6 +19,7 @@ pipeline {
         stage('push') {
             steps {
                 timestamps {
+                    sh 'docker tag registry.sonata-nfv.eu:5000/tng-vnv-tee:latest registry.sonata-nfv.eu:5000/tng-vnv-tee:v4.0'
                     sh 'docker push registry.sonata-nfv.eu:5000/tng-vnv-tee:v4.0'
                 }
             }
