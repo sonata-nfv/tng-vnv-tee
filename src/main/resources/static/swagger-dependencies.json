@@ -22,10 +22,6 @@
             "description": "Test Catelogogue Mock"
         },
         {
-            "name": "test-execution-engine-mock",
-            "description": "Test Execution Engine Mock"
-        },
-        {
             "name": "test-result-repository-mock",
             "description": "Test Result Repository Mock"
         }
@@ -144,52 +140,6 @@
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/Session"
-                        }
-                    },
-                    "201": {
-                        "description": "Created"
-                    },
-                    "401": {
-                        "description": "Unauthorized"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    },
-                    "404": {
-                        "description": "Not Found"
-                    }
-                }
-            }
-        },
-        "/mock/tee/test-suite-results": {
-            "post": {
-                "tags": [
-                    "test-execution-engine-mock"
-                ],
-                "summary": "executeTestAgainstNs",
-                "operationId": "executeTestAgainstNsUsingPOST_1",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "*/*"
-                ],
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "testSuiteResult",
-                        "description": "testSuiteResult",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/TestSuiteResult"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/TestSuiteResult"
                         }
                     },
                     "201": {
