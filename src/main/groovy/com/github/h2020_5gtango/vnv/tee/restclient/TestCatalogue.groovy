@@ -45,6 +45,7 @@ import org.springframework.stereotype.Component
 import org.springframework.web.client.RestTemplate
 
 import static com.github.h2020_5gtango.vnv.tee.helper.DebugHelper.callExternalEndpoint
+import static com.github.h2020_5gtango.vnv.tee.helper.DebugHelper.loginfo
 
 @Log
 @Component
@@ -73,6 +74,10 @@ class TestCatalogue {
 
     @Value('${app.tee.tmp.dir}')
     File tmpDir
+
+    public TestCatalogue(){
+        println "##vnvlog: vnv-init: new code loaded"
+    }
 
     List<Test> listTests() {
         callExternalEndpoint(restTemplateWithAuth.getForEntity(testListEndpoint, Test[].class),'TestCatalogue.listTests',testListEndpoint).body
@@ -104,11 +109,12 @@ class TestCatalogue {
             targetFile.parentFile.mkdirs()
             targetFile.delete()
 
-            packageMetadata.pd.package_content.each{pc -> log.info("##vnvlog: testResource.source: ${testResource.source} while package_content [source: ${pc.source}, content-type: ${pc.content-type} & ")}
+            packageMetadata.pd.package_content.each{pc -> loginfo("##vnvlog: testResource.source: ${testResource.source} while package_content [source: ${pc.source}, content-type: ${pc.content-type} & ")}
             def resourceUuid=packageMetadata.pd.package_content.find{it.source==testResource.source}.uuid
             targetFile << callExternalEndpoint(
                     restTemplate.getForEntity(resourceDownloadEndpoint,byte[].class,packageMetadata.uuid,resourceUuid),'TestCatalogue.downloadTestSuiteResources',resourceDownloadEndpoint).body
         }
         testSuiteWorkingDir
     }
+
 }

@@ -46,6 +46,8 @@ import org.springframework.http.MediaType
 import org.springframework.stereotype.Component
 import org.springframework.web.client.RestTemplate
 
+import static com.github.h2020_5gtango.vnv.tee.helper.DebugHelper.callExternalEndpoint
+
 @Component
 class TestResultRepository {
 
