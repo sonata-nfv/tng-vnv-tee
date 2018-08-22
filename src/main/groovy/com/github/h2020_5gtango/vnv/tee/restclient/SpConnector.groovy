@@ -52,7 +52,7 @@ class SpConnector {
     def serviceListEndpoint
 
     List<NetworkService> listServices() {
-        restTemplate.getForEntity(serviceListEndpoint, NetworkService[].class).body
+        callExternalEndpoint(restTemplate.getForEntity(serviceListEndpoint, NetworkService[].class),'SpConnector.listServices',serviceListEndpoint).body
     }
 
 }
