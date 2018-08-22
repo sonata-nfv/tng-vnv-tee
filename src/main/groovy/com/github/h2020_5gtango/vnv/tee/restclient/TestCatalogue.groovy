@@ -109,7 +109,7 @@ class TestCatalogue {
             targetFile.parentFile.mkdirs()
             targetFile.delete()
 
-            packageMetadata.pd.package_content.each{pc -> loginfo("##vnvlog: testResource.source: ${testResource.source} while package_content [source: ${pc.source}, content-type: ${pc.content-type} & ")}
+            packageMetadata.pd.package_content.each{pc -> loginfo("##vnvlog: testResource.source: ${testResource.source} while package_content [source: ${pc.source} ")}
             def resourceUuid=packageMetadata.pd.package_content.find{it.source==testResource.source}.uuid
             targetFile << callExternalEndpoint(
                     restTemplate.getForEntity(resourceDownloadEndpoint,byte[].class,packageMetadata.uuid,resourceUuid),'TestCatalogue.downloadTestSuiteResources',resourceDownloadEndpoint).body
