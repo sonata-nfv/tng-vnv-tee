@@ -37,12 +37,17 @@ package com.github.h2020_5gtango.vnv.tee.restclient
 import com.github.h2020_5gtango.vnv.tee.model.PackageMetadata
 import com.github.h2020_5gtango.vnv.tee.model.Test
 import com.github.h2020_5gtango.vnv.tee.model.TestSuite
+import groovy.util.logging.Log
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 import org.springframework.web.client.RestTemplate
 
+import static com.github.h2020_5gtango.vnv.tee.helper.DebugHelper.callExternalEndpoint
+import static com.github.h2020_5gtango.vnv.tee.helper.DebugHelper.loginfo
+
+@Log
 @Component
 class TestCatalogue {
 
@@ -70,16 +75,20 @@ class TestCatalogue {
     @Value('${app.tee.tmp.dir}')
     File tmpDir
 
+    public TestCatalogue(){
+        println "##vnvlog: vnv-init: new code loaded"
+    }
+
     List<Test> listTests() {
-        restTemplateWithAuth.getForEntity(testListEndpoint, Test[].class).body
+        callExternalEndpoint(restTemplateWithAuth.getForEntity(testListEndpoint, Test[].class),'TestCatalogue.listTests',testListEndpoint).body
     }
 
     PackageMetadata loadPackageMetadata(String packageId ) {
-        restTemplate.getForEntity(packageLoadEndpoint,PackageMetadata,packageId).body
+        callExternalEndpoint(restTemplate.getForEntity(packageLoadEndpoint,PackageMetadata,packageId),'TestCatalogue.loadPackageMetadata',packageLoadEndpoint).body
     }
 
     TestSuite loadTestSuite(String testUuid ) {
-        TestSuite testSuite=restTemplateWithAuth.getForEntity(testSuiteLoadEndpoint,TestSuite,testUuid).body
+        TestSuite testSuite=callExternalEndpoint(restTemplateWithAuth.getForEntity(testSuiteLoadEndpoint,TestSuite,testUuid),'TestCatalogue.loadTestSuite',testSuiteLoadEndpoint).body
         testSuite.type=testSuite.testd.test_type
         testSuite.testd.test_configuration_parameters.each{param->
             if(param.containsKey('content_type')){
@@ -99,9 +108,13 @@ class TestCatalogue {
             def targetFile=new File(testSuiteWorkingDir,testResource.target?:testResource.source)
             targetFile.parentFile.mkdirs()
             targetFile.delete()
+
+            packageMetadata.pd.package_content.each{pc -> loginfo("##vnvlog: testResource.source: ${testResource.source} while package_content [source: ${pc.source} ")}
             def resourceUuid=packageMetadata.pd.package_content.find{it.source==testResource.source}.uuid
-            targetFile << restTemplate.getForEntity(resourceDownloadEndpoint,byte[].class,packageMetadata.uuid,resourceUuid).body
+            targetFile << callExternalEndpoint(
+                    restTemplate.getForEntity(resourceDownloadEndpoint,byte[].class,packageMetadata.uuid,resourceUuid),'TestCatalogue.downloadTestSuiteResources',resourceDownloadEndpoint).body
         }
         testSuiteWorkingDir
     }
+
 }

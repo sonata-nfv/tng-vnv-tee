@@ -46,6 +46,8 @@ import org.springframework.http.MediaType
 import org.springframework.stereotype.Component
 import org.springframework.web.client.RestTemplate
 
+import static com.github.h2020_5gtango.vnv.tee.helper.DebugHelper.callExternalEndpoint
+
 @Component
 class TestResultRepository {
 
@@ -76,20 +78,20 @@ class TestResultRepository {
         def headers = new HttpHeaders()
         headers.setContentType(MediaType.APPLICATION_JSON)
         def entity = new HttpEntity<TestSuiteResult>(testSuiteResult ,headers)
-        restTemplate.postForEntity(testSuiteResultCreateEndpoint,entity,TestSuiteResult).body
+        callExternalEndpoint(restTemplate.postForEntity(testSuiteResultCreateEndpoint,entity,TestSuiteResult),'TestResultRepository.createTestSuiteResult',testSuiteResultCreateEndpoint).body
     }
 
     TestSuiteResult updateTestSuiteResult(TestSuiteResult testSuiteResult) {
         def headers = new HttpHeaders()
         headers.setContentType(MediaType.APPLICATION_JSON)
         def entity = new HttpEntity<TestSuiteResult>(testSuiteResult ,headers)
-        restTemplate.exchange(testSuiteResultUpdateEndpoint, HttpMethod.PUT, entity, TestSuiteResult.class ,testSuiteResult.uuid).body
+        callExternalEndpoint(restTemplate.exchange(testSuiteResultUpdateEndpoint, HttpMethod.PUT, entity, TestSuiteResult.class ,testSuiteResult.uuid),'TestResultRepository.updateTestSuiteResult',testSuiteResultUpdateEndpoint).body
     }
 
     NetworkServiceInstance loadNetworkServiceInstance(String instanceUuid) {
-        NetworkServiceInstance networkServiceInstance = restTemplate.getForEntity(networkServiceInstanceLoadEndpoint, NetworkServiceInstance, instanceUuid).body
+        NetworkServiceInstance networkServiceInstance = callExternalEndpoint(restTemplate.getForEntity(networkServiceInstanceLoadEndpoint, NetworkServiceInstance, instanceUuid),'TestResultRepository.loadNetworkServiceInstance',networkServiceInstanceLoadEndpoint).body
         networkServiceInstance.networkFunctions?.each{vnf->
-            def vnfi = restTemplate.getForEntity(networkFunctionInstanceLoadEndpoint, Object.class, vnf.vnfr_id).body
+            def vnfi = callExternalEndpoint(restTemplate.getForEntity(networkFunctionInstanceLoadEndpoint, Object.class, vnf.vnfr_id),'TestResultRepository.loadNetworkServiceInstance',networkServiceInstanceLoadEndpoint).body
             vnf.vnfi=vnfi
             vnfi.virtual_deployment_units?.each{unit->
                 unit.vnfc_instance?.each{vnfc_instance->
@@ -106,10 +108,10 @@ class TestResultRepository {
     }
 
     List<TestSuiteResult> listByService(String serviceUuid) {
-        restTemplate.getForEntity(resultFilterByServiceEndpoint, TestSuiteResult[].class,serviceUuid).body
+        callExternalEndpoint(restTemplate.getForEntity(resultFilterByServiceEndpoint, TestSuiteResult[].class,serviceUuid),'TestResultRepository.listByService',resultFilterByServiceEndpoint).body
     }
 
     List<TestSuiteResult> listByTest(String testUuid) {
-        restTemplate.getForEntity(resultFilterByServiceEndpoint, TestSuiteResult[].class,testUuid).body
+        callExternalEndpoint(restTemplate.getForEntity(resultFilterByServiceEndpoint, TestSuiteResult[].class,testUuid),'TestResultRepository.listByTest',resultFilterByServiceEndpoint).body
     }
 }
