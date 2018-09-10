@@ -41,6 +41,7 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.http.HttpStatus
 import spock.lang.Ignore
 
+@Ignore
 class TestExecutionEngineTest extends AbstractSpec {
     @Value('${app.test.package.id}')
     def testPackageId
