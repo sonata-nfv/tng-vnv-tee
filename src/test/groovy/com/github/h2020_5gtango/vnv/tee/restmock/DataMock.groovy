@@ -34,47 +34,21 @@
 
 package com.github.h2020_5gtango.vnv.tee.restmock
 
-import com.github.h2020_5gtango.vnv.tee.model.NetworkServiceInstance
-import com.github.h2020_5gtango.vnv.tee.model.TestSuiteResult
-import groovy.util.logging.Log
-import org.springframework.web.bind.annotation.*
+import groovy.json.JsonSlurper
+import org.springframework.util.ResourceUtils
 
-@Log
-@RestController
-class TestResultRepositoryMock {
+class DataMock {
 
-    Map<String, TestSuiteResult> testSuiteResults = [:]
-
-    void reset() {
-        testSuiteResults.clear()
+    static def getTest(String uuid) {
+        attachJsonData("classpath:static/json/tests.json").find{it.uuid == uuid}
     }
 
-    @PostMapping('/mock/trr/test-suite-results')
-    TestSuiteResult createTestSuiteResult(@RequestBody TestSuiteResult testSuiteResult) {
-        log.info("##vnvlog-v.2: testSuiteResult.uuid is ${testSuiteResult.uuid}")
-        if(!testSuiteResult.uuid) {
-            testSuiteResult.uuid = UUID.randomUUID().toString()
-        }
-        testSuiteResults[testSuiteResult.uuid] = testSuiteResult
+    static def getPackage(String uuid) {
+        attachJsonData("classpath:static/json/packages.json").find{it.uuid == uuid}
     }
 
-    @PostMapping('/mock/trr/test-suite-results/{testSuiteResultId:.+}')
-    TestSuiteResult updateTestSuiteResult(
-            @RequestBody TestSuiteResult testSuiteResult, @PathVariable('testSuiteResultId') String testSuiteResultId) {
-        testSuiteResults[testSuiteResultId] = testSuiteResult
+    static def attachJsonData(String resourceLocation){
+        File file = ResourceUtils.getFile(resourceLocation)
+        (file.exists()) ? new JsonSlurper().parseText(file.text) :  null
     }
-
-    @GetMapping('/mock/trr/network-service-instance-instances/{instanceUuid}')
-    NetworkServiceInstance loadNetworkServiceInstance(
-            @PathVariable('instanceUuid') String instanceUuid) {
-        new NetworkServiceInstance(
-                instanceUuid: instanceUuid,
-                runtime: [
-                        host: [
-                                ip: '8.8.8.8'
-                        ]
-                ]
-        )
-    }
-
 }

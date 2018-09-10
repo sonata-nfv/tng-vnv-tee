@@ -60,7 +60,7 @@ class BashTesterTest extends AbstractSpec {
     void "bashTester should return the details from details.json file"() {
         given:
         def workspace = new File('/tmp')
-        def mockRunnerFile = new File( bash.RUNNER_EXECUTABLE_FILE)
+        def mockRunnerFile = new File(workspace, bash.RUNNER_EXECUTABLE_FILE)
         def detailsFile = new File(workspace, bash.DETAILS_JSON_FILE)
 
         detailsFile << loadDetailsData()
@@ -70,7 +70,9 @@ class BashTesterTest extends AbstractSpec {
         def result = bash.execute(workspace, testSuiteResult)
 
         then:
+        //fixme: paths
         result.details.name == 'John Smith'
+        result.status == 'SUCCESS'
 
         cleanup:
         mockRunnerFile.delete()
