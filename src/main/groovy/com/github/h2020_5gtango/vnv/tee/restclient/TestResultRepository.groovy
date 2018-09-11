@@ -81,6 +81,14 @@ class TestResultRepository {
         callExternalEndpoint(restTemplate.postForEntity(testSuiteResultCreateEndpoint,entity,TestSuiteResult),'TestResultRepository.createTestSuiteResult',testSuiteResultCreateEndpoint).body
     }
 
+    TestSuiteResult processTestSuiteResult(TestSuiteResult testSuiteResult) {
+        testSuiteResult.status='TESTING'
+        def headers = new HttpHeaders()
+        headers.setContentType(MediaType.APPLICATION_JSON)
+        def entity = new HttpEntity<TestSuiteResult>(testSuiteResult ,headers)
+        callExternalEndpoint(restTemplate.postForEntity(testSuiteResultCreateEndpoint,entity,TestSuiteResult),'TestResultRepository.createTestSuiteResult',testSuiteResultCreateEndpoint).body
+    }
+
     TestSuiteResult updateTestSuiteResult(TestSuiteResult testSuiteResult) {
         def headers = new HttpHeaders()
         headers.setContentType(MediaType.APPLICATION_JSON)
