@@ -56,7 +56,8 @@ class Wrk2TesterTest extends AbstractSpec {
         given:
         def workspace = new File('/tmp')
         def mockRunnerFile = new File( 'runner.sh')
-        def resultFile = new File(workspace,'result.log')
+        //def resultFile = new File(workspace,'result.log')
+        def resultFile = new File('result.log')
         resultFile << loadResultData()
 
 

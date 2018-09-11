@@ -60,8 +60,9 @@ class BashTesterTest extends AbstractSpec {
     void "bashTester should return the details from details.json file"() {
         given:
         def workspace = new File('/tmp')
-        def mockRunnerFile = new File(workspace, bash.RUNNER_EXECUTABLE_FILE)
-        def detailsFile = new File(workspace, bash.DETAILS_JSON_FILE)
+        def mockRunnerFile = new File(bash.RUNNER_EXECUTABLE_FILE)
+        //def detailsFile = new File(workspace, bash.DETAILS_JSON_FILE)
+        def detailsFile = new File(bash.DETAILS_JSON_FILE)
 
         detailsFile << loadDetailsData()
         mockRunnerFile << loadRunnerFile()
@@ -83,8 +84,11 @@ class BashTesterTest extends AbstractSpec {
 
         given:
         def workspace = new File('/tmp')
-        def mockRunnerFile = new File(workspace, bash.RUNNER_EXECUTABLE_FILE)
-        def resultFile = new File(workspace,bash.RESULTS_LOG_FILE)
+        //fixme: make this a test
+        //def mockRunnerFile = new File(workspace, bash.RUNNER_EXECUTABLE_FILE)
+        def mockRunnerFile = new File(bash.RUNNER_EXECUTABLE_FILE)
+        //def resultFile = new File(workspace,bash.RESULTS_LOG_FILE)
+        def resultFile = new File(bash.RESULTS_LOG_FILE)
         resultFile << loadResultData()
 
         when:
