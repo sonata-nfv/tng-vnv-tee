@@ -446,6 +446,9 @@
                         "type": "object"
                     }
                 },
+                "name": {
+                    "type": "string"
+                },
                 "network_functions": {
                     "type": "array",
                     "items": {

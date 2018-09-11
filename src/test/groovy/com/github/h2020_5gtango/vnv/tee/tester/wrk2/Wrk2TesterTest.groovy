@@ -37,9 +37,11 @@ package com.github.h2020_5gtango.vnv.tee.tester.wrk2
 import com.github.h2020_5gtango.vnv.tee.model.TestSuiteResult
 import com.github.h2020_5gtango.vnv.tee.tester.bash.BashTester
 import com.github.mrduguo.spring.test.AbstractSpec
+import org.junit.Ignore
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 
+@Ignore
 class Wrk2TesterTest extends AbstractSpec {
 
     @Value('${app.test.suite.id}')

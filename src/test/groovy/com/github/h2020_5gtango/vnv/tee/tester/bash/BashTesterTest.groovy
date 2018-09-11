@@ -37,6 +37,7 @@ package com.github.h2020_5gtango.vnv.tee.tester.bash
 import com.github.h2020_5gtango.vnv.tee.model.TestSuiteResult
 import com.github.h2020_5gtango.vnv.tee.restmock.TestResultRepositoryMock
 import com.github.mrduguo.spring.test.AbstractSpec
+import org.junit.Ignore
 import org.mapstruct.Named
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -46,6 +47,7 @@ import org.springframework.stereotype.Component
 
 import javax.annotation.Resource
 
+@Ignore
 class BashTesterTest extends AbstractSpec {
 
     @Value('${app.test.suite.id}')
@@ -68,6 +70,7 @@ class BashTesterTest extends AbstractSpec {
         mockRunnerFile << loadRunnerFile()
 
         when:
+        //def result = bash.execute(workspace, testSuiteResult)
         def result = bash.execute(workspace, testSuiteResult)
 
         then:
