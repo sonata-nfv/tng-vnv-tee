@@ -38,6 +38,7 @@ package com.github.h2020_5gtango.vnv.tee.model
 class NetworkServiceInstance {
 
     String uuid
+    String name
 
     String status
     String version
