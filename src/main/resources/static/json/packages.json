@@ -1,0 +1,477 @@
+[
+  {
+    "created_at": "2018-09-05T14:24:19.199+00:00",
+    "md5": "4fb13117a3f6b28b39401f05cc2f993c",
+    "pd": {
+      "description": "This is the 5GTANGO network service for year 1 demo",
+      "descriptor_schema": "https://raw.githubusercontent.com/sonata-nfv/tng-schema/master/package-specification/napd-schema.yml",
+      "maintainer": "Luis Hens",
+      "name": "ns-squid-haproxy",
+      "package_content": [
+        {
+          "algorithm": "SHA-256",
+          "content-type": "application/vnd.5gtango.nsd",
+          "hash": "8cd93dd0f66efb168161468a383f129c0085d85cf1ca56325e5f407e457d8128",
+          "id": {
+            "name": "ns-squid-haproxy",
+            "vendor": "eu.5gtango",
+            "version": "0.1"
+          },
+          "source": "Definitions/Definitions/ns-squid-haproxy.yaml",
+          "tags": [
+            "eu.5gtango"
+          ],
+          "uuid": "33205817-7758-4616-898a-d0ba99d47ff4"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "application/vnd.5gtango.vnfd",
+          "hash": "8dfc0efb6b20f1efdfec1871879095645e0f1768da21aa5b18672404d39beea9",
+          "id": {
+            "name": "haproxy-vnf",
+            "vendor": "eu.5gtango",
+            "version": "0.1"
+          },
+          "source": "Definitions/Definitions/haproxy_vnf.yaml",
+          "tags": [],
+          "uuid": "0228c462-2f4f-485d-bd4c-2e4b02719542"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "application/vnd.5gtango.vnfd",
+          "hash": "b3e68dd2a178be487d54bccfb2aa27b6b26756cc7958cd89bf91a34b2e66d2de",
+          "id": {
+            "name": "squid-vnf",
+            "vendor": "eu.5gtango",
+            "version": "0.1"
+          },
+          "source": "Definitions/Definitions/squid_vnf.yaml",
+          "tags": [
+            "eu.5gtango"
+          ],
+          "uuid": "0e330614-c9fc-4f4b-ae3f-4dc018ff57d0"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "image/png",
+          "hash": "dd83757e632740f9f390af15eeb8bc25480a0c412c7ea9ac9abbb0e5e025e508",
+          "source": "Icons/upb_logo.png",
+          "tags": [],
+          "uuid": "7f10ab4d-28de-4205-b53c-0ecb1c380dd5"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "application/vnd.5gtango.ref",
+          "hash": "e26ff11f2cd2efc1eed3a47a94fccbf6fc8d0c844ff15b65aeb02576c1d02640",
+          "id": {
+            "name": "mycloudimage",
+            "vendor": "eu.5gtango",
+            "version": "16.04"
+          },
+          "source": "Images/mycloudimage.ref",
+          "tags": []
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "text/plain",
+          "hash": "179f180ea1630016d585ff32321037b18972d389be0518c0192021286c4898ca",
+          "source": "Licenses/LICENSE",
+          "tags": [],
+          "uuid": "e7c1b08b-8ed3-4a1d-ada1-431e122284c5"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "text/x-shellscript",
+          "hash": "e16360cc3518bde752ac2d506e6bdb6bcb6638a0f94df9ea06975ae910204277",
+          "source": "Scripts/cloud.init",
+          "tags": [],
+          "uuid": "14869049-7c68-4b7c-9a1b-5136f05e78c8"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "application/vnd.etsi.osm.nsd",
+          "hash": "ce003808e20409408f3509c71252cf67e490e844c5bc80aff8d65e0f39f1ea80",
+          "source": "DefinitionsOSM/osm_ns-squid-haproxy.yml",
+          "tags": [
+            "etsi.osm"
+          ],
+          "uuid": "ed115b3b-f280-47a5-be7a-3a8d0de66c33"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "application/vnd.etsi.osm.vnfd",
+          "hash": "da0984a4d9e9e8e9751699b3ea92f1a318b7d8342098f65118780e3bad8dcd9d",
+          "source": "DefinitionsOSM/osm_squid_vnf.yml",
+          "tags": [
+            "etsi.osm"
+          ],
+          "uuid": "b4096dfd-9353-4ed3-b2b7-1c0d1a183f9c"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "application/vnd.etsi.osm.vnfd",
+          "hash": "d4917b002d230330578e7a47bd00a19f8e2ca87e4bdd9495bf05097c0485e276",
+          "source": "DefinitionsOSM/osm_haproxy_vnf.yml",
+          "tags": [
+            "etsi.osm"
+          ],
+          "uuid": "d28eaec2-7825-4581-a2cd-4b0a2f7de91d"
+        }
+      ],
+      "package_file_name": "eu.5gtango.ns-squid-haproxy.0.1.tgo",
+      "package_file_uuid": "b33003ec-0fba-40cf-97a9-fc7c104fdb87",
+      "package_type": "application/vnd.5gtango.package.nsp",
+      "release_date_time": "2018-09-05T15:50:42Z",
+      "vendor": "eu.5gtango",
+      "version": "0.1",
+      "warning": null
+    },
+    "signature": null,
+    "status": "active",
+    "updated_at": "2018-09-05T14:24:19.199+00:00",
+    "username": null,
+    "uuid": "f1a5e1c1-ac4d-4ba6-8e8c-d47418f63356"
+  },
+  {
+    "created_at": "2018-09-06T10:06:37.565+00:00",
+    "md5": "50a5cb0d7fe0d73cf109afb8c8eac193",
+    "pd": {
+      "description": "This is a 5GTANGO test package for http VUT Benchmarking",
+      "descriptor_schema": "https://raw.githubusercontent.com/sonata-nfv/tng-schema/master/package-specification/napd-schema.yml",
+      "maintainer": "Luis Hens, ATOS",
+      "name": "services-check",
+      "package_content": [
+        {
+          "algorithm": "SHA-256",
+          "content-type": "image/png",
+          "hash": "dd83757e632740f9f390af15eeb8bc25480a0c412c7ea9ac9abbb0e5e025e508",
+          "source": "Icons/upb_logo.png",
+          "tags": [],
+          "uuid": "c0a30179-6325-486c-ac32-022cd675c05e"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "text/plain",
+          "hash": "3cd74acbebc0a41414f342d27edbda0284ef4640ee6c077fdf00cd5a69ce181b",
+          "source": "Licenses/LICENSE",
+          "tags": [],
+          "uuid": "c184a98a-0224-475e-8955-bd476ebe1f8d"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "text/plain",
+          "hash": "7c9cb16b3597e6f6e2f0ea2c8f5d80fd27b592f2c950b1e76d65df548e5a0303",
+          "source": "Tests/config.cfg",
+          "tags": [],
+          "uuid": "50831d18-3bc0-42e2-99bb-6ae7bfea179f"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "text/x-shellscript",
+          "hash": "89eef6afd44c47a0f38c82b958e0d40c8c02d525f5ddebbbaf10ef2107e65bcb",
+          "source": "Tests/runner.sh",
+          "tags": [],
+          "uuid": "c520e3b8-5339-473e-9a18-343df5b5ecb4"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "application/vnd.5gtango.tstd",
+          "hash": "adcbfdd2fa612d08b938511d59cabfb185a6be060d5fa3ab7a0154720d3d4be0",
+          "id": {
+            "name": "ping-test",
+            "vendor": "eu.5gtango.atos.simple-test-descriptor",
+            "version": "0.1"
+          },
+          "source": "Definitions/Definitions/test-descriptor.yml",
+          "tags": [],
+          "uuid": "125ac89c-cb69-4f27-8e78-7f537ed05c83"
+        }
+      ],
+      "package_file_name": "eu.5gtango.services-check.0.1.tgo",
+      "package_file_uuid": "6a080137-c691-4b13-823c-7cb5f371d9b5",
+      "package_type": "application/vnd.5gtango.package.tdp",
+      "release_date_time": "2018-09-05T15:13:39Z",
+      "vendor": "eu.5gtango",
+      "version": "0.1",
+      "warning": null
+    },
+    "signature": null,
+    "status": "active",
+    "updated_at": "2018-09-06T10:06:37.565+00:00",
+    "username": null,
+    "uuid": "4fdc6a44-67d6-4e23-b58c-e3744a2ff8ec"
+  },
+  {
+    "created_at": "2018-09-06T10:06:44.417+00:00",
+    "md5": "66daa6d5f36eb0d8150726186253fe25",
+    "pd": {
+      "description": "This is a 5GTANGO test package to check the availability of opened ports in an application or network service",
+      "descriptor_schema": "https://raw.githubusercontent.com/sonata-nfv/tng-schema/master/package-specification/napd-schema.yml",
+      "maintainer": "AR, ALB",
+      "name": "port-test",
+      "package_content": [
+        {
+          "algorithm": "SHA-256",
+          "content-type": "image/png",
+          "hash": "dd83757e632740f9f390af15eeb8bc25480a0c412c7ea9ac9abbb0e5e025e508",
+          "source": "Icons/upb_logo.png",
+          "tags": [],
+          "uuid": "4764e4e0-d2db-4613-ba49-be4af9c4695d"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "text/plain",
+          "hash": "3cd74acbebc0a41414f342d27edbda0284ef4640ee6c077fdf00cd5a69ce181b",
+          "source": "Licenses/LICENSE",
+          "tags": [],
+          "uuid": "898f9b99-b177-4d8b-bb53-27a20585e8e2"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "text/plain",
+          "hash": "effb10d74d205022640562cb8d213879714b3af0fb65e02bc6e02c4aa84eeb62",
+          "source": "Tests/config.cfg",
+          "tags": [],
+          "uuid": "530ee01e-74f3-403d-b83a-50be337d8308"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "text/x-shellscript",
+          "hash": "76d0999e0b248581425d62103e491a3b7ac2b96396156902af604fbdacfd269d",
+          "source": "Tests/runner.sh",
+          "tags": [],
+          "uuid": "401ca5dd-a91f-49a4-b285-e1a6b84176d7"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "application/vnd.5gtango.tstd",
+          "hash": "507cdcfb5a9a592d98d6914340cc831cb7ce81c1650de5e29fe22f1201466352",
+          "id": {
+            "name": "vnv-test-ports",
+            "vendor": "eu.5gtango.atos.simple-test-descriptor",
+            "version": "0.1"
+          },
+          "source": "Definitions/Definitions/test-descriptor.yml",
+          "tags": [],
+          "uuid": "5ed51ad5-1d27-4951-b7a8-809de88bcc10"
+        }
+      ],
+      "package_file_name": "eu.5gtango.port-test.0.1.tgo",
+      "package_file_uuid": "13df413a-0ec0-4883-89b6-a105fdf8b68b",
+      "package_type": "application/vnd.5gtango.package.tdp",
+      "release_date_time": "2018-09-05T15:13:33Z",
+      "vendor": "eu.5gtango",
+      "version": "0.1",
+      "warning": null
+    },
+    "signature": null,
+    "status": "active",
+    "updated_at": "2018-09-06T10:06:44.417+00:00",
+    "username": null,
+    "uuid": "dea4f82b-d605-4b86-846c-bc42e6dc6910"
+  },
+  {
+    "created_at": "2018-09-06T10:07:07.743+00:00",
+    "md5": "50261d3dd8ac3b6b80efc46fc507dc17",
+    "pd": {
+      "description": "This is a 5GTANGO test package for http VUT Benchmarking",
+      "descriptor_schema": "https://raw.githubusercontent.com/sonata-nfv/tng-schema/master/package-specification/napd-schema.yml",
+      "maintainer": "Felipe Vicens, ATOS",
+      "name": "http-benchmarking-test",
+      "package_content": [
+        {
+          "algorithm": "SHA-256",
+          "content-type": "image/png",
+          "hash": "dd83757e632740f9f390af15eeb8bc25480a0c412c7ea9ac9abbb0e5e025e508",
+          "source": "Icons/upb_logo.png",
+          "tags": [],
+          "uuid": "eae4bf97-a1c0-4396-bac7-44f476422aad"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "text/plain",
+          "hash": "3cd74acbebc0a41414f342d27edbda0284ef4640ee6c077fdf00cd5a69ce181b",
+          "source": "Licenses/LICENSE",
+          "tags": [],
+          "uuid": "6bf4c42b-e632-4a6e-a631-8bd546d61b54"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "text/plain",
+          "hash": "fafc703a0df816abc71f8ff47923ada7122db95add17e71515399e5fdee74bbf",
+          "source": "Tests/config.cfg",
+          "tags": [],
+          "uuid": "8bebae3b-7e48-4e8a-abce-65c4e67fdea1"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "text/x-shellscript",
+          "hash": "5987d97479163ef7f929686445a3ba2467108bcf512304ff70de600281ff89cf",
+          "source": "Tests/runner.sh",
+          "tags": [],
+          "uuid": "3b36922f-8955-4d29-bcd2-179b7ce1f4a8"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "application/vnd.5gtango.tstd",
+          "hash": "a562da9211805f1105946d742a244410418daf3a8e155a3c40c3328a714982d8",
+          "id": {
+            "name": "http-benchmark-test",
+            "vendor": "eu.5gtango.atos.simple-test-descriptor",
+            "version": "0.1"
+          },
+          "source": "Definitions/Definitions/test-descriptor.yml",
+          "tags": [],
+          "uuid": "bb4c9ac6-ab9d-499a-9344-17e7d768f77e"
+        }
+      ],
+      "package_file_name": "eu.5gtango.http-benchmarking-test.0.1.tgo",
+      "package_file_uuid": "57d03272-04fb-423a-ae98-407475b662e8",
+      "package_type": "application/vnd.5gtango.package.tdp",
+      "release_date_time": "2018-09-05T15:12:43Z",
+      "vendor": "eu.5gtango",
+      "version": "0.1",
+      "warning": null
+    },
+    "signature": null,
+    "status": "active",
+    "updated_at": "2018-09-06T10:07:07.743+00:00",
+    "username": null,
+    "uuid": "2ceb0d91-f7cc-441d-9583-1e91b5d40d0a"
+  },
+  {
+    "created_at": "2018-09-06T13:50:09.504+00:00",
+    "md5": "64ebf83be036874a963c096a1cfcda4c",
+    "pd": {
+      "description": "This is the 5GTANGO network service for year 1 demo",
+      "descriptor_schema": "https://raw.githubusercontent.com/sonata-nfv/tng-schema/master/package-specification/napd-schema.yml",
+      "maintainer": "Ignacio Dominguez",
+      "name": "ns-gobetween",
+      "package_content": [
+        {
+          "algorithm": "SHA-256",
+          "content-type": "application/vnd.5gtango.nsd",
+          "hash": "9ce68895b61a5eba660942e3ef5dcdc137c54b8f77a58d3322b93bd67a8e1056",
+          "id": {
+            "name": "gobetween",
+            "vendor": "atos",
+            "version": "0.1"
+          },
+          "source": "Definitions/sources/nsd/gobetween.yml",
+          "tags": [],
+          "uuid": "11d2417b-bdeb-4b5e-a61a-fda328425178"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "application/vnd.5gtango.vnfd",
+          "hash": "2d583168575c2c0f10c6833f3dde9b10850d9fcb64f12d9b488e8135b035caea",
+          "id": {
+            "name": "gobetween-vnf",
+            "vendor": "atos",
+            "version": "0.1"
+          },
+          "source": "Definitions/sources/vnf/gobetween-vnf/gobetween-vnf.yml",
+          "tags": [],
+          "uuid": "d61169cd-b85d-446d-a2e2-99596d169b33"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "image/png",
+          "hash": "dc88c2efe8f12acf4797444b9a1a17e50f37d4222bc4731502d453bfe5921398",
+          "source": "Icons/atos_logo.png",
+          "tags": [],
+          "uuid": "d4cc13d7-41dd-4a16-9e33-ce9826ec7e11"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "text/plain",
+          "hash": "c92192539dbdbaf679785ac68f84096ec5694cb2326ecdcc0d03f5d50604a1ed",
+          "source": "Licenses/LICENSE",
+          "tags": [],
+          "uuid": "44b5d717-1f74-4dfd-b198-e1fea2bdc3e3"
+        }
+      ],
+      "package_file_name": "eu.5gtango.ns-gobetween.0.1.tgo",
+      "package_file_uuid": "7774c759-ab4b-4753-abd1-5c91d4c34c15",
+      "package_type": "application/vnd.5gtango.package.nsp",
+      "release_date_time": "2018-09-06T10:59:38Z",
+      "vendor": "eu.5gtango",
+      "version": "0.1",
+      "warning": null
+    },
+    "signature": null,
+    "status": "active",
+    "updated_at": "2018-09-06T13:50:09.504+00:00",
+    "username": null,
+    "uuid": "7576f4e5-451e-44d7-9f1e-15f8f95bdf3e"
+  },
+  {
+    "created_at": "2018-09-06T14:20:37.781+00:00",
+    "md5": "07ecad7f4062dcf8864668f7490fe383",
+    "pd": {
+      "description": "This is a 5GTANGO test package for http VUT Benchmarking",
+      "descriptor_schema": "https://raw.githubusercontent.com/sonata-nfv/tng-schema/master/package-specification/napd-schema.yml",
+      "maintainer": "Felipe Vicens, ATOS",
+      "name": "test-http-benchmarking-advanced-proxy",
+      "package_content": [
+        {
+          "algorithm": "SHA-256",
+          "content-type": "image/png",
+          "hash": "dd83757e632740f9f390af15eeb8bc25480a0c412c7ea9ac9abbb0e5e025e508",
+          "source": "Icons/upb_logo.png",
+          "tags": [],
+          "uuid": "79871a49-e733-45a2-b330-f3ebc419750b"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "text/plain",
+          "hash": "3cd74acbebc0a41414f342d27edbda0284ef4640ee6c077fdf00cd5a69ce181b",
+          "source": "Licenses/LICENSE",
+          "tags": [],
+          "uuid": "4edb4550-baa1-4209-bb22-126b6d6e77f3"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "text/plain",
+          "hash": "79b03e1936b833bc022d6aacb3daab771b9a58238012f86d8584a55fafe46573",
+          "source": "Tests/config.cfg",
+          "tags": [],
+          "uuid": "b2bcfb38-9c8f-4d54-848c-9976dda2f743"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "text/x-shellscript",
+          "hash": "23374fb03a15cc1d8f69dda102f08720a749d5bcfdf4b17efe737159f5a45fd8",
+          "source": "Tests/runner.sh",
+          "tags": [],
+          "uuid": "da036896-830c-4e9c-96cf-45da347d7e7f"
+        },
+        {
+          "algorithm": "SHA-256",
+          "content-type": "application/vnd.5gtango.tstd",
+          "hash": "b90ef6ddc958f513b416f4f649cd1e868db62d966c1f0d4c0cf14c18ea9c2570",
+          "id": {
+            "name": "test-http-benchmark-advanced-proxy",
+            "vendor": "eu.5gtango.atos",
+            "version": "0.1"
+          },
+          "source": "Definitions/Definitions/test-descriptor.yml",
+          "tags": [],
+          "uuid": "fcad365e-8606-4059-8434-5003eb068f21"
+        }
+      ],
+      "package_file_name": "eu.5gtango.test-http-benchmarking-advanced-proxy.0.1.tgo",
+      "package_file_uuid": "65b34925-2236-4cf7-8a94-f8a2c19e51c4",
+      "package_type": "application/vnd.5gtango.package.tdp",
+      "release_date_time": "2018-09-06T16:13:43Z",
+      "vendor": "eu.5gtango",
+      "version": "0.1",
+      "warning": null
+    },
+    "signature": null,
+    "status": "active",
+    "updated_at": "2018-09-06T14:20:37.781+00:00",
+    "username": null,
+    "uuid": "0c113989-8b2e-4378-8626-992b1ab7d463"
+  }
+]

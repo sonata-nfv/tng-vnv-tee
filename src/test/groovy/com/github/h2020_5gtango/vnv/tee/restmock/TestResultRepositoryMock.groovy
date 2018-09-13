@@ -36,8 +36,10 @@ package com.github.h2020_5gtango.vnv.tee.restmock
 
 import com.github.h2020_5gtango.vnv.tee.model.NetworkServiceInstance
 import com.github.h2020_5gtango.vnv.tee.model.TestSuiteResult
+import groovy.util.logging.Log
 import org.springframework.web.bind.annotation.*
 
+@Log
 @RestController
 class TestResultRepositoryMock {
 
@@ -49,6 +51,10 @@ class TestResultRepositoryMock {
 
     @PostMapping('/mock/trr/test-suite-results')
     TestSuiteResult createTestSuiteResult(@RequestBody TestSuiteResult testSuiteResult) {
+        log.info("##vnvlog-v.2: testSuiteResult.uuid is ${testSuiteResult.uuid}")
+        if(!testSuiteResult.uuid) {
+            testSuiteResult.uuid = UUID.randomUUID().toString()
+        }
         testSuiteResults[testSuiteResult.uuid] = testSuiteResult
     }
 

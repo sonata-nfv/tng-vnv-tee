@@ -32,24 +32,23 @@
  * partner consortium (www.5gtango.eu).
  */
 
-package com.github.h2020_5gtango.vnv.tee.model
+package com.github.h2020_5gtango.vnv.tee.restmock
 
+import groovy.json.JsonSlurper
+import org.springframework.util.ResourceUtils
 
-class NetworkServiceInstance {
+class DataMock {
 
-    String uuid
-    String name
+    static def getTest(String uuid) {
+        attachJsonData("classpath:static/json/tests.json").find{it.uuid == uuid}
+    }
 
-    String status
-    String version
+    static def getPackage(String uuid) {
+        attachJsonData("classpath:static/json/packages.json").find{it.uuid == uuid}
+    }
 
-    Date createdAt
-    Date updatedAt
-
-    List forwardingGraphs
-    List networkFunctions
-    List virtualLinks
-
-    Map connectionPoints=[:]
-
+    static def attachJsonData(String resourceLocation){
+        File file = ResourceUtils.getFile(resourceLocation)
+        (file.exists()) ? new JsonSlurper().parseText(file.text) :  null
+    }
 }
