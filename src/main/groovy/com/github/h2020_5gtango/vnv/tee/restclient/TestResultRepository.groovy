@@ -74,7 +74,7 @@ class TestResultRepository {
     def resultFilterByTestEndpoint
 
     TestSuiteResult createTestSuiteResult(TestSuiteResult testSuiteResult) {
-        testSuiteResult.status='SCHEDULED'
+        testSuiteResult.status='LOADING'
         def headers = new HttpHeaders()
         headers.setContentType(MediaType.APPLICATION_JSON)
         def entity = new HttpEntity<TestSuiteResult>(testSuiteResult ,headers)
@@ -86,7 +86,7 @@ class TestResultRepository {
         def headers = new HttpHeaders()
         headers.setContentType(MediaType.APPLICATION_JSON)
         def entity = new HttpEntity<TestSuiteResult>(testSuiteResult ,headers)
-        callExternalEndpoint(restTemplate.postForEntity(testSuiteResultCreateEndpoint,entity,TestSuiteResult),'TestResultRepository.createTestSuiteResult',testSuiteResultCreateEndpoint).body
+        callExternalEndpoint(restTemplate.exchange(testSuiteResultUpdateEndpoint, HttpMethod.PUT, entity, TestSuiteResult.class ,testSuiteResult.uuid),'TestResultRepository.processTestSuiteResult',testSuiteResultUpdateEndpoint).body
     }
 
     TestSuiteResult updateTestSuiteResult(TestSuiteResult testSuiteResult) {
