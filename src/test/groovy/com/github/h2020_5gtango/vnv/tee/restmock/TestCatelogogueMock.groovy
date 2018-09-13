@@ -34,12 +34,18 @@
 
 package com.github.h2020_5gtango.vnv.tee.restmock
 
+import com.github.h2020_5gtango.vnv.tee.model.PackageMetadata
 import com.github.h2020_5gtango.vnv.tee.model.TestSuite
+import groovy.util.logging.Log
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
+import static com.github.h2020_5gtango.vnv.tee.restmock.DataMock.getPackage
+import static com.github.h2020_5gtango.vnv.tee.restmock.DataMock.getTest
+
+@Log
 @RestController
 class TestCatelogogueMock {
 
@@ -88,4 +94,20 @@ class TestCatelogogueMock {
         new File("src/test/resources/test-suite-resources/$source").bytes
     }
 
+    @GetMapping('/mock/catalogues/tests/{testUuid}')
+    Map loadTest(@PathVariable('testUuid') String testUuid) {
+        getTest(testUuid)
+    }
+
+    @GetMapping('/mock/gk/packages/{package_id}')
+    Map loadPackageMetadata(@PathVariable('package_id') String packageId){
+        getPackage(packageId)
+    }
+
+
+    @GetMapping('/mock/gk/packages/{package_id}/files/resource_uuid')
+    byte[] downloadTestSuiteResources(@PathVariable('package_id') String packageId, @PathVariable('resource_uuid') String resourceUuid){
+        log.info("download request for packageId: $packageId and resourceUuid: $resourceUuid")
+
+    }
 }

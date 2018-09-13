@@ -41,6 +41,8 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 import org.springframework.web.client.RestTemplate
 
+import static com.github.h2020_5gtango.vnv.tee.helper.DebugHelper.callExternalEndpoint
+
 @Component
 class SpConnector {
 
@@ -52,7 +54,7 @@ class SpConnector {
     def serviceListEndpoint
 
     List<NetworkService> listServices() {
-        restTemplate.getForEntity(serviceListEndpoint, NetworkService[].class).body
+        callExternalEndpoint(restTemplate.getForEntity(serviceListEndpoint, NetworkService[].class),'SpConnector.listServices',serviceListEndpoint).body
     }
 
 }

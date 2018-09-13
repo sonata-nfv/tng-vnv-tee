@@ -111,6 +111,128 @@
                 }
             }
         },
+        "/mock/catalogues/tests/{testUuid}": {
+            "get": {
+                "tags": [
+                    "test-catelogogue-mock"
+                ],
+                "summary": "loadTest",
+                "operationId": "loadTestUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "name": "testUuid",
+                        "in": "path",
+                        "description": "testUuid",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/mock/gk/packages/{package_id}": {
+            "get": {
+                "tags": [
+                    "test-catelogogue-mock"
+                ],
+                "summary": "loadPackageMetadata",
+                "operationId": "loadPackageMetadataUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "name": "package_id",
+                        "in": "path",
+                        "description": "package_id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/mock/gk/packages/{package_id}/files/resource_uuid": {
+            "get": {
+                "tags": [
+                    "test-catelogogue-mock"
+                ],
+                "summary": "downloadTestSuiteResources",
+                "operationId": "downloadTestSuiteResourcesUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "parameters": [
+                    {
+                        "name": "package_id",
+                        "in": "path",
+                        "description": "package_id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "resource_uuid",
+                        "in": "path",
+                        "description": "resource_uuid",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string",
+                            "format": "byte"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
         "/mock/gk/sessions": {
             "post": {
                 "tags": [
@@ -323,6 +445,9 @@
                     "items": {
                         "type": "object"
                     }
+                },
+                "name": {
+                    "type": "string"
                 },
                 "network_functions": {
                     "type": "array",
