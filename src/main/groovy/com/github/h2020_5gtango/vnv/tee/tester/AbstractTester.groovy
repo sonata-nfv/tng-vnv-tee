@@ -55,7 +55,7 @@ class AbstractTester implements Tester {
     }
 
     TestSuiteResult executeShell(File workspace, TestSuiteResult testSuiteResult) {
-        def result = bashRunner.run(new File(RUNNER_EXECUTABLE_FILE))
+        def result = bashRunner.run(new File(workspace, RUNNER_EXECUTABLE_FILE))
         testSuiteResult.status = result.exitValue == 0 ? 'SUCCESS' : 'FAILED'
         testSuiteResult.stout = result.stout?.toString()
         testSuiteResult.sterr = result.sterr?.toString()

@@ -3,13 +3,15 @@ server:
 app:
   tee.tmp.dir: docker-host-shared-tmp
   gk.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/gk
+  cat.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/catalogues
+  vnvgk.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/gk
   catalogue.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/catalogue
   trr.base.url: http://localhost:${server.port}/tng-vnv-tee/mock/trr
   test:
-    package.id: test_pacakge_id
+    package.id: '2ceb0d91-f7cc-441d-9583-1e91b5d40d0a'
     plan.id: test_plan_id
     nsi.id: instance_uuid
-    suite.id: test_uuid
+    suite.id: 'input0ts-75f5-4ca1-90c8-12ec80a79821'
 #  gk.base.url: http://qual-sp-bcn.5gtango.eu:32002/api/v3
 #  vnvgk.base.url: http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3
 #  cat.base.url: http://pre-int-vnv-bcn.5gtango.eu:4011/api/catalogues/v2

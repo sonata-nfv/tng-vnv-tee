@@ -65,6 +65,7 @@ class TestExecutionEngine {
         def testWorkspace = testCatalogue.downloadTestSuiteResources(packageMetadata,testSuite, testSuiteResult.uuid)
         def nsi = testResultRepository.loadNetworkServiceInstance(testSuiteResult.instanceUuid)
         applyTemplating(testSuite, testWorkspace, nsi)
+        testSuiteResult=testResultRepository.processTestSuiteResult(testSuiteResult)
         testSuiteResult = testers[testSuite.type].execute(testWorkspace, testSuiteResult)
         testResultRepository.updateTestSuiteResult(testSuiteResult)
     }
