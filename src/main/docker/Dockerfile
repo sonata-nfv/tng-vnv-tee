@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:8-jdk-alpine
 RUN apt-get update && apt-get install -y libltdl7 vim && rm -rf /var/lib/apt/lists/*
 ENTRYPOINT ["java", "-jar", "/app.jar"]
 EXPOSE 6200
