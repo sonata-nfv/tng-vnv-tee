@@ -1,0 +1,174 @@
+@startuml
+
+title __TNG-VNV-TEE Class Diagram__\n
+
+  package com.github.h2020_5gtango.vnv.tee {
+    class Application {
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.config {
+      class BearerAuthorizationInterceptor {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.helper {
+      class DebugHelper {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.model {
+      class LatencyPercentile {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.model {
+      class NetworkService {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.model {
+      class NetworkServiceInstance {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.model {
+      class PackageMetadata {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.config {
+      class RestConfig {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.status {
+      class ServicesStatus {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.model {
+      class Session {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.restclient {
+      class SpConnector {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.model {
+      class Test {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.restclient {
+      class TestCatalogue {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.engine {
+      class TestExecutionEngine {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.restclient {
+      class TestResultRepository {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.model {
+      class TestSuite {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.model {
+      class TestSuiteResult {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.status {
+      class TestsStatus {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.restclient {
+      class UserSessionManager {
+      }
+    }
+  }
+  
+
+  package com.github.h2020_5gtango.vnv.tee {
+    package com.github.h2020_5gtango.vnv.tee.model {
+      class Wrk2ResultDetails {
+      }
+    }
+  }
+  
+
+  BearerAuthorizationInterceptor -up-|> ClientHttpRequestInterceptor
+  BearerAuthorizationInterceptor o-- UserSessionManager : userSessionManager
+  RestConfig o-- BearerAuthorizationInterceptor : bearerAuthorizationInterceptor
+  ServicesStatus o-- SpConnector : spConnector
+  ServicesStatus o-- TestResultRepository : testResultRepository
+  TestExecutionEngine o-- TestResultRepository : testResultRepository
+  TestExecutionEngine o-- TestCatalogue : testCatalogue
+  TestsStatus o-- TestCatalogue : testCatalogue
+  TestsStatus o-- TestResultRepository : testResultRepository
+  UserSessionManager o-- Session : session
+
+@enduml
